@@ -1,5 +1,5 @@
 
-# inline documentation generator
+# inline documentation generator ([GitHub repo](http://github.com/zlsa/indoc/))
 
 Inspired heavily by [`docco`](https://jashkenas.github.io/docco/),
 `indoc` is a quick-and-dirty documentation generator written in plain

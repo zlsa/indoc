@@ -158,6 +158,9 @@
   font-weight: bold;
   font-style: normal; }
 
+body.overview #header .overview {
+  display: none; }
+
 body.overview #header header {
   color: rgba(0, 0, 0, 0.6); }
   body.overview #header header:before {

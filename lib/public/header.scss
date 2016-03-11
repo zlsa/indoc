@@ -277,6 +277,10 @@ body.overview {
   
   #header {
 
+    .overview {
+      display: none;
+    }
+
     @include header-files-visible();
 
     > .comment {
