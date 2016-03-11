@@ -322,6 +322,11 @@ body {
         font-family: 'Inconsolata', Consolata, monospace; }
         body #sections #header > .comment header .file-path #project-overview {
           font-weight: bold; }
+          body #sections #header > .comment header .file-path #project-overview .version {
+            float: right;
+            font-weight: normal;
+            font-size: 16px;
+            color: #6c9393; }
       body #sections #header > .comment header #filename {
         font-weight: bold;
         color: #415858;
@@ -401,9 +406,22 @@ body {
       body #sections .section.markdown > .code > .markdown p, body #sections .section.markdown > .code > .markdown pre, body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h2, body #sections .section.markdown > .code > .markdown h3, body #sections .section.markdown > .code > .markdown h4, body #sections .section.markdown > .code > .markdown h5, body #sections .section.markdown > .code > .markdown h6 {
         padding-left: 5vh;
         padding-right: 5vh; }
-      body #sections .section.markdown > .code > .markdown pre, body #sections .section.markdown > .code > .markdown blockquote {
+      body #sections .section.markdown > .code > .markdown pre {
         margin-left: 5vh;
-        border-left: 4px solid #d3dede;
+        border-left: 4px solid #d3dede; }
+      body #sections .section.markdown > .code > .markdown blockquote {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        padding-left: 5vh;
+        padding-right: 5vh;
+        border-left: 6px solid #d3dede; }
+        body #sections .section.markdown > .code > .markdown blockquote p {
+          padding: 12px;
+          padding-left: 0;
+          font-style: italic;
+          margin-left: -6px;
+          padding-right: 6px; }
+      body #sections .section.markdown > .code > .markdown pre {
         padding-left: 16px; }
       body #sections .section.footer > .code {
         border-top: 1px solid #d3dede; } }
@@ -473,9 +491,22 @@ body {
         body #sections .section.markdown > .code > .markdown p, body #sections .section.markdown > .code > .markdown pre, body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h2, body #sections .section.markdown > .code > .markdown h3, body #sections .section.markdown > .code > .markdown h4, body #sections .section.markdown > .code > .markdown h5, body #sections .section.markdown > .code > .markdown h6 {
           padding-left: 24px;
           padding-right: 64px; }
-        body #sections .section.markdown > .code > .markdown pre, body #sections .section.markdown > .code > .markdown blockquote {
+        body #sections .section.markdown > .code > .markdown pre {
           margin-left: 24px;
-          border-left: 4px solid #d3dede;
+          border-left: 4px solid #d3dede; }
+        body #sections .section.markdown > .code > .markdown blockquote {
+          margin-top: 24px;
+          margin-bottom: 24px;
+          padding-left: 24px;
+          padding-right: 64px;
+          border-left: 6px solid #d3dede; }
+          body #sections .section.markdown > .code > .markdown blockquote p {
+            padding: 12px;
+            padding-left: 0;
+            font-style: italic;
+            margin-left: -6px;
+            padding-right: 6px; }
+        body #sections .section.markdown > .code > .markdown pre {
           padding-left: 16px; }
         body #sections .section.footer > .code {
           border-top: 1px solid #d3dede; } }

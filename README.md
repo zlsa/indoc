@@ -15,6 +15,13 @@ Unlike `docco`, `indoc` has the concept of a `project`; instead of
 having a hacky "Jump To" menu, `indoc` has an integrated file listing
 on each generated page. (Check it out on the left.)
 
+> Note that `indoc` is currently only a few days old, and is subject to
+> rapid, backwards-incompatible changes in the near future.
+
+# Usage
+
+The recommended usage is to install `indoc` globally.
+
 # Getting the library
 
 ```
@@ -61,6 +68,12 @@ argument, you shouldn't be using `indoc` in the first place.
 
 Displays the program's `semver`; for example, `0.1.0`, then exits.
 
+```
+$ indoc --version
+0.3.2
+$
+```
+
 ### `-r <file>` or `--readme <file>`
 
 Provide a README file, to be used on the project's overview page. This
@@ -78,6 +91,12 @@ Set the output directory (the default is `docs`).
 
 Sets a string. By default, it's `contributors`. This string is at the
 footer of every generated page.
+
+### `-p <version>` or `--project-version <version>`
+
+Sets the project version. This is displayed on every page. The special
+string `package.json` will attempt to read the `package.json` file and
+find the version there.
 
 # Using the library
 
@@ -107,9 +126,9 @@ project.run(function(err, data) {
 
 At the moment, `indoc` is very, very new. It would probably be better
 if, instead of contributing code, you
-[create new issues](https://github.com/zlsa/indoc/issues). The project
-is very new, and I'd like to see it stabilize more before changing
-major areas of its functionality.
+[open new issues](https://github.com/zlsa/indoc/issues). I'd like to
+see `indoc` stabilize more before changing major areas of its
+functionality.
 
 # License
 

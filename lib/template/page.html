@@ -26,7 +26,7 @@
             <div class="file-path">
               
               {{#if index}}
-              <span id="project-overview">{{project}}</span>
+              <span id="project-overview">{{project}}<span class="version">{{version}}</span></span>
               {{else}}
               <a id="project-overview" href="{{path}}" title="Project Overview">{{project}}</a>
               {{/if}}
@@ -64,8 +64,10 @@
         <div class="code empty">
         </div>
         {{/if}}
-        
+
+        {{#unless index}}
         <div id="version">{{version}}</div>
+        {{/unless}}
 
       </section>
 
