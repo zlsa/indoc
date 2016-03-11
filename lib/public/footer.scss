@@ -13,7 +13,7 @@ $footer-height: 48px;
       padding-bottom: 0;
     }
       
-    > .comment {
+    > .comment .content {
       font-size: 13px;
 
       color: hsl($hue, $saturation, 45%);
@@ -21,8 +21,11 @@ $footer-height: 48px;
     }
     
     > .code {
-      font-size: 14px;
       text-align: right;
+    }
+    
+    > .code .content {
+      font-size: 14px;
       @include font-mono();
 
       color: hsl($hue, $saturation, 50%);

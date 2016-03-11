@@ -95,7 +95,7 @@
     
   }
   
-  &.footer > .comment {
+  &.footer > .comment > .content {
     padding-left: $left;
     padding-right: $right;
   }
@@ -121,10 +121,8 @@
 @mixin code-padding($vert, $left, $right) {
   
   > .code > pre,
-  &.footer > .code {
-    
+  &.footer > .code > .content {
     padding: $vert $right $vert $left;
-    
   }
 
   &.markdown > .code > .markdown {
@@ -171,6 +169,10 @@
 
   @include comment-padding($section-single-column-padding-v, $section-single-column-padding-h, $section-single-column-padding-h);
   
+  @include narrow() {
+    @include comment-padding($section-narrow-v, $section-narrow-h, $section-narrow-h);
+  }
+  
 }
 
 @mixin code-single-column() {
@@ -187,6 +189,10 @@
   }
 
   @include code-padding($section-single-column-padding-v, $section-single-column-padding-h, $section-single-column-padding-h);
+
+  @include narrow() {
+    @include code-padding($section-narrow-v, $section-narrow-h, $section-narrow-h);
+  }
   
   &.footer > .code {
     border-top: 1px solid $code-border-color;

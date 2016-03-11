@@ -17,6 +17,9 @@ $section-two-column-outer: 64px;
 $section-single-column-padding-v: 16px;
 $section-single-column-padding-h: 5vh;
 
+$section-narrow-v: 16px;
+$section-narrow-h: 12px;
+
 $comment-font-size: 14px;
 $code-font-size: 14px;
 
@@ -26,10 +29,17 @@ $code-font-size: 14px;
   }
 }
 
-$two-column-width: 1200px;
+$two-column-width: 900px;
+$narrow-width: 480px;
 
 @mixin single-column() {
   @media (max-width: #{$two-column-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin narrow() {
+  @media (max-width: #{$narrow-width}) {
     @content;
   }
 }
