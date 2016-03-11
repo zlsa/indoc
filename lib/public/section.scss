@@ -9,6 +9,11 @@
     
     line-height: 160%;
 
+    > .text {
+      @include markdown();
+      @include markdown-small-headers();
+    }
+
   }
 
 }
@@ -23,10 +28,6 @@
   
   > .code {
 
-    &.empty {
-      display: none !important;
-    }
-    
     > pre {
       white-space: pre-wrap;
       word-wrap: break-word;
@@ -97,8 +98,6 @@
   &.footer > .comment {
     padding-left: $left;
     padding-right: $right;
-    padding-top: $footer-padding;
-    padding-bottom: $footer-padding;
   }
   
 }
@@ -128,11 +127,6 @@
     
   }
 
-  &.footer > .code {
-    padding-top: $footer-padding;
-    padding-bottom: $footer-padding;
-  }
-  
   &.markdown > .code > .markdown {
     @include markdown-padding($left, $right);
   }
@@ -186,6 +180,10 @@
     border-bottom: 1px solid $code-border-color;
     border-top: 1px solid $code-border-color;
 
+    &.empty {
+      display: none !important;
+    }
+    
   }
 
   @include code-padding($section-single-column-padding-v, $section-single-column-padding-h, $section-single-column-padding-h);

@@ -1,12 +1,7 @@
 #!/bin/bash
 set -e
 
-rm -rf docs || exit 0;
-mkdir docs;
-
-node ./bin/main.js bin/*.js lib/*.js --name Indoc --readme README.md --owners 'ZLSA Design'
-
-cd docs
+./build.sh
 
 git init
 

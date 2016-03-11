@@ -71,8 +71,111 @@ body {
     body #sections .section > .comment {
       background: #fcfdfd;
       line-height: 160%; }
-    body #sections .section > .code.empty {
-      display: none !important; }
+      body #sections .section > .comment > .text a {
+        color: #577575;
+        text-decoration: underline; }
+      body #sections .section > .comment > .text p code {
+        font-family: 'Inconsolata', Consolata, monospace;
+        display: inline;
+        background: #f0f4f4;
+        border: 1px solid #d3dede;
+        border-radius: 2px;
+        padding: 0px 2px;
+        margin: 0 1px; }
+      body #sections .section > .comment > .text pre {
+        margin: 24px 0; }
+        body #sections .section > .comment > .text pre .hljs-keyword {
+          color: #00994d; }
+        body #sections .section > .comment > .text pre .hljs-built_in {
+          color: #660099; }
+        body #sections .section > .comment > .text pre .hljs-type {
+          color: #f0f; }
+        body #sections .section > .comment > .text pre .hljs-literal {
+          color: #990066;
+          font-weight: bold; }
+        body #sections .section > .comment > .text pre .hljs-number {
+          color: #12a12a; }
+        body #sections .section > .comment > .text pre .hljs-regexp,
+        body #sections .section > .comment > .text pre .hljs-string {
+          color: #7d4d36; }
+        body #sections .section > .comment > .text pre .hljs-symbol {
+          color: #000099; }
+        body #sections .section > .comment > .text pre .hljs-function {
+          color: gray; }
+        body #sections .section > .comment > .text pre .hljs-params {
+          color: #333333; }
+        body #sections .section > .comment > .text pre .hljs-comment {
+          color: #70c299;
+          font-weight: bold; }
+      body #sections .section > .comment > .text p + p {
+        text-indent: 1em;
+        margin-top: 8px; }
+      body #sections .section > .comment > .text h1 {
+        font-size: 24px;
+        min-height: 64px;
+        line-height: 64px;
+        border-bottom: 1px solid #d3dede;
+        margin-bottom: 16px; }
+      body #sections .section > .comment > .text * + h1 {
+        margin-top: 48px; }
+      body #sections .section > .comment > .text h2 {
+        font-size: 22px;
+        min-height: 48px;
+        line-height: 48px;
+        margin-bottom: 14px; }
+      body #sections .section > .comment > .text * + h2 {
+        margin-top: 42px; }
+      body #sections .section > .comment > .text h3 {
+        font-size: 16px;
+        min-height: 36px;
+        line-height: 36px;
+        border-bottom: 1px solid #d3dede;
+        margin-bottom: 12px; }
+      body #sections .section > .comment > .text * + h3 {
+        margin-top: 36px; }
+      body #sections .section > .comment > .text h4 {
+        font-size: 14px;
+        min-height: 32px;
+        line-height: 32px;
+        margin-bottom: 10px; }
+      body #sections .section > .comment > .text * + h4 {
+        margin-top: 24px; }
+      body #sections .section > .comment > .text h1, body #sections .section > .comment > .text h3 {
+        font-weight: bold; }
+      body #sections .section > .comment > .text h1 {
+        font-size: 18px;
+        min-height: 38px;
+        line-height: 38px;
+        border-bottom: 1px solid #d3dede;
+        margin-bottom: 14px; }
+      body #sections .section > .comment > .text * + h1 {
+        margin-top: 24px; }
+      body #sections .section > .comment > .text h2 {
+        font-size: 16px;
+        min-height: 34px;
+        line-height: 34px;
+        margin-bottom: 12px; }
+      body #sections .section > .comment > .text * + h2 {
+        margin-top: 20px; }
+      body #sections .section > .comment > .text h3 {
+        font-size: 14px;
+        min-height: 28px;
+        line-height: 28px;
+        border-bottom: 1px solid #d3dede;
+        margin-bottom: 10px; }
+      body #sections .section > .comment > .text * + h3 {
+        margin-top: 18px; }
+      body #sections .section > .comment > .text h4 {
+        font-size: 12px;
+        min-height: 22px;
+        line-height: 22px;
+        margin-bottom: 8px; }
+      body #sections .section > .comment > .text * + h4 {
+        margin-top: 16px; }
+      body #sections .section > .comment > .text h1, body #sections .section > .comment > .text h2, body #sections .section > .comment > .text h3, body #sections .section > .comment > .text h4 {
+        color: #577575; }
+      body #sections .section > .comment > .text h1, body #sections .section > .comment > .text h2 {
+        text-transform: uppercase; }
     body #sections .section > .code > pre {
       white-space: pre-wrap;
       word-wrap: break-word;
@@ -156,7 +259,6 @@ body {
         font-size: 22px;
         min-height: 48px;
         line-height: 48px;
-        border-bottom: 1px solid #d3dede;
         margin-bottom: 14px; }
       body #sections .section.markdown > .code > .markdown * + h2 {
         margin-top: 42px; }
@@ -269,18 +371,15 @@ body {
         padding-left: 5vh; }
       body #sections .section.footer > .comment {
         padding-left: 5vh;
-        padding-right: 5vh;
-        padding-top: 36px;
-        padding-bottom: 36px; }
+        padding-right: 5vh; }
       body #sections .section > .code {
         border-bottom: 1px solid #d3dede;
         border-top: 1px solid #d3dede; }
+        body #sections .section > .code.empty {
+          display: none !important; }
       body #sections .section > .code > pre,
       body #sections .section.footer > .code {
         padding: 16px 5vh 16px 5vh; }
-      body #sections .section.footer > .code {
-        padding-top: 36px;
-        padding-bottom: 36px; }
       body #sections .section.markdown > .code > .markdown p, body #sections .section.markdown > .code > .markdown pre, body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h2, body #sections .section.markdown > .code > .markdown h3, body #sections .section.markdown > .code > .markdown h4, body #sections .section.markdown > .code > .markdown h5, body #sections .section.markdown > .code > .markdown h6 {
         padding-left: 5vh;
         padding-right: 5vh; }
@@ -345,9 +444,7 @@ body {
           padding-left: 64px; }
         body #sections .section.footer > .comment {
           padding-left: 64px;
-          padding-right: 24px;
-          padding-top: 36px;
-          padding-bottom: 36px; }
+          padding-right: 24px; }
         body #sections .section.footer > .comment {
           border-top: 1px solid #dfe7e7; }
         body #sections .section > .code {
@@ -355,9 +452,6 @@ body {
         body #sections .section > .code > pre,
         body #sections .section.footer > .code {
           padding: 8px 64px 8px 24px; }
-        body #sections .section.footer > .code {
-          padding-top: 36px;
-          padding-bottom: 36px; }
         body #sections .section.markdown > .code > .markdown p, body #sections .section.markdown > .code > .markdown pre, body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h2, body #sections .section.markdown > .code > .markdown h3, body #sections .section.markdown > .code > .markdown h4, body #sections .section.markdown > .code > .markdown h5, body #sections .section.markdown > .code > .markdown h6 {
           padding-left: 24px;
           padding-right: 64px; }
@@ -367,8 +461,13 @@ body {
           padding-left: 16px; }
         body #sections .section.footer > .code {
           border-top: 1px solid #d3dede; } }
+    body #sections #footer > .comment, body #sections #footer > .code {
+      height: 48px;
+      line-height: 48px;
+      padding-top: 0;
+      padding-bottom: 0; }
     body #sections #footer > .comment {
-      font-size: 14px;
+      font-size: 13px;
       color: #628484;
       font-weight: bold; }
     body #sections #footer > .code {
@@ -376,6 +475,9 @@ body {
       text-align: right;
       font-family: 'Inconsolata', Consolata, monospace;
       color: #6c9393; }
+    @media (max-width: 1199px) {
+      body #sections #footer {
+        text-align: right; } }
   body.index #header > .comment #project-overview {
     border-bottom: 1px solid #dfe7e7;
     font-size: 24px; }

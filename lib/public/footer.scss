@@ -5,9 +5,17 @@ $footer-height: 48px;
 
   #footer {
     
-    > .comment {
-      font-size: 14px;
+    > .comment, > .code {
+      height: $footer-height;
+      line-height: $footer-height;
       
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+      
+    > .comment {
+      font-size: 13px;
+
       color: hsl($hue, $saturation, 45%);
       font-weight: bold;
     }
@@ -16,14 +24,18 @@ $footer-height: 48px;
       font-size: 14px;
       text-align: right;
       @include font-mono();
-      
+
       color: hsl($hue, $saturation, 50%);
     }
     
   }
 
   @include single-column() {
-
+    
+    #footer {
+      text-align: right;
+    }
+    
   }
   
 }

@@ -20,8 +20,6 @@ $section-single-column-padding-h: 5vh;
 $comment-font-size: 14px;
 $code-font-size: 14px;
 
-$footer-padding: 36px;
-
 @mixin clickable() {
   &:hover {
     cursor: pointer;

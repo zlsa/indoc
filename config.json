@@ -1,0 +1,7 @@
+{
+  "files": ["bin/*.js", "lib/*.js", "examples/*"],
+  "readme": "README.md",
+  "name": "Indoc",
+  "output": "docs",
+  "owners": "ZLSA Design"
+}

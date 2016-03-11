@@ -4,7 +4,7 @@
   "description": "Inline documentation generator for complete projects",
   "keywords": ["documentation", "inline", "site", "html", "generate", "doc"],
   "homepage": "https://zlsa.github.io/indoc/",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "MIT",
   "repository": "github:zlsa/indoc",
   
