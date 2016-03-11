@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 
 // Parse arguments with `yargs`.
 var argv = require('yargs')
