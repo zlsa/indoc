@@ -17,7 +17,11 @@ on each generated page. (Check it out on the left.)
 
 # Getting the library
 
-    npm install -g indoc
+```
+npm install -g indoc
+```
+
+The command `indoc` should now be available.
 
 # Using the command line program
 
@@ -29,6 +33,23 @@ $ indoc [options] files...
 
 Sets a config file to read configuration options from. If used, the
 rest of the arguments are ignored.
+
+Example config:
+
+```js
+{
+  "name": "Mousetrap Simulation Library"
+  "owners": "Tom",
+  "output": "docs",
+  "readme": "README.md",
+  "files": [
+    "src/animal.js",
+    "src/cat.js",
+    "src/mouse.js",
+    "src/trap.js"
+  ]
+}
+```
 
 ### `-h` or `--help`
 
@@ -63,14 +84,16 @@ footer of every generated page.
 var indoc = require('indoc');
 
 var project = indoc.project.create({
+  name: 'Mousetrap Simulation Library'
+  owners: 'Tom', // "Copyright 2016 Tom"
+  output: 'docs',
+  readme: 'README.md',
   files: [
     'src/animal.js',
     'src/cat.js',
     'src/mouse.js',
     'src/trap.js'
-  ],
-  readme: 'README.md',
-  name: 'Mousetrap Simulation Library'
+  ]
 });
 
 project.run(function(err, data) {
@@ -78,9 +101,17 @@ project.run(function(err, data) {
 });
 ```
 
+# Contributing/Feedback
+
+At the moment, `indoc` is very, very new. It would probably be better
+if, instead of contributing code, you
+[create new issues](https://github.com/zlsa/indoc/issues). The project
+is very new, and I'd like to see it stabilize more before changing
+major areas of its functionality.
+
 # License
 
-Copyright (c) 2016 Indoc contributors.
+Copyright (c) 2016 ZLSA Design.
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
