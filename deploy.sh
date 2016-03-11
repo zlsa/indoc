@@ -3,6 +3,8 @@ set -e
 
 ./build.sh
 
+cd docs
+
 git init
 
 git add .

@@ -5,5 +5,3 @@ mkdir docs;
 
 node ./bin/main.js --config config.json
 
-cd docs
-
