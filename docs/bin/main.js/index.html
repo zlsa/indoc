@@ -1,0 +1,471 @@
+<!doctype html>
+<html>
+  <head>
+    <title>bin/main.js [ Indoc ]</title>
+    <link rel="stylesheet" href="./../../public/style.css" />
+    <script src="./../../public/jquery.min.js"></script>
+    <script src="./../../public/script.js"></script>
+  </head>
+  <body class="code">
+    
+    <main id="sections">
+
+      <!-- The header -->
+
+      <section class="section header files-hidden" id="header">
+
+        <aside class="comment">
+
+          <header>
+
+            <div class="file-path">
+              
+              <a id="project-overview" href="./../.." title="Project Overview">Indoc</a>
+              
+              <div class="files-menu">
+                <span id="filename">bin/main.js</span>
+                
+                <ul class="files hidable">
+                  
+                  <li class="file"><a href="./../../README.md/">README.md</a></li>
+                  <li class="file"><a href="./../../examples/example.c/">examples/example.c</a></li>
+                  <li class="file"><a href="./../../examples/example.js/">examples/example.js</a></li>
+                  <li class="file"><a href="./../../examples/example.s/">examples/example.s</a></li>
+                  <li class="file"><a href="./../../lib/class.js/">lib/class.js</a></li>
+                  <li class="file"><a href="./../../lib/file.js/">lib/file.js</a></li>
+                  <li class="file"><a href="./../../lib/language.js/">lib/language.js</a></li>
+                  <li class="file"><a href="./../../lib/main.js/">lib/main.js</a></li>
+                  <li class="file"><a href="./../../lib/section.js/">lib/section.js</a></li>
+                  
+                </ul>
+                
+              </div>
+                
+            </div>
+
+            <div class="spacer"></div>
+            
+          </header>
+            
+        </aside>
+
+        <div class="code empty">
+        </div>
+        
+      </section>
+
+      <!-- The main code section -->
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>Parse arguments with <code>yargs</code>.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code><span class="hljs-keyword">var</span> argv = <span class="hljs-built_in">require</span>(<span class="hljs-string">'yargs'</span>)
+      .usage(<span class="hljs-string">'Usage: $0 [options] file...'</span>)
+
+      .alias(<span class="hljs-string">'v'</span>, <span class="hljs-string">'version'</span>)
+      .version(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">require</span>(<span class="hljs-string">'../package'</span>).version; })
+      .describe(<span class="hljs-string">'v'</span>, <span class="hljs-string">'show version information'</span>)
+
+      .help(<span class="hljs-string">'h'</span>)
+      .alias(<span class="hljs-string">'h'</span>, <span class="hljs-string">'help'</span>)
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>No default README file to avoid ugly warnings.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>      .option(<span class="hljs-string">'r'</span>, {
+        alias : <span class="hljs-string">'readme'</span>,
+        describe: <span class="hljs-string">'Provide a README markdown file'</span>,
+        type: <span class="hljs-string">'string'</span>,
+        nargs: <span class="hljs-number">1</span>,
+        <span class="hljs-keyword">default</span>: <span class="hljs-literal">null</span>
+      })
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>Again, no default here. (If no name is provided, <code>indoc</code> has its own defaults.)</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>      .option(<span class="hljs-string">'n'</span>, {
+        alias : <span class="hljs-string">'name'</span>,
+        describe: <span class="hljs-string">'The name of the project'</span>,
+        type: <span class="hljs-string">'string'</span>,
+        nargs: <span class="hljs-number">1</span>,
+        <span class="hljs-keyword">default</span>: <span class="hljs-literal">null</span>
+      })
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>The output directory.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>      .option(<span class="hljs-string">'o'</span>, {
+        alias : <span class="hljs-string">'output'</span>,
+        describe: <span class="hljs-string">'The output directory'</span>,
+        type: <span class="hljs-string">'string'</span>,
+        nargs: <span class="hljs-number">1</span>,
+        <span class="hljs-keyword">default</span>: <span class="hljs-string">'docs'</span>
+      })
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>The owners of the project; for example, &quot;Mousetrap Contributors&quot; or
+&quot;Linus Torvalds et. al.&quot;</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>      .option(<span class="hljs-string">'owners'</span>, {
+        describe: <span class="hljs-string">'The owners of the project'</span>,
+        type: <span class="hljs-string">'string'</span>,
+        nargs: <span class="hljs-number">1</span>,
+        <span class="hljs-keyword">default</span>: <span class="hljs-literal">null</span>
+      })
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>A JSON config file, in the same format as the main <code>indoc</code> options
+argument.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>      .option(<span class="hljs-string">'config'</span>, {
+        alias: <span class="hljs-string">'c'</span>,
+        describe: <span class="hljs-string">'A JSON configuration file'</span>,
+        type: <span class="hljs-string">'string'</span>,
+        nargs: <span class="hljs-number">1</span>,
+        <span class="hljs-keyword">default</span>: <span class="hljs-literal">null</span>
+      })
+
+      .epilog(<span class="hljs-string">'Copyright 2016'</span>)
+      .argv;
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p><code>winston</code>, for logging.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code><span class="hljs-keyword">var</span> winston = <span class="hljs-built_in">require</span>(<span class="hljs-string">'winston'</span>);
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>Set up the logger.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code><span class="hljs-keyword">var</span> logger = <span class="hljs-keyword">new</span> winston.Logger({
+  level: <span class="hljs-string">'info'</span>,
+  transports: [
+    
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>I have no idea what this really does but I copy-pasted it, and
+it works and looks pretty, so I&#39;m not complaining.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>    <span class="hljs-keyword">new</span> (winston.transports.Console)({
+      colorize: <span class="hljs-literal">true</span>
+    })
+    
+  ]
+});
+
+<span class="hljs-keyword">var</span> process = <span class="hljs-built_in">require</span>(<span class="hljs-string">'process'</span>);
+<span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs-extra'</span>);
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>Require the <code>indoc</code> library. Stuff is getting serious.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code><span class="hljs-keyword">var</span> indoc = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../lib/main'</span>);
+
+<span class="hljs-comment">////////////////////////////////////////////////</span>
+
+<span class="hljs-keyword">if</span>(argv.config) {
+  
+  fs.readFile(argv.config, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, data</span>) </span>{
+    
+    <span class="hljs-keyword">if</span>(err) {
+      logger.log(<span class="hljs-string">'error'</span>, <span class="hljs-string">'Could not open config file "'</span> + argv.config + <span class="hljs-string">'"'</span>);
+      <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-keyword">try</span> {
+      data = <span class="hljs-built_in">JSON</span>.parse(data);
+    } <span class="hljs-keyword">catch</span>(e) {
+      logger.log(<span class="hljs-string">'error'</span>, <span class="hljs-string">'Could not parse config file "'</span> + argv.config + <span class="hljs-string">'"'</span>);
+      <span class="hljs-keyword">return</span>;
+    }
+    
+    run(data);
+    
+  });
+  
+} <span class="hljs-keyword">else</span> {
+
+  <span class="hljs-keyword">if</span>(argv._.length == <span class="hljs-number">0</span>) {
+    logger.log(<span class="hljs-string">'error'</span>, <span class="hljs-string">'No files specified'</span>);
+    process.exit(<span class="hljs-number">0</span>);
+  }
+  
+  run({
+    
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>This is easy thanks to <code>yargs</code>. Thanks, matey!</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>    files: argv._,
+    readme: argv.r,
+    name: argv.n,
+    output: argv.o,
+    owners: argv.owners
+    
+  });
+}
+
+<span class="hljs-comment">////////////////////////////////////////////////</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">run</span>(<span class="hljs-params">options</span>) </span>{
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>And create the project with all of the above command-line options.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>  <span class="hljs-keyword">var</span> project = indoc.project.create(options);
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>Called when we have a duplicate file (i.e. [&#39;foo.js&#39;,
+&#39;foo.js&#39;]). <code>indoc</code> automatically ignores it, but the event lets us
+print out a warning message.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>  project.on(<span class="hljs-string">'duplicate-file'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+    logger.log(<span class="hljs-string">'warn'</span>, <span class="hljs-string">'Duplicate file "'</span> + data.filename + <span class="hljs-string">'"'</span>);
+  });
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>Called when a template can&#39;t be read. This is probably going to
+crash things later on. FIXME!!!</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>  project.on(<span class="hljs-string">'template-err'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+    logger.log(<span class="hljs-string">'warn'</span>, <span class="hljs-string">'Could not read template "'</span> + data.filename + <span class="hljs-string">'"'</span>);
+  });
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>Called when the provided README file can&#39;t be opened. Instead of
+failing, &quot;No README provided&quot; is used as a replacement for the actual
+README file.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>  project.on(<span class="hljs-string">'readme-err'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+    logger.log(<span class="hljs-string">'warn'</span>, <span class="hljs-string">'Could not open README file "'</span> + data.filename + <span class="hljs-string">'"'</span>);
+  });
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>Called when a file (from the <code>public/</code> directory) cannot be
+copied. This really shouldn&#39;t ever happen unless I screwed up and
+told it to copy a file that doesn&#39;t exist.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>  project.on(<span class="hljs-string">'copy-err'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+    logger.log(<span class="hljs-string">'warn'</span>, <span class="hljs-string">'Could not copy file "'</span> + data.src + <span class="hljs-string">'" to "'</span> + data.dest + <span class="hljs-string">'"'</span>);
+  });
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>Called for every file that has been generated.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>  project.on(<span class="hljs-string">'run-file-complete'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">data</span>) </span>{
+    
+    <span class="hljs-keyword">if</span>(data.err) {
+      logger.log(<span class="hljs-string">'error'</span>, <span class="hljs-string">'Could not generate "'</span> + data.data.filename + <span class="hljs-string">'"'</span>);
+      <span class="hljs-keyword">return</span>;
+    }
+    
+    logger.log(<span class="hljs-string">'info'</span>, <span class="hljs-string">'Generated "'</span> + data.data.filename + <span class="hljs-string">'"'</span>);
+  });
+
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>And we run the project, finally! This parses all of the files, then
+creates the generated files, as well as copying over all of the
+CSS/JS/fonts required to display the resulting page. The callback
+is called when every file is fully generated.</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>  project.run(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, data</span>) </span>{
+
+    <span class="hljs-keyword">var</span> total = data.total;
+    <span class="hljs-keyword">var</span> errors = data.errors;
+    <span class="hljs-keyword">var</span> number = total;
+    
+    <span class="hljs-keyword">if</span>(errors) number = (total - errors) + <span class="hljs-string">'/'</span> + total;
+    
+</code></pre>
+        </div>
+        
+      </section>
+      <section class="section">
+        
+        <aside class="comment">
+          <div class="text markdown"><p>See you all!</p>
+</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>    logger.log(<span class="hljs-string">'info'</span>, <span class="hljs-string">'Successfully generated '</span> + number + <span class="hljs-string">' file'</span> + (total == <span class="hljs-number">1</span> ? <span class="hljs-string">''</span> : <span class="hljs-string">'s'</span>));
+
+  });
+  
+}
+
+</code></pre>
+        </div>
+        
+      </section>
+      
+      <section class="section footer" id="footer">
+        
+        <aside class="comment">
+          <span class="project-copyright">&copy; Copyright 2016 ZLSA Design.</span>
+        </aside>
+
+        <div class="code">
+          <span class="page-generation-time">Generated Fri, 11 Mar 2016 21:13:46 GMT</span>
+        </div>
+        
+      </section>
+      
+    </main>
+
+  </body>
+</html>
+
