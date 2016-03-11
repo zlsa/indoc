@@ -284,6 +284,7 @@ body.overview {
       header {
 
         top: 0;
+        position: relative;
         
         &:before {
           display: none;
@@ -301,7 +302,7 @@ body.overview {
 
     .files {
       position: relative;
-      top: $header-height;
+      top: 0;
       border: none;
     }
     
