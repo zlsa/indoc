@@ -33,6 +33,25 @@ var argv = require('yargs')
         default: null
       })
 
+// The output directory.
+
+      .option('o', {
+        alias : 'output',
+        describe: 'The output directory',
+        type: 'string',
+        nargs: 1,
+        default: 'docs'
+      })
+
+// The owners of the project
+
+      .option('owners', {
+        describe: 'The owners of the project',
+        type: 'string',
+        nargs: 1,
+        default: null
+      })
+
       .epilog('Copyright 2016')
       .argv;
 
@@ -67,7 +86,9 @@ var project = indoc.project.create({
   
   files: argv._,
   readme: argv.r,
-  name: argv.n
+  name: argv.n,
+  output: argv.o,
+  owners: argv.owners
   
 });
 

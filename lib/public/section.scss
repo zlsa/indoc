@@ -5,13 +5,15 @@
 @import 'markdown';
 @import 'code';
 
-$line-height: 20px;
+$line-height: 22px;
 
 // comment
 
 @mixin comment() {
   @include comment-bg();
   @include font-sans();
+  font-size: 14px;
+  
   line-height: $line-height;
 
   color: rgba(black, 0.9);
@@ -24,6 +26,8 @@ $line-height: 20px;
 @mixin comment-wide() {
   padding: 0 $padding-h-outer;
   padding-right: $padding-h-inner;
+
+  padding-bottom: 12px;
 }
 
 @mixin comment-narrow() {
@@ -35,6 +39,8 @@ $line-height: 20px;
 @mixin code() {
   @include font-mono();
   line-height: $line-height;
+  
+  font-size: 13px;
 
   padding: $padding-v $padding-h;
 

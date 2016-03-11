@@ -1,0 +1,16 @@
+
+@import 'fonts';
+
+$footer-height: 48px;
+
+footer {
+  @include font-sans();
+  font-size: 11px;
+  color: rgba(black, 0.6);
+  
+  padding: 0 24px;
+
+  height: $footer-height;
+  line-height: $footer-height;
+  margin-top: -$footer-height;
+}
