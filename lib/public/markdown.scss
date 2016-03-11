@@ -28,7 +28,7 @@
   
   h1 {
     font-size: 150%;
-    height: 64px;
+    min-height: 64px;
     line-height: 64px;
     margin-bottom: $spacing;
   }
@@ -36,7 +36,7 @@
   h2 {
     font-size: 120%;
     
-    height: 48px;
+    min-height: 48px;
     line-height: 48px;
     
     margin: 12px 0;
@@ -46,7 +46,7 @@
   h3 {
     font-size: 115%;
     
-    height: 36px;
+    min-height: 36px;
     line-height: 36px;
     
     margin: 12px 0;

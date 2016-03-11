@@ -4,6 +4,7 @@
 @import 'header';
 @import 'markdown';
 @import 'code';
+@import 'footer';
 
 $line-height: 22px;
 
@@ -162,6 +163,7 @@ $line-height: 22px;
   .sections .section {
     @include section-narrow();
   }
+
 }
 
 @media only screen and (min-width: 1201px) {

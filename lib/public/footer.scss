@@ -4,6 +4,7 @@
 $footer-height: 48px;
 
 footer {
+  border-top: 1px solid $code-border-color;
   @include font-sans();
   font-size: 11px;
   color: rgba(black, 0.6);
@@ -12,5 +13,13 @@ footer {
 
   height: $footer-height;
   line-height: $footer-height;
-  margin-top: -$footer-height;
+  
+  @include comment-bg();
+  width: 100%;
 }
+
+@media only screen and (max-width: 1200px) {
+  footer {
+  }
+}
+
