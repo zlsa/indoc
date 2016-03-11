@@ -1,6 +1,12 @@
 {
   "name": "indoc",
+  "author": "Jon Ross <jonross.zlsa@gmail.com> (https://zlsa.github.io/)",
+  "description": "Inline documentation generator for complete projects",
+  "keywords": ["documentation", "inline", "site", "html", "generate", "doc"],
+  "homepage": "https://zlsa.github.io/indoc/",
   "version": "0.1.0",
+  "license": "MIT",
+  "repository": "github:zlsa/indoc",
   "bin": {
     "indoc": "bin/indoc.js"
   },
