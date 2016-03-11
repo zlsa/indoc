@@ -2,16 +2,21 @@
   "name": "indoc",
   "author": "Jon Ross <jonross.zlsa@gmail.com> (https://zlsa.github.io/)",
   "description": "Inline documentation generator for complete projects",
-  "keywords": ["documentation", "inline", "site", "html", "generate", "doc"],
+  "keywords": [
+    "documentation",
+    "inline",
+    "site",
+    "html",
+    "generate",
+    "doc"
+  ],
   "homepage": "https://zlsa.github.io/indoc/",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "license": "MIT",
   "repository": "github:zlsa/indoc",
-  
   "bin": {
     "indoc": "bin/main.js"
   },
-  
   "main": "lib/main.js",
   "dependencies": {
     "fs-extra": "^0.26.5",
