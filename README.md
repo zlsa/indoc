@@ -25,6 +25,11 @@ on each generated page. (Check it out on the left.)
 $ indoc [options] files...
 ```
 
+### `-c <config>` or `--config <config>`
+
+Sets a config file to read configuration options from. If used, the
+rest of the arguments are ignored.
+
 ### `-h` or `--help`
 
 Displays help. If you need to consult the README to find this
