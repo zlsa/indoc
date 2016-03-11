@@ -2,20 +2,44 @@
 @import 'reset';
 
 @import 'fonts';
+@import 'values';
 
-@import 'main';
+@import 'code';
+@import 'markdown';
 
+@import 'header';
 @import 'section';
+@import 'footer';
 
 html, body {
   width: 100%;
   height: 100%;
 }
 
-html {
+body {
   @include font-sans();
+
+  background: $code-bg;
+
+  font-size: $comment-font-size;
+
+  main {
+    min-height: 100%;
+  }
+  
+  #sections {
+    @include sections();
+  }
+
+  &.index {
+    @include header-index();
+  }
+  
+  &.code {
+    @include two-column() {
+      @include header-code();
+    }
+  }
+  
 }
 
-html #sections {
-  @include sections();
-}

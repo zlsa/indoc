@@ -1,8 +1,5 @@
 
 @import 'values';
-@import 'fonts';
-@import 'markdown';
-@import 'code';
 
 @mixin comment() {
   
@@ -16,9 +13,19 @@
 
 }
 
+@mixin comment-width() {
+  width: $comment-width;
+  min-width: 24em;
+  max-width: 64em;
+}
+
 @mixin code() {
   
   > .code {
+
+    &.empty {
+      display: none !important;
+    }
     
     > pre {
       white-space: pre-wrap;
@@ -31,11 +38,12 @@
       
       line-height: 135%;
     }
-    
+
   }
   
   &.markdown > .code > .markdown {
     @include markdown();
+    @include markdown-code();
 
     @include font-mono();
 
@@ -48,13 +56,47 @@
 
 @mixin comment-padding($vert, $left, $right) {
 
-  > .comment {
-    
+  > .comment > .text {
     padding: $vert $right $vert $left;
+  }
+  
+  &#header > .comment > header {
+    
+    > .file-path {
+      
+      #project-overview {
+        padding-left: $left !important;
+      }
+      
+      #filename {
+        padding-right: $right;
+        
+        @include single-column() {
+          padding-left: $left;
+        }
+        
+      }
+      
+    }
+
+    .files li a {
+      padding-right: $right;
+
+      @include single-column() {
+        padding-left: $left;
+      }
+      
+    }
+    
+    .files.index li a {
+      padding-left: $left;
+    }
     
   }
   
   &.footer > .comment {
+    padding-left: $left;
+    padding-right: $right;
     padding-top: $footer-padding;
     padding-bottom: $footer-padding;
   }
@@ -65,6 +107,14 @@
 
   > .comment {
     padding-bottom: $padding;
+  }
+  
+}
+
+@mixin comment-padding-top($padding) {
+
+  > .comment {
+    padding-top: $padding;
   }
   
 }
@@ -97,6 +147,14 @@
   
 }
 
+@mixin code-padding-top($padding) {
+
+  > .code {
+    padding-top: $padding;
+  }
+  
+}
+
 /* `section.section` styling now */
 
 @mixin section() {
@@ -106,16 +164,53 @@
   
 }
 
+/* SINGLE COLUMN */
+
+@mixin comment-single-column() {
+  
+  > .comment {
+
+    width: 100%;
+    min-height: none;
+    
+  }
+
+  @include comment-padding($section-single-column-padding-v, $section-single-column-padding-h, $section-single-column-padding-h);
+  
+}
+
+@mixin code-single-column() {
+  
+  > .code {
+    
+    border-bottom: 1px solid $code-border-color;
+    border-top: 1px solid $code-border-color;
+
+  }
+
+  @include code-padding($section-single-column-padding-v, $section-single-column-padding-h, $section-single-column-padding-h);
+  
+  &.footer > .code {
+    border-top: 1px solid $code-border-color;
+  }
+
+}
+
+@mixin section-single-column() {
+  @include comment-single-column();
+  @include code-single-column();
+}
+
 /* TWO COLUMN STYLING */
 
 @mixin comment-two-column($comment-width) {
   
   > .comment {
+
+    @include comment-width();
     
-    width: $comment-width;
-    min-width: 24em;
-    max-width: 64em;
-    
+    border-right: 1px solid $code-border-color;
+
   }
 
   @include comment-padding($section-two-column-padding, $section-two-column-outer, $section-two-column-inner);
@@ -130,8 +225,6 @@
   
   > .code {
     
-    border-left: 1px solid $code-border-color;
-
     flex: 1;
 
   }
@@ -152,13 +245,22 @@
   
 }
 
+@mixin section-first() {
+  $padding: 64px;
+
+  @include comment-padding-bottom($padding);
+  @include code-padding-bottom($padding);
+}
+
 @mixin section-last() {
   flex: 1;
 
   $padding: 64px;
 
-  @include comment-padding-bottom($padding);
-  @include code-padding-bottom($padding);
+  @include two-column() {
+    @include comment-padding-bottom($padding);
+    @include code-padding-bottom($padding);
+  }
 }
 
 /* `#section` styling */
@@ -170,12 +272,36 @@
 
   .section {
     @include section();
-    @include section-two-column($comment-width);
 
+    &:first-child {
+      @include section-first();
+    }
+    
     &:nth-last-child(2) {
       @include section-last();
     }
     
+    
   }
   
+  @include header();
+
+  @include single-column() {
+    @include header-single-column();
+    
+    .section {
+      @include section-single-column();
+    }
+    
+  }
+  
+  @include two-column() {
+    @include header-two-column();
+
+    .section {
+      @include section-two-column($comment-width);
+    }
+  }
+
+  @include footer();
 }

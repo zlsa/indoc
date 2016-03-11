@@ -43,7 +43,8 @@ var argv = require('yargs')
         default: 'docs'
       })
 
-// The owners of the project
+// The owners of the project; for example, "Mousetrap Contributors" or
+// "Linus Torvalds et. al."
 
       .option('owners', {
         describe: 'The owners of the project',

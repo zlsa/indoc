@@ -6,32 +6,53 @@
     <script src="{{path}}/public/jquery.min.js"></script>
     <script src="{{path}}/public/script.js"></script>
   </head>
-  <body class=" {{classes}}">
+  <body class="{{classes}}">
     
     <main id="sections">
 
       <!-- The header -->
 
       {{#if markdown}}
-      <section class="section header markdown" id="header">
+      <section class="section header files-hidden markdown" id="header">
       {{else}}
-      <section class="section header" id="header">
+      <section class="section header files-hidden" id="header">
       {{/if}}
 
         <aside class="comment">
 
-          {{#if project}}
-          <a class="overview" href="{{path}}" title="Project Overview">{{project}}</a>
-          {{/if}}
-          
-          <header>{{title}}</header>
-          
-          <ul class="files">
-            {{#each files}}
-            <li class="file"><a href="{{../path}}/{{this.link}}">{{this.filename}}</a></li>
-            {{/each}}
-          </ul>
-          
+          <header>
+
+            <div class="file-path">
+              
+              {{#if index}}
+              <span id="project-overview">{{project}}</span>
+              {{else}}
+              <a id="project-overview" href="{{path}}" title="Project Overview">{{project}}</a>
+              {{/if}}
+              
+              <div class="files-menu">
+                <span id="filename">{{title}}</span>
+                
+                {{#if index}}
+                <ul class="files index">
+                {{else}}
+                <ul class="files hidable">
+                {{/if}}
+                  
+                  {{#each files}}
+                  <li class="file"><a href="{{../path}}/{{this.link}}">{{this.filename}}</a></li>
+                  {{/each}}
+                  
+                </ul>
+                
+              </div>
+                
+            </div>
+
+            <div class="spacer"></div>
+            
+          </header>
+            
         </aside>
 
         {{#if markdown}}
@@ -39,7 +60,8 @@
           <div class="markdown">{{{markdown}}}</div>
         </div>
         {{else}}
-        <div class="code empty"><pre><code></code></pre></div>
+        <div class="code empty">
+        </div>
         {{/if}}
         
       </section>
@@ -61,7 +83,7 @@
       {{/each}}
       {{/unless}}
       
-      <section class="section footer">
+      <section class="section footer" id="footer">
         
         <aside class="comment">
           <span class="project-copyright">&copy; Copyright {{year}} {{owners}}.</span>

@@ -17,7 +17,7 @@ on each generated page. (Check it out on the left.)
 
 # Getting the library
 
-`npm install -g indoc`
+    npm install -g indoc
 
 # Using the command line program
 

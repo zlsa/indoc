@@ -8,11 +8,14 @@ $code-border-color: hsl($hue, $saturation, 85%);
 $comment-bg: hsl($hue, $saturation, 99%);
 $code-bg: hsl($hue, $saturation, 95%);
 
-$comment-width: 35%;
+$comment-width: 30%;
 
 $section-two-column-padding: 8px;
 $section-two-column-inner: 24px;
 $section-two-column-outer: 64px;
+
+$section-single-column-padding-v: 16px;
+$section-single-column-padding-h: 5vh;
 
 $comment-font-size: 14px;
 $code-font-size: 14px;
@@ -22,5 +25,19 @@ $footer-padding: 36px;
 @mixin clickable() {
   &:hover {
     cursor: pointer;
+  }
+}
+
+$two-column-width: 1200px;
+
+@mixin single-column() {
+  @media (max-width: #{$two-column-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin two-column() {
+  @media (min-width: #{$two-column-width}) {
+    @content;
   }
 }

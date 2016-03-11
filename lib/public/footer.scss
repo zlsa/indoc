@@ -1,18 +1,29 @@
 
 $footer-height: 48px;
 
-footer {
-  border-top: 1px solid $code-border-color;
-  @include font-sans();
-  font-size: 11px;
-  color: rgba(black, 0.6);
-  
-  padding: 0 24px;
+@mixin footer() {
 
-  height: $footer-height;
-  line-height: $footer-height;
+  #footer {
+    
+    > .comment {
+      font-size: 14px;
+      
+      color: hsl($hue, $saturation, 45%);
+      font-weight: bold;
+    }
+    
+    > .code {
+      font-size: 14px;
+      text-align: right;
+      @include font-mono();
+      
+      color: hsl($hue, $saturation, 50%);
+    }
+    
+  }
+
+  @include single-column() {
+
+  }
   
-  @include comment-bg();
-  width: 100%;
 }
-
