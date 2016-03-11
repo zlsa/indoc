@@ -1,0 +1,13 @@
+
+@import 'values';
+
+body {
+  background: $code-bg;
+
+  font-size: $comment-font-size;
+
+  main {
+    min-height: 100%;
+  }
+  
+}

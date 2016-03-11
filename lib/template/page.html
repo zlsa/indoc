@@ -7,9 +7,16 @@
     <script src="{{path}}/public/script.js"></script>
   </head>
   <body class=" {{classes}}">
-    <main class="sections">
-      
+    
+    <main id="sections">
+
+      <!-- The header -->
+
+      {{#if markdown}}
+      <section class="section header markdown" id="header">
+      {{else}}
       <section class="section header" id="header">
+      {{/if}}
 
         <aside class="comment">
 
@@ -27,26 +34,47 @@
           
         </aside>
 
-        {{#if readme}}
-        <pre class="code readme"><code>{{{readme}}}</code></pre>
+        {{#if markdown}}
+        <div class="code">
+          <div class="markdown">{{{markdown}}}</div>
+        </div>
         {{else}}
-        <pre class="code"><code></code></pre>
+        <div class="code empty"><pre><code></code></pre></div>
         {{/if}}
         
       </section>
-      
+
+      <!-- The main code section -->
+      {{#unless markdown}}
       {{#each sections}}
       <section class="section">
-        <aside class="comment"><div class="comment-text">{{{this.comment_markdown}}}</div></aside>
-        <pre class="code"><code>{{{this.code_highlighted}}}</code></pre>
+        
+        <aside class="comment">
+          <div class="text markdown">{{{this.comment_markdown}}}</div>
+        </aside>
+
+        <div class="code">
+          <pre><code>{{{this.code_highlighted}}}</code></pre>
+        </div>
+        
       </section>
       {{/each}}
+      {{/unless}}
+      
+      <section class="section footer">
+        
+        <aside class="comment">
+          <span class="project-copyright">&copy; Copyright {{year}} {{owners}}.</span>
+        </aside>
+
+        <div class="code">
+          <span class="page-generation-time">Generated {{generate_time}}</span>
+        </div>
+        
+      </section>
+      
     </main>
 
-    <footer>
-      <span id="copyright">&copy; Copyright {{year}} {{owners}}.</span>
-      <span id="generation-time">Generated {{generate_time}}</span>
-    </footer>
   </body>
 </html>
 

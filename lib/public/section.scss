@@ -1,173 +1,181 @@
 
 @import 'values';
 @import 'fonts';
-@import 'header';
 @import 'markdown';
 @import 'code';
-@import 'footer';
-
-$line-height: 22px;
-
-// comment
 
 @mixin comment() {
-  @include comment-bg();
-  @include font-sans();
-  font-size: 14px;
-  
-  line-height: $line-height;
-
-  color: rgba(black, 0.9);
-  
-  padding: $padding-v $padding-h;
-
-  @include markdown();
-}
-
-@mixin comment-wide() {
-  padding: 0 $padding-h-outer;
-  padding-right: $padding-h-inner;
-
-  padding-bottom: 12px;
-}
-
-@mixin comment-narrow() {
-  margin: $spacing 0;
-}
-
-// code
-
-@mixin code() {
-  @include font-mono();
-  line-height: $line-height;
-  
-  font-size: 13px;
-
-  padding: $padding-v $padding-h;
-
-  color: hsl(0, 0, 20%);
-
-  code {
-    @include hljs();
-  }
-  
-}
-
-@mixin code-wide() {
-  border-left: 1px solid $code-border-color;
-  padding: $padding-v $padding-h-outer;
-  padding: 0 $padding-h-outer;
-  padding-left: $padding-h-inner;
-}
-
-@mixin code-narrow() {
-  @include code-bg();
-  
-  border-top: 1px solid $code-border-color;
-  border-bottom: 1px solid $code-border-color;
-  
-  padding: $padding-v $padding-h;
-  margin: $spacing 0;
-}
-
-// for comment/code padding
-
-@mixin last-child-wide() {
-  padding-bottom: 48px;
-}
-
-@mixin section() {
-
-  &.header {
-    @include header();
-  }
   
   > .comment {
-    @include comment();
-  }
+    
+    background: $comment-bg;
+    
+    line-height: 160%;
 
-  > .code {
-    @include code();
   }
 
 }
 
-@mixin section-wide($comments-width) {
+@mixin code() {
+  
+  > .code {
+    
+    > pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
 
-  display: flex;
+      font-size: $code-font-size;
 
-  &:last-child {
-    flex: 1;
-
-    > .code, > .comment {
-      padding-bottom: 128px !important;
+      @include font-mono();
+      @include hljs();
+      
+      line-height: 135%;
     }
     
   }
+  
+  &.markdown > .code > .markdown {
+    @include markdown();
 
-  &.header {
-    @include header-wide($comments-width);
+    @include font-mono();
+
+    line-height: 150%;
   }
   
+}
+
+/* Set up padding mixins so we can extend them later */
+
+@mixin comment-padding($vert, $left, $right) {
+
   > .comment {
-    width: $comments-width;
-    min-width: 24em;
-
-    @include comment-wide();
-  }
-
-  > .code {
-    flex: 1;
     
-    @include code-wide();
-  }
-
-  &:last-child > .comment,
-  &:last-child > .code, {
-    @include last-child-wide();
-  }
-
-}
-
-@mixin section-narrow() {
-
-  &.header {
-    @include header-narrow();
+    padding: $vert $right $vert $left;
+    
   }
   
-  > .comment {
-    @include comment-narrow();
+  &.footer > .comment {
+    padding-top: $footer-padding;
+    padding-bottom: $footer-padding;
   }
-
-  > .code {
-    @include code-narrow();
-  }
-
+  
 }
 
-.sections {
+@mixin comment-padding-bottom($padding) {
 
+  > .comment {
+    padding-bottom: $padding;
+  }
+  
+}
+
+@mixin code-padding($vert, $left, $right) {
+  
+  > .code > pre,
+  &.footer > .code {
+    
+    padding: $vert $right $vert $left;
+    
+  }
+
+  &.footer > .code {
+    padding-top: $footer-padding;
+    padding-bottom: $footer-padding;
+  }
+  
+  &.markdown > .code > .markdown {
+    @include markdown-padding($left, $right);
+  }
+  
+}
+
+@mixin code-padding-bottom($padding) {
+
+  > .code {
+    padding-bottom: $padding;
+  }
+  
+}
+
+/* `section.section` styling now */
+
+@mixin section() {
+  
+  @include comment();
+  @include code();
+  
+}
+
+/* TWO COLUMN STYLING */
+
+@mixin comment-two-column($comment-width) {
+  
+  > .comment {
+    
+    width: $comment-width;
+    min-width: 24em;
+    max-width: 64em;
+    
+  }
+
+  @include comment-padding($section-two-column-padding, $section-two-column-outer, $section-two-column-inner);
+  
+  &.footer > .comment {
+    border-top: 1px solid $comment-border-color;
+  }
+  
+}
+
+@mixin code-two-column() {
+  
+  > .code {
+    
+    border-left: 1px solid $code-border-color;
+
+    flex: 1;
+
+  }
+
+  @include code-padding($section-two-column-padding, $section-two-column-inner, $section-two-column-outer);
+  
+  &.footer > .code {
+    border-top: 1px solid $code-border-color;
+  }
+  
+}
+
+@mixin section-two-column($comment-width) {
+  display: flex;
+
+  @include comment-two-column($comment-width);
+  @include code-two-column();
+  
+}
+
+@mixin section-last() {
+  flex: 1;
+
+  $padding: 64px;
+
+  @include comment-padding-bottom($padding);
+  @include code-padding-bottom($padding);
+}
+
+/* `#section` styling */
+
+@mixin sections() {
+  
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-  
+
   .section {
     @include section();
-  }
-}
+    @include section-two-column($comment-width);
 
-@media only screen and (max-width: 1200px) {
-  html {
-    background-color: hsl($hue, $saturation, 99%) !important;
+    &:nth-last-child(2) {
+      @include section-last();
+    }
+    
   }
-  .sections .section {
-    @include section-narrow();
-  }
-
-}
-
-@media only screen and (min-width: 1201px) {
-  .sections .section {
-    @include section-wide(30%);
-  }
+  
 }

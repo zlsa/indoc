@@ -1,15 +1,40 @@
 
 @import 'values';
-@import 'fonts';
+@import 'code';
+
+@mixin markdown-header($element, $font-size, $height: 48px, $margin-top: 24px, $margin-bottom: 12px, $border: false) {
+  #{$element} {
+    font-size: $font-size;
+    
+    min-height: $height;
+    line-height: $height;
+
+    @if $border {
+      border-bottom: 1px solid $code-border-color;
+    }
+    
+    margin-bottom: $margin-bottom;
+  }
+
+  * + #{$element} {
+    margin-top: $margin-top;
+  }
+  
+}
 
 @mixin markdown() {
 
-  code {
+  a {
+    color: hsl($hue, $saturation, 40%);
+    text-decoration: underline;
+  }
+
+  p code {
     @include font-mono();    
 
-    display: inline-block;
+    display: inline;
 
-    @include code-bg();
+    background: $code-bg;
     border: 1px solid $code-border-color;
     
     border-radius: 2px;
@@ -19,48 +44,8 @@
   }
 
   pre {
+    @include hljs();
     margin: 24px 0;
-  }
-
-  h1, h2, h3 {
-    border-bottom: 1px solid $code-border-color;
-  }
-  
-  h1 {
-    font-size: 160%;
-    min-height: 64px;
-    line-height: 64px;
-    margin-bottom: $spacing;
-    font-weight: bold;
-  }
-
-  h2 {
-    font-size: 120%;
-    
-    min-height: 48px;
-    line-height: 48px;
-    
-    margin: 12px 0;
-    margin-top: 24px;
-  }
-
-  h3 {
-    font-size: 115%;
-    
-    min-height: 36px;
-    line-height: 36px;
-    
-    margin: 12px 0;
-    margin-top: 24px;
-  }
-
-  * + h1 {
-    margin-top: $spacing;
-  }
-
-  a {
-    color: hsl($hue, $saturation, 40%);
-    text-decoration: underline;
   }
 
   p + p {
@@ -68,35 +53,22 @@
     margin-top: 8px;
   }
 
+  @include markdown-header(h1, 24px, 64px, 32px, 16px, true);
+  @include markdown-header(h2, 22px, 48px, 24px, 14px);
+  @include markdown-header(h3, 16px, 36px, 24px, 12px);
+  @include markdown-header(h4, 14px, 32px, 24px, 10px);
+
+  h1, h3 {
+    font-weight: bold;
+  }
+
 }
 
-@mixin markdown-code() {
-  
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
+@mixin markdown-padding($left, $right) {
 
-  > code {
-    
-    line-height: 130%;
-    
-    @include markdown();
-
-    white-space: normal;
-
-    code {
-      display: inline;
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      margin: 0;
-      padding: 0;
-      
-      font-weight: bold;
-    }
-
-    h1 {
-    }
-    
+  p, pre, h1, h2, h3, h4, h5, h6 {
+    padding-left: $left;
+    padding-right: $right;
   }
   
 }

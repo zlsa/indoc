@@ -1,12 +1,11 @@
 
 @import 'reset';
 
-@import 'values';
-
 @import 'fonts';
-@import 'section';
 
-@import 'footer';
+@import 'main';
+
+@import 'section';
 
 html, body {
   width: 100%;
@@ -15,5 +14,8 @@ html, body {
 
 html {
   @include font-sans();
-  @include code-bg();
+}
+
+html #sections {
+  @include sections();
 }

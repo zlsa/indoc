@@ -2,33 +2,25 @@
 $hue: 180;
 $saturation: 15%;
 
+$comment-border-color: hsl($hue, $saturation, 89%);
 $code-border-color: hsl($hue, $saturation, 85%);
 
-@mixin comment-bg() {
-  background-color: hsl($hue, $saturation, 99%);
-}
+$comment-bg: hsl($hue, $saturation, 99%);
+$code-bg: hsl($hue, $saturation, 95%);
 
-@mixin code-bg() {
-  background-color: hsl($hue, $saturation, 97%);
-}
+$comment-width: 35%;
 
-$padding-h: 64px;
-$padding-h-inner: 36px;
-$padding-h-outer: 64px;
+$section-two-column-padding: 8px;
+$section-two-column-inner: 24px;
+$section-two-column-outer: 64px;
 
-$padding-v: 8px;
+$comment-font-size: 14px;
+$code-font-size: 14px;
+
+$footer-padding: 36px;
 
 @mixin clickable() {
   &:hover {
     cursor: pointer;
   }
 }
-
-@mixin unclickable() {
-  &:hover {
-    cursor: auto;
-  }
-}
-
-$spacing: 24px;
-
