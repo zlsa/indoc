@@ -325,7 +325,8 @@ footer {
     .sections .section.header > .code.readme {
       font-size: 16px;
       padding-top: 0 !important;
-      padding-bottom: 0 !important; }
+      padding-bottom: 0 !important;
+      padding-bottom: 128px !important; }
       .sections .section.header > .code.readme > code {
         line-height: 130%;
         white-space: normal; }
@@ -342,10 +343,11 @@ footer {
         .sections .section.header > .code.readme > code h1, .sections .section.header > .code.readme > code h2, .sections .section.header > .code.readme > code h3 {
           border-bottom: 1px solid #d3dede; }
         .sections .section.header > .code.readme > code h1 {
-          font-size: 150%;
+          font-size: 160%;
           min-height: 64px;
           line-height: 64px;
-          margin-bottom: 24px; }
+          margin-bottom: 24px;
+          font-weight: bold; }
         .sections .section.header > .code.readme > code h2 {
           font-size: 120%;
           min-height: 48px;
@@ -357,6 +359,8 @@ footer {
           min-height: 36px;
           line-height: 36px;
           margin: 12px 0;
+          margin-top: 24px; }
+        .sections .section.header > .code.readme > code * + h1 {
           margin-top: 24px; }
         .sections .section.header > .code.readme > code a {
           color: #577575;
@@ -392,10 +396,11 @@ footer {
     .sections .section > .comment h1, .sections .section > .comment h2, .sections .section > .comment h3 {
       border-bottom: 1px solid #d3dede; }
     .sections .section > .comment h1 {
-      font-size: 150%;
+      font-size: 160%;
       min-height: 64px;
       line-height: 64px;
-      margin-bottom: 24px; }
+      margin-bottom: 24px;
+      font-weight: bold; }
     .sections .section > .comment h2 {
       font-size: 120%;
       min-height: 48px;
@@ -407,6 +412,8 @@ footer {
       min-height: 36px;
       line-height: 36px;
       margin: 12px 0;
+      margin-top: 24px; }
+    .sections .section > .comment * + h1 {
       margin-top: 24px; }
     .sections .section > .comment a {
       color: #577575;

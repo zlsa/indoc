@@ -15,7 +15,11 @@ Unlike `docco`, `indoc` has the concept of a `project`; instead of
 having a hacky "Jump To" menu, `indoc` has an integrated file listing
 on each generated page. (Check it out on the left.)
 
-## Command line arguments
+# Getting the library
+
+`npm install -g indoc`
+
+# Using the command line program
 
 ```
 $ indoc [options] files...
@@ -39,7 +43,16 @@ file will be parsed as Markdown.
 
 Set the user-facing name of the project.
 
-## Using the library
+### `-o <directory>` or `--output <directory>`
+
+Set the output directory (the default is `docs`).
+
+### `--owners <owners>`
+
+Sets a string. By default, it's `contributors`. This string is at the
+footer of every generated page.
+
+# Using the library
 
 ```js
 var indoc = require('indoc');
@@ -59,4 +72,27 @@ project.run(function(err, data) {
   console.log('Generated ' + data.total + ' files!');
 });
 ```
+
+# License
+
+Copyright (c) 2016 Indoc contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 

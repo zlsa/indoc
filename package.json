@@ -7,9 +7,11 @@
   "version": "0.1.0",
   "license": "MIT",
   "repository": "github:zlsa/indoc",
+  
   "bin": {
-    "indoc": "bin/indoc.js"
+    "indoc": "bin/main.js"
   },
+  
   "main": "lib/main.js",
   "dependencies": {
     "fs-extra": "^0.26.5",

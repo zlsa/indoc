@@ -129,6 +129,8 @@ $anim: 0.3s;
     font-size: 16px;
 
     @include markdown-code();
+    
+    padding-bottom: 128px !important;
   }
 
 }
@@ -224,7 +226,7 @@ $anim: 0.3s;
     position: relative;
     
     padding-top: 16px;
-    
+
   }
     
 }
