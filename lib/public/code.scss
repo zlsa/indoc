@@ -1,0 +1,45 @@
+
+@mixin hljs() {
+  .hljs-keyword {
+    color: hsl(150, 100%, 30%);
+  }
+
+  .hljs-built_in {
+    color: hsl(280, 100%, 30%);
+  }
+
+  .hljs-type {
+    color: #f0f;
+  }
+
+  .hljs-literal {
+    color: hsl(320, 100%, 30%);
+    font-weight: bold;
+  }
+
+  .hljs-number {
+    color: hsl(130, 80%, 35%);
+  }
+
+  .hljs-regexp,
+  .hljs-string {
+    color: hsl(20, 40%, 35%);
+  }
+
+  .hljs-symbol {
+    color: hsl(240, 100%, 30%);
+  }
+
+  .hljs-function {
+    color: hsl(0, 0, 50%);
+  }
+
+  .hljs-params {
+    color: hsl(0, 0, 20%);
+  }
+
+  .hljs-comment {
+    color: hsl(150, 40%, 60%);
+    font-weight: bold;
+  }
+}

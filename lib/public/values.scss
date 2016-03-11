@@ -1,0 +1,34 @@
+
+$hue: 180;
+$saturation: 15%;
+
+$code-border-color: hsl($hue, $saturation, 85%);
+
+@mixin comment-bg() {
+  background-color: hsl($hue, $saturation, 99%);
+}
+
+@mixin code-bg() {
+  background-color: hsl($hue, $saturation, 97%);
+}
+
+$padding-h: 64px;
+$padding-h-inner: 36px;
+$padding-h-outer: 64px;
+
+$padding-v: 8px;
+
+@mixin clickable() {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+@mixin unclickable() {
+  &:hover {
+    cursor: auto;
+  }
+}
+
+$spacing: 24px;
+

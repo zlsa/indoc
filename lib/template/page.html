@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="{{path}}/public/style.css" />
+    <script src="{{path}}/public/jquery.min.js"></script>
+    <script src="{{path}}/public/script.js"></script>
+  </head>
+  <body class=" {{classes}}">
+    <main class="sections">
+      
+      <section class="section header" id="header">
+
+        <aside class="comment">
+
+          {{#if project}}
+          <a class="overview" href="{{path}}" title="Project Overview">{{project}}</a>
+          {{/if}}
+          
+          <header>{{title}}</header>
+          
+          <ul class="files">
+            {{#each files}}
+            <li class="file"><a href="{{path}}/{{this.link}}">{{this.filename}}</a></li>
+            {{/each}}
+          </ul>
+          
+        </aside>
+
+        {{#if readme}}
+        <pre class="code readme"><code>{{{readme}}}</code></pre>
+        {{else}}
+        <pre class="code"><code></code></pre>
+        {{/if}}
+        
+      </section>
+      
+      {{#each sections}}
+      <section class="section">
+        <aside class="comment"><div class="comment-text">{{{this.comment_markdown}}}</div></aside>
+        <pre class="code"><code>{{{this.code_highlighted}}}</code></pre>
+      </section>
+      {{/each}}
+    </main>
+  </body>
+</html>
+

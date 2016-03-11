@@ -1,0 +1,310 @@
+
+@import 'values';
+@import 'fonts';
+@import 'markdown';
+
+$file-height: 48px;
+
+$header-overview-height: 48px;
+$header-font-size: 24px;
+$header-height: 64px;
+$header-bottom-padding: 24px;
+
+$header-padding-h: 48px;
+
+$anim: 0.3s;
+
+@mixin header-files-visible() {
+  
+  header {
+    
+    color: rgba(black, 0.6);
+    
+    &:before {
+      transform: scaleY(-1);
+    }
+
+  }
+  
+  .files {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scaleY(1);
+  }
+
+}
+
+@mixin header() {
+
+  position: relative;
+
+  > .comment {
+
+    margin: 0;
+    padding: 0;
+
+    position: relative;
+
+    min-height: $header-height + $header-overview-height + $header-bottom-padding;
+    
+    > .overview {
+      display: block;
+
+      text-decoration: none;
+      
+      border-bottom: 1px solid $code-border-color;
+      
+      height: $header-overview-height;
+      line-height: $header-overview-height;
+
+      width: 100%;
+
+      font-size: 12px;
+      font-weight: bold;
+      
+      text-transform: uppercase;
+
+      color: rgba(black, 0.5);
+      
+      @include clickable();
+
+      &:hover {
+        background-color: hsl($hue, $saturation, 97%)
+      }
+      
+    }
+
+    header {
+      display: block;
+
+      @include font-header();
+      font-size: $header-font-size;
+      
+      height: $header-height;
+      line-height: $header-height;
+
+      color: rgba(black, 0.5);
+      
+      transition: color $anim ease;
+      
+      border-bottom: 1px solid $code-border-color;
+    }
+
+    .files {
+      border-bottom: 1px solid $code-border-color;
+      
+      width: 100%;
+      
+      .file {
+        @include font-mono();
+        font-size: 14px;
+        font-weight: bold;
+
+        list-style-type: none;
+
+        a {
+          
+          display: block;
+          height: $file-height;
+          line-height: $file-height;
+          
+          transition: background-color $anim ease;
+
+          @include clickable();
+
+          &:hover {
+            background-color: hsl($hue, $saturation, 97%)
+          }
+          
+        }
+        
+      }
+      
+    }
+    
+  }
+  
+  > .code.readme {
+
+    font-size: 16px;
+
+    @include markdown-code();
+  }
+
+}
+
+@mixin header-wide($comments-width) {
+  
+  > .comment {
+
+    > .overview {
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      padding-left: $padding-h-outer;
+    }
+
+    header {
+      @include clickable();
+
+      position: absolute;
+      top: $header-overview-height;
+      left: 0;
+      width: 100%;
+      
+      padding-left: $padding-h-outer;
+
+      &:before {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        display: block;
+        content: '';
+        
+        height: $header-height;
+        width: $header-height;
+
+        opacity: 0.5;
+        
+        transition: opacity $anim ease, transform $anim ease;
+        
+        background-image: url('dropdown.png');
+        background-repeat: no-repeat;
+      }
+      
+      &:hover {
+        background-color: hsl($hue, $saturation, 97%);
+        color: rgba(black, 0.6);
+
+        &:before {
+          opacity: 1;
+        }
+        
+      }
+
+    }
+    
+    .files {
+
+      @include comment-bg();
+
+      opacity: 0;
+      
+      transform-origin: 0 0;
+      transform: scaleY(0.95);
+      
+      pointer-events: none;
+
+      transition: opacity $anim ease, transform $anim ease;
+      
+      position: absolute;
+
+      top: $header-height + $header-overview-height;
+      left: 0;
+
+      .file {
+
+        a {
+          padding-left: $padding-h-outer;
+        }
+        
+      }
+      
+    }
+
+  }
+
+  &.files-visible {
+    @include header-files-visible();
+  }
+  
+  > .code.readme {
+    position: relative;
+    
+    padding-top: 16px;
+    
+  }
+    
+}
+
+@mixin header-narrow() {
+
+  > .comment {
+
+    .overview {
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      height: $header-height;
+      line-height: $header-height;
+      width: $header-height;
+
+      background-image: url('home.png');
+      opacity: 0.7;
+
+      color: transparent;
+    }
+    
+    header {
+      padding: 0 $header-padding-h;
+      padding-left: $header-height;
+    }
+    
+    .files {
+      
+      a {
+        padding: 0 $header-height;
+      }
+      
+    }
+    
+  }
+
+  > .code {
+    display: none;
+  }
+
+  > .code.readme {
+    display: block;
+  }
+
+}
+
+body.overview {
+  
+  #header {
+
+    @include header-files-visible();
+
+    > .comment {
+
+      header {
+
+        top: 0;
+        
+        &:before {
+          display: none;
+        }
+        
+        @include unclickable();
+        
+        &:hover {
+          background-color: transparent;
+        }
+        
+      }
+      
+    }
+
+    .files {
+      position: relative;
+      top: $header-height;
+      border: none;
+    }
+    
+  }
+
+}

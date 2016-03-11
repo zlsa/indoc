@@ -1,0 +1,165 @@
+
+@import 'values';
+@import 'fonts';
+@import 'header';
+@import 'markdown';
+@import 'code';
+
+$line-height: 20px;
+
+// comment
+
+@mixin comment() {
+  @include comment-bg();
+  @include font-sans();
+  line-height: $line-height;
+
+  color: rgba(black, 0.9);
+  
+  padding: $padding-v $padding-h;
+
+  @include markdown();
+}
+
+@mixin comment-wide() {
+  padding: 0 $padding-h-outer;
+  padding-right: $padding-h-inner;
+}
+
+@mixin comment-narrow() {
+  margin: $spacing 0;
+}
+
+// code
+
+@mixin code() {
+  @include font-mono();
+  line-height: $line-height;
+
+  padding: $padding-v $padding-h;
+
+  color: hsl(0, 0, 20%);
+
+  code {
+    @include hljs();
+  }
+  
+}
+
+@mixin code-wide() {
+  border-left: 1px solid $code-border-color;
+  padding: $padding-v $padding-h-outer;
+  padding: 0 $padding-h-outer;
+  padding-left: $padding-h-inner;
+}
+
+@mixin code-narrow() {
+  @include code-bg();
+  
+  border-top: 1px solid $code-border-color;
+  border-bottom: 1px solid $code-border-color;
+  
+  padding: $padding-v $padding-h;
+  margin: $spacing 0;
+}
+
+// for comment/code padding
+
+@mixin last-child-wide() {
+  padding-bottom: 48px;
+}
+
+@mixin section() {
+
+  &.header {
+    @include header();
+  }
+  
+  > .comment {
+    @include comment();
+  }
+
+  > .code {
+    @include code();
+  }
+
+}
+
+@mixin section-wide($comments-width) {
+
+  display: flex;
+
+  &:last-child {
+    flex: 1;
+
+    > .code, > .comment {
+      padding-bottom: 128px !important;
+    }
+    
+  }
+
+  &.header {
+    @include header-wide($comments-width);
+  }
+  
+  > .comment {
+    width: $comments-width;
+    min-width: 24em;
+
+    @include comment-wide();
+  }
+
+  > .code {
+    flex: 1;
+    
+    @include code-wide();
+  }
+
+  &:last-child > .comment,
+  &:last-child > .code, {
+    @include last-child-wide();
+  }
+
+}
+
+@mixin section-narrow() {
+
+  &.header {
+    @include header-narrow();
+  }
+  
+  > .comment {
+    @include comment-narrow();
+  }
+
+  > .code {
+    @include code-narrow();
+  }
+
+}
+
+.sections {
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  
+  .section {
+    @include section();
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  html {
+    background-color: hsl($hue, $saturation, 99%) !important;
+  }
+  .sections .section {
+    @include section-narrow();
+  }
+}
+
+@media only screen and (min-width: 1201px) {
+  .sections .section {
+    @include section-wide(30%);
+  }
+}

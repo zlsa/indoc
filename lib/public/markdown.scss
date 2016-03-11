@@ -1,0 +1,97 @@
+
+@import 'values';
+@import 'fonts';
+
+@mixin markdown() {
+
+  code {
+    @include font-mono();    
+
+    display: inline-block;
+
+    @include code-bg();
+    border: 1px solid $code-border-color;
+    
+    border-radius: 2px;
+    
+    padding: 0px 2px;
+    margin: 0 1px;
+  }
+
+  pre {
+    margin: 24px 0;
+  }
+
+  h1, h2, h3 {
+    border-bottom: 1px solid $code-border-color;
+  }
+  
+  h1 {
+    font-size: 150%;
+    height: 64px;
+    line-height: 64px;
+    margin-bottom: $spacing;
+  }
+
+  h2 {
+    font-size: 120%;
+    
+    height: 48px;
+    line-height: 48px;
+    
+    margin: 12px 0;
+    margin-top: 24px;
+  }
+
+  h3 {
+    font-size: 115%;
+    
+    height: 36px;
+    line-height: 36px;
+    
+    margin: 12px 0;
+    margin-top: 24px;
+  }
+
+  a {
+    color: hsl($hue, $saturation, 40%);
+    text-decoration: underline;
+  }
+
+  p + p {
+    text-indent: 2em;
+    margin-top: 8px;
+  }
+
+}
+
+@mixin markdown-code() {
+  
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+
+  > code {
+    
+    line-height: 130%;
+    
+    @include markdown();
+
+    white-space: normal;
+
+    code {
+      display: inline;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      padding: 0;
+      
+      font-weight: bold;
+    }
+
+    h1 {
+    }
+    
+  }
+  
+}
