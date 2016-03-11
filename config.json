@@ -3,5 +3,6 @@
   "readme": "README.md",
   "name": "Indoc",
   "output": "docs",
+  "version": "package.json",
   "owners": "ZLSA Design"
 }

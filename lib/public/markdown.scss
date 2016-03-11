@@ -47,6 +47,9 @@
   pre {
     @include hljs();
     margin: 24px 0;
+    
+    white-space: pre-wrap;
+    word-wrap: break-word;
   }
 
   p + p {

@@ -42,6 +42,7 @@ Example config:
   "owners": "Tom",
   "output": "docs",
   "readme": "README.md",
+  "version": "package.json",
   "files": [
     "src/animal.js",
     "src/cat.js",
@@ -88,6 +89,7 @@ var project = indoc.project.create({
   owners: 'Tom', // "Copyright 2016 Tom"
   output: 'docs',
   readme: 'README.md',
+  version: 'package.json', // the special string "package.json" will open the file "package.json" and read the version string there
   files: [
     'src/animal.js',
     'src/cat.js',

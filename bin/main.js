@@ -62,6 +62,16 @@ var argv = require('yargs')
         default: null
       })
 
+// A version number.
+
+      .option('project-version', {
+        alias: 'p',
+        describe: 'A version number. Use "package.json" to read from that file.',
+        type: 'string',
+        nargs: 1,
+        default: null
+      })
+
       .epilog('Copyright 2016')
       .argv;
 
@@ -86,6 +96,7 @@ var logger = new winston.Logger({
 
 var process = require('process');
 var fs = require('fs-extra');
+var jsonfile = require('jsonfile');
 
 // Require the `indoc` library. Stuff is getting serious.
 
@@ -95,20 +106,13 @@ var indoc = require('../lib/main');
 
 if(argv.config) {
   
-  fs.readFile(argv.config, function(err, data) {
-    
+  jsonfile.readFile(argv.config, function(err, data) {
+
     if(err) {
-      logger.log('error', 'Could not open config file "' + argv.config + '"');
+      logger.log('error', 'Could not read config file "' + argv.config + '"');
       return;
     }
 
-    try {
-      data = JSON.parse(data);
-    } catch(e) {
-      logger.log('error', 'Could not parse config file "' + argv.config + '"');
-      return;
-    }
-    
     run(data);
     
   });
@@ -128,7 +132,8 @@ if(argv.config) {
     readme: argv.r,
     name: argv.n,
     output: argv.o,
-    owners: argv.owners
+    owners: argv.owners,
+    version: argv['project-version']
     
   });
 }
@@ -148,11 +153,17 @@ function run(options) {
     logger.log('warn', 'Duplicate file "' + data.filename + '"');
   });
 
-  // Called when a template can't be read. This is probably going to
-  // crash things later on. FIXME!!!
+  // Called when a template can't be read.
 
   project.on('template-err', function(data) {
-    logger.log('warn', 'Could not read template "' + data.filename + '"');
+    logger.log('error', 'Could not read template "' + data.filename + '"');
+    process.exit(1);
+  });
+
+  // Called when `package.json` can't be read (for the version number).
+
+  project.on('package-json-err', function(data) {
+    logger.log('error', 'Could not get version number from "package.json"');
   });
 
   // Called when the provided README file can't be opened. Instead of
