@@ -70,6 +70,28 @@ $project-overview-width: 160px;
             @include hoverable();
 
             @include font-mono();
+
+            position: relative;
+
+            .language {
+              float: right;
+              display: inline-block;
+              font-size: 0;
+              
+              $size: 10px;
+              
+              line-height: $size;
+              height: $size;
+              width: $size;
+              border-radius: $size * 2;
+
+              color: transparent;
+              position: absolute;
+              top: 50%;
+              right: 14px;
+              transform: translateY(-50%);
+            }
+
           }
 
           .file + .file {
@@ -138,6 +160,7 @@ $project-overview-width: 160px;
               border-top: 1px solid $comment-border-color;
               
               max-height: 80vh;
+              max-height: calc(100vh - #{$path-height} - 48px);
               
               position: absolute;
               top: $path-height;
@@ -334,6 +357,7 @@ $project-overview-width: 160px;
         pointer-events: none;
         
         opacity: 0;
+        
         transform: scaleY(0.9);
         
       }

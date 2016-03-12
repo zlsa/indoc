@@ -42,6 +42,19 @@
   "C": {
     "extensions": ["c"],
     "name": {
+      "hljs": "C"
+    },
+    "single": [
+      "//"
+    ],
+    "multi": [
+      ["/*", "*", "*/"]
+    ]
+  },
+  
+  "CPP": {
+    "extensions": ["cpp", "cxx", "C"],
+    "name": {
       "hljs": "CPP"
     },
     "single": [
@@ -62,7 +75,8 @@
   "ARM Assembly": {
     "extensions": ["s", "S"],
     "name": {
-      "hljs": "armasm"
+      "hljs": "armasm",
+      "color": "Assembly"
     },
     "single": [
       ";",

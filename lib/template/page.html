@@ -43,10 +43,17 @@
                   
                   {{#each files}}
                   {{#if this.separator}}
-                  <li class="file separator"><a href="{{../path}}/{{this.link}}">{{this.filename}}</a></li>
+                  <li class="file separator">
                   {{else}}
-                  <li class="file"><a href="{{../path}}/{{this.link}}">{{this.filename}}</a></li>
+                  <li class="file">
                   {{/if}}
+                  <a href="{{../path}}/{{this.link}}">
+                    {{#if this.color}}
+                    <span class="language" style="background-color: {{this.color}}">{{this.language}}</span>
+                    {{else}}
+                    <span class="language">{{this.language}}</span>
+                    {{/if}}
+                    {{this.filename}}</a></li>
                   {{/each}}
                   
                 </ul>

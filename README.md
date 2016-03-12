@@ -198,7 +198,8 @@ var project = indoc.project.create({
       ],
       name: {
         hljs: 'JavaScript', // the language type for Highlight.js, or null
-        human: 'JavaScript'
+        human: 'JavaScript',
+        abbr: 'JS'
       },
       single: [ '//', ';;' ], // a single-line comment starts with '//' or ';;'
       multi: [

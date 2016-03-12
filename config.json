@@ -1,5 +1,6 @@
 {
-  "files": ["bin/*.js", "lib/*.js", "examples/*", "*.md", "lib/template/*.html", "lib/public/*.scss"],
+  "files": ["bin/*.js", "lib/**/*.js", "examples/*", "*.md", "lib/template/*.html", "lib/public/*.scss"],
+  "ignore": ["**/*.min.js"],
   "readme": "MAIN.md",
   "name": "Indoc",
   "output": "docs",

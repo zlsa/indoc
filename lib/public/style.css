@@ -356,11 +356,25 @@ body {
           padding-right: 24px;
           color: #415858;
           transition: background-color 0.1s ease;
-          font-family: 'Inconsolata', Consolata, monospace; }
+          font-family: 'Inconsolata', Consolata, monospace;
+          position: relative; }
           body #sections #header > .comment header .files .file a:hover {
             cursor: pointer; }
           body #sections #header > .comment header .files .file a:hover {
             background-color: #f6f8f8; }
+          body #sections #header > .comment header .files .file a .language {
+            float: right;
+            display: inline-block;
+            font-size: 0;
+            line-height: 10px;
+            height: 10px;
+            width: 10px;
+            border-radius: 20px;
+            color: transparent;
+            position: absolute;
+            top: 50%;
+            right: 14px;
+            transform: translateY(-50%); }
         body #sections #header > .comment header .files .file + .file.separator {
           border-top: 1px solid #e8eeee !important; }
     @media (max-width: 899px) {
@@ -513,6 +527,7 @@ body {
               body #sections #header > .comment header .file-path .files-menu .files {
                 border-top: 1px solid #dfe7e7;
                 max-height: 80vh;
+                max-height: calc(100vh - 64px - 48px);
                 position: absolute;
                 top: 64px;
                 margin-left: 0;

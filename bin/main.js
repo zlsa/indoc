@@ -51,22 +51,22 @@ var argv = require('yargs')
         default: null
       })
 
+// A version number.
+
+      .option('project-version', {
+        alias: 'p',
+        describe: 'A version number. Use "package.json" to read from that file.',
+        type: 'string',
+        nargs: 1,
+        default: null
+      })
+
 // A JSON config file, in the same format as the main `indoc` options
 // argument.
 
       .option('config', {
         alias: 'c',
         describe: 'A JSON configuration file',
-        type: 'string',
-        nargs: 1,
-        default: null
-      })
-
-// A version number.
-
-      .option('project-version', {
-        alias: 'p',
-        describe: 'A version number. Use "package.json" to read from that file.',
         type: 'string',
         nargs: 1,
         default: null
@@ -142,6 +142,12 @@ if(argv.config) {
 
 function run(options) {
   // And create the project with all of the above command-line options.
+
+  function elapsed(start) {
+    return ((Date.now() - start) * 0.001).toFixed(2) + 's';
+  }
+
+  var start = Date.now();
 
   var project = indoc.project.create(options);
 
@@ -234,7 +240,7 @@ function run(options) {
     
     // See you all!
     
-    logger.log('info', 'Successfully generated ' + number + ' file' + (total == 1 ? '' : 's'));
+    logger.log('info', 'Successfully generated ' + number + ' file' + (total == 1 ? '' : 's') + ' in ' + elapsed(start));
 
   });
   
