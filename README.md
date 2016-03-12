@@ -226,6 +226,12 @@ if, instead of contributing code, you
 see `indoc` stabilize more before changing major areas of its
 functionality.
 
+## Contributing languages
+
+Just edit `lib/languages.json` and open a PR with the languages you've
+included. Make sure that the JSON still validates and that `indoc`
+runs without any problems. Thanks!
+
 # License
 
 Copyright (c) 2016 ZLSA Design.

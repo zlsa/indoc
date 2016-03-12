@@ -3,7 +3,9 @@
   "JavaScript": {
     "extensions": ["js", "json"],
     "name": {
-      "hljs": "JavaScript"
+      "hljs": "JavaScript",
+      "human": "JavaScript",
+      "abbr": "js"
     },
     "single": [
       "//"
@@ -13,10 +15,23 @@
     ]
   },
   
+  "Python": {
+    "extensions": ["py"],
+    "name": {
+      "hljs": "JavaScript",
+      "abbr": "py"
+    },
+    "single": [
+      "#"
+    ]
+  },
+  
   "SCSS": {
     "extensions": ["scss"],
     "name": {
-      "hljs": "SCSS"
+      "hljs": "SCSS",
+      "human": "SCSS",
+      "abbr": "SCSS"
     },
     "single": [
       "//"
@@ -29,7 +44,9 @@
   "CSS": {
     "extensions": ["css"],
     "name": {
-      "hljs": "CSS"
+      "hljs": "CSS",
+      "human": "CSS",
+      "abbr": "CSS"
     },
     "single": [
       "//"
@@ -42,7 +59,9 @@
   "C": {
     "extensions": ["c"],
     "name": {
-      "hljs": "C"
+      "hljs": "C",
+      "human": "C",
+      "abbr": "C"
     },
     "single": [
       "//"
@@ -55,7 +74,9 @@
   "CPP": {
     "extensions": ["cpp", "cxx", "C"],
     "name": {
-      "hljs": "CPP"
+      "hljs": "CPP",
+      "human": "CPP",
+      "abbr": "CPP"
     },
     "single": [
       "//"
@@ -68,15 +89,19 @@
   "Markdown": {
     "extensions": ["md"],
     "name": {
-      "hljs": null
+      "hljs": null,
+      "human": "Markdown",
+      "abbr": "MD"
     }
   },
   
-  "ARM Assembly": {
+  "Assembly": {
     "extensions": ["s", "S"],
     "name": {
       "hljs": "armasm",
-      "color": "Assembly"
+      "color": "Assembly",
+      "human": "Assembly",
+      "abbr": "ASM"
     },
     "single": [
       ";",
@@ -92,7 +117,9 @@
   "HTML": {
     "extensions": ["htm", "html"],
     "name": {
-      "hljs": "html"
+      "hljs": "html",
+      "human": "HTML",
+      "abbr": "HTML"
     },
     "multi": [
       ["<!--", "", "-->"]
