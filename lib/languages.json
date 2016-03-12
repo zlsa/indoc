@@ -1,0 +1,79 @@
+{
+  
+  "JavaScript": {
+    "extensions": ["js"],
+    "name": {
+      "hljs": "JavaScript"
+    },
+    "single": [
+      "//"
+    ],
+    "multi": [
+      ["/*", "*", "*/"]
+    ]
+  },
+  
+  "SCSS": {
+    "extensions": ["scss"],
+    "name": {
+      "hljs": "SCSS"
+    },
+    "single": [
+      "//"
+    ],
+    "multi": [
+      ["/*", "*", "*/"]
+    ]
+  },
+  
+  "CSS": {
+    "extensions": ["css"],
+    "name": {
+      "hljs": "CSS"
+    },
+    "single": [
+      "//"
+    ],
+    "multi": [
+      ["/*", "*", "*/"]
+    ]
+  },
+  
+  "C": {
+    "extensions": ["c"],
+    "name": {
+      "hljs": "CPP"
+    },
+    "single": [
+      "//"
+    ],
+    "multi": [
+      ["/*", "*", "*/"]
+    ]
+  },
+  
+  "Markdown": {
+    "extensions": ["md"],
+    "name": {
+      "hljs": null
+    }
+  },
+  
+  "ARM Assembly": {
+    "extensions": ["s", "S"],
+    "name": {
+      "hljs": "armasm"
+    },
+    "single": [
+      ";",
+      "//",
+      "@",
+      "#"
+    ],
+    "multi": [
+      ["/*", "*", "*/"]
+    ]
+  }
+  
+}
+

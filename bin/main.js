@@ -166,6 +166,18 @@ function run(options) {
     logger.log('error', 'Could not get version number from "package.json"');
   });
 
+  // Called when a language cannot be detected
+
+  project.on('language-not-found', function(data) {
+    logger.log('error', 'Could not detect the programming language of "' + data.filename + '"');
+  });
+
+  // Called when a language cannot be detected by `highlight.js`
+
+  project.on('language-highlight-err', function(data) {
+    logger.log('error', 'Could not highlight "' + data.filename + '" ("' + data.language + '" not known by highlight.js)');
+  });
+
   // Called when the provided README file can't be opened. Instead of
   // failing, "No README provided" is used as a replacement for the actual
   // README file.
