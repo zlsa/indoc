@@ -4,6 +4,7 @@
     color: hsl(150, 100%, 30%);
   }
 
+  .hljs-name,
   .hljs-built_in {
     color: hsl(280, 100%, 30%);
   }
@@ -34,13 +35,19 @@
     color: hsl(0, 0, 50%);
   }
 
+  .hljs-attr,
   .hljs-params {
-    color: hsl(0, 0, 20%);
+    color: hsl(120, 50%, 20%);
   }
 
   .hljs-comment {
     color: hsl(150, 40%, 60%);
     font-weight: bold;
   }
+  
+  .hljs-meta {
+    color: hsl(150, 50%, 40%);
+  }
+
 }
 

@@ -161,7 +161,7 @@ project.run(function(err, data) {
 
 The languages supported by `indoc` are stored in `lib/languages.json` in the following format:
 
-```json
+```javascript
 "JSFOO": {
   "extensions": [
     "js", "json"
@@ -184,7 +184,7 @@ Right now, if there's a language that's not included, you can use the
 `languages` field of the `options` argument of the `indoc.project` to
 add new languages:
 
-```
+```javascript
 var project = indoc.project.create({
   name: 'Mousetrap Simulation Library',
 

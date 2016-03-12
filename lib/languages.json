@@ -73,6 +73,16 @@
     "multi": [
       ["/*", "*", "*/"]
     ]
+  },
+  
+  "HTML": {
+    "extensions": ["htm", "html"],
+    "name": {
+      "hljs": "html"
+    },
+    "multi": [
+      ["<!--", "", "-->"]
+    ]
   }
   
 }

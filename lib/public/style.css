@@ -102,6 +102,7 @@ body {
         word-wrap: break-word; }
         body #sections .section > .comment > .text pre .hljs-keyword {
           color: #00994d; }
+        body #sections .section > .comment > .text pre .hljs-name,
         body #sections .section > .comment > .text pre .hljs-built_in {
           color: #660099; }
         body #sections .section > .comment > .text pre .hljs-type {
@@ -118,11 +119,14 @@ body {
           color: #000099; }
         body #sections .section > .comment > .text pre .hljs-function {
           color: gray; }
+        body #sections .section > .comment > .text pre .hljs-attr,
         body #sections .section > .comment > .text pre .hljs-params {
-          color: #333333; }
+          color: #1a4d1a; }
         body #sections .section > .comment > .text pre .hljs-comment {
           color: #70c299;
           font-weight: bold; }
+        body #sections .section > .comment > .text pre .hljs-meta {
+          color: #339966; }
       body #sections .section > .comment > .text p + p {
         text-indent: 1em;
         margin-top: 8px; }
@@ -200,6 +204,7 @@ body {
       line-height: 135%; }
       body #sections .section > .code > pre .hljs-keyword {
         color: #00994d; }
+      body #sections .section > .code > pre .hljs-name,
       body #sections .section > .code > pre .hljs-built_in {
         color: #660099; }
       body #sections .section > .code > pre .hljs-type {
@@ -216,11 +221,14 @@ body {
         color: #000099; }
       body #sections .section > .code > pre .hljs-function {
         color: gray; }
+      body #sections .section > .code > pre .hljs-attr,
       body #sections .section > .code > pre .hljs-params {
-        color: #333333; }
+        color: #1a4d1a; }
       body #sections .section > .code > pre .hljs-comment {
         color: #70c299;
         font-weight: bold; }
+      body #sections .section > .code > pre .hljs-meta {
+        color: #339966; }
     body #sections .section.markdown > .code > .markdown {
       font-family: 'Inconsolata', Consolata, monospace;
       line-height: 150%; }
@@ -241,6 +249,7 @@ body {
         word-wrap: break-word; }
         body #sections .section.markdown > .code > .markdown pre .hljs-keyword {
           color: #00994d; }
+        body #sections .section.markdown > .code > .markdown pre .hljs-name,
         body #sections .section.markdown > .code > .markdown pre .hljs-built_in {
           color: #660099; }
         body #sections .section.markdown > .code > .markdown pre .hljs-type {
@@ -257,11 +266,14 @@ body {
           color: #000099; }
         body #sections .section.markdown > .code > .markdown pre .hljs-function {
           color: gray; }
+        body #sections .section.markdown > .code > .markdown pre .hljs-attr,
         body #sections .section.markdown > .code > .markdown pre .hljs-params {
-          color: #333333; }
+          color: #1a4d1a; }
         body #sections .section.markdown > .code > .markdown pre .hljs-comment {
           color: #70c299;
           font-weight: bold; }
+        body #sections .section.markdown > .code > .markdown pre .hljs-meta {
+          color: #339966; }
       body #sections .section.markdown > .code > .markdown p + p {
         text-indent: 1em;
         margin-top: 8px; }

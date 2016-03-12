@@ -1,5 +1,5 @@
 {
-  "files": ["bin/*.js", "lib/*.js", "examples/*", "*.md"],
+  "files": ["bin/*.js", "lib/*.js", "examples/*", "*.md", "lib/**/*.html"],
   "readme": "MAIN.md",
   "name": "Indoc",
   "output": "docs",
