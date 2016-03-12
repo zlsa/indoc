@@ -440,13 +440,10 @@ body {
         margin-bottom: 24px;
         padding-left: 5vh;
         padding-right: 5vh;
-        border-left: 6px solid #d3dede; }
+        background-color: #d3dede; }
         body #sections .section.markdown > .code > .markdown blockquote p {
           padding: 12px;
-          padding-left: 0;
-          font-style: italic;
-          margin-left: -6px;
-          padding-right: 6px; }
+          font-style: italic; }
       body #sections .section.markdown > .code > .markdown pre {
         padding-left: 16px; } }
 
@@ -465,13 +462,10 @@ body {
     margin-bottom: 24px;
     padding-left: 12px;
     padding-right: 12px;
-    border-left: 6px solid #d3dede; }
+    background-color: #d3dede; }
     body #sections .section.markdown > .code > .markdown blockquote p {
       padding: 12px;
-      padding-left: 0;
-      font-style: italic;
-      margin-left: -6px;
-      padding-right: 6px; }
+      font-style: italic; }
   body #sections .section.markdown > .code > .markdown pre {
     padding-left: 16px; } }
     @media (max-width: 899px) {
@@ -551,13 +545,10 @@ body {
           margin-bottom: 24px;
           padding-left: 24px;
           padding-right: 64px;
-          border-left: 6px solid #d3dede; }
+          background-color: #d3dede; }
           body #sections .section.markdown > .code > .markdown blockquote p {
             padding: 12px;
-            padding-left: 0;
-            font-style: italic;
-            margin-left: -6px;
-            padding-right: 6px; }
+            font-style: italic; }
         body #sections .section.markdown > .code > .markdown pre {
           padding-left: 16px; }
         body #sections .section.footer > .code {
