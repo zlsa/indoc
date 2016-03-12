@@ -1,5 +1,5 @@
 
-# inline documentation generator ([GitHub repo](http://github.com/zlsa/indoc/))
+# inline documentation generator ([live demo](http://zlsa.github.io/indoc/))
 
 Inspired heavily by [`docco`](https://jashkenas.github.io/docco/),
 `indoc` is a quick-and-dirty documentation generator written in plain
@@ -18,10 +18,8 @@ on each generated page. (Check it out on the left.)
 > Note that `indoc` is currently only a few days old, and is subject to
 > rapid, backwards-incompatible changes in the near future.
 
-# Usage
-
-The recommended usage is to install `indoc` globally and use a config
-file with the `-c` command line option.
+The recommended usage is to install `indoc` globally and use a local
+project `config.json` file with the `-c` command line option.
 
 ```sh
 $ ls
@@ -58,6 +56,14 @@ npm install -g indoc
 ```
 
 The command `indoc` should now be available.
+
+Alternatively, use
+
+```
+npm install indoc
+```
+
+to use the library as a `node.js` module.
 
 # Using the command line program
 
@@ -133,7 +139,7 @@ find the version there.
 var indoc = require('indoc');
 
 var project = indoc.project.create({
-  name: 'Mousetrap Simulation Library'
+  name: 'Mousetrap Simulation Library',
   owners: 'Tom', // "Copyright 2016 Tom"
   output: 'docs',
   readme: 'README.md',
@@ -150,6 +156,48 @@ project.run(function(err, data) {
   console.log('Generated ' + data.total + ' files!');
 });
 ```
+
+# Languages
+
+Currently, language comment settings are hardcoded in
+`lib/languages.js`; soon, the hardcoded languages will be broken out
+into a `json` file.
+
+Right now, if there's a language that's not included, you can use the
+`languages` field of the `options` argument of the `indoc.project` to
+add new languages:
+
+```
+var project = indoc.project.create({
+  name: 'Mousetrap Simulation Library',
+
+  ...
+
+  files: [ ... ],
+  languages: {
+    'SubScript': {
+      extensions: [
+        'sub', 'sbs'
+      ],
+      name: {
+        hljs: 'JavaScript', // the language type for Highlight.js, or null
+      },
+      single: [ '//', ';;' ], // a single-line comment starts with '//' or ';;'
+      multi: [
+        ['/*', '*', '*/'] /* See below for an explanation of how multiline comments work. */
+      ]
+    }
+  }
+  });
+  
+  /* a multi-line comment starts with '/*' and ends with '*/'.
+  * Optionally, if a line starts with '*', it will be removed
+  * to allow for indented multi-line comments, like this one.
+  * Both `single` and `multi` allow for multiple comment formats.
+  * */
+
+```
+
 
 # Contributing/Feedback
 

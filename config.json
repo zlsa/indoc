@@ -1,6 +1,6 @@
 {
-  "files": ["bin/*.js", "lib/*.js", "examples/*"],
-  "readme": "README.md",
+  "files": ["bin/*.js", "lib/*.js", "examples/*", "*.md"],
+  "readme": "MAIN.md",
   "name": "Indoc",
   "output": "docs",
   "version": "package.json",
