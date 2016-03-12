@@ -20,7 +20,36 @@ on each generated page. (Check it out on the left.)
 
 # Usage
 
-The recommended usage is to install `indoc` globally.
+The recommended usage is to install `indoc` globally and use a config
+file with the `-c` command line option.
+
+```sh
+$ ls
+bin/     lib/     src/     README.md   config.json
+$ more config.json
+{
+  "name": "Mousetrap Simulation Library"
+  "owners": "Tom",
+  "output": "docs",
+  "readme": "README.md",
+  "version": "package.json",
+  "files": [
+    "src/**/*.js"
+  ]
+}
+$ indoc -c config.json
+info: Generated "README.md"
+info: Generated "src/animal.js"
+info: Generated "src/cat.js"
+info: Generated "src/mouse.js"
+info: Generated "src/trap.js"
+info: Successfully generated 5 files
+$ ls
+bin/     docs/    lib/     src/     README.md   config.json
+$ ls docs/
+index.html README.md/    animal.js/    cat.js/    mouse.js/     trap.js/
+$ 
+```
 
 # Getting the library
 
