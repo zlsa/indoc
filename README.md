@@ -159,9 +159,26 @@ project.run(function(err, data) {
 
 # Languages
 
-Currently, language comment settings are hardcoded in
-`lib/languages.js`; soon, the hardcoded languages will be broken out
-into a `json` file.
+The languages supported by `indoc` are stored in `lib/languages.json` in the following format:
+
+```json
+"JSFOO": {
+  "extensions": [
+    "js", "json"
+  ],
+  "name": {
+    "hljs": "JavaScript",  // the language type for Highlight.js, 'auto' to autodetect, or `null` for Markdown
+    "human": "JavaScript", // the human-readable language name. If not present, the name of the language
+                           // (JSFOO, above) is used instead.
+    "abbr": "JS"           // The short abbreviation of the language. If not present, the first item in
+                           // "extensions", above, is used.
+  },
+  "single": [ "//", ";;" ],
+  multi: [
+    ["/*", "*", "*/"]
+  ]
+}
+```
 
 Right now, if there's a language that's not included, you can use the
 `languages` field of the `options` argument of the `indoc.project` to
@@ -181,6 +198,7 @@ var project = indoc.project.create({
       ],
       name: {
         hljs: 'JavaScript', // the language type for Highlight.js, or null
+        human: 'JavaScript'
       },
       single: [ '//', ';;' ], // a single-line comment starts with '//' or ';;'
       multi: [

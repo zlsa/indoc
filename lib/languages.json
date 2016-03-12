@@ -1,7 +1,7 @@
 {
   
   "JavaScript": {
-    "extensions": ["js"],
+    "extensions": ["js", "json"],
     "name": {
       "hljs": "JavaScript"
     },
