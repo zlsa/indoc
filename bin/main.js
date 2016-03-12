@@ -156,7 +156,14 @@ function run(options) {
   // Called when an input file resides in the output folder
 
   project.on('recursive-file', function(data) {
-    logger.log('error', 'File "' + data.filename + '" is in the output directory');
+    logger.log('warn', 'File "' + data.filename + '" is in the output directory, ignoring');
+  });
+
+  // Called when a project link (a link starting with ':') doesn't
+  // resolve to any file
+
+  project.on('project-link-err', function(data) {
+    logger.log('warn', 'File "' + data.filename + '" links to nonexistent file "' + data.link + '"');
   });
 
   // Called when a template can't be read.
