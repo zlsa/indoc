@@ -123,23 +123,33 @@ $project-overview-width: 160px;
           }
 
           .files-menu {
-            border-left: 1px solid $comment-border-color;
             flex: 1;
 
             #filename {
               width: 100%;
+              border-left: 1px solid $comment-border-color;
             }
-            
+
+            .files {
+              border-top: 1px solid $comment-border-color;
+              
+              max-height: 80vh;
+              
+              position: absolute;
+              top: $path-height;
+              margin-left: 0;
+              
+              display: block;
+              overflow-y: auto;
+              
+              list-style-type: none;
+              
+              transform-origin: 0 0;
+              transition: opacity $files-anim ease, transform $files-anim ease;
+              
+            }
+
           }
-          
-        }
-
-        .files {
-          list-style-type: none;
-
-          transform-origin: 0 0;
-
-          transition: opacity $files-anim ease, transform $files-anim ease;
           
         }
 
@@ -208,6 +218,14 @@ $project-overview-width: 160px;
 
       #filename {
         display: none !important;
+      }
+
+      .files {
+        border-top: none !important;
+        position: static !important;
+        top: 0;
+        max-height: none !important;
+        overflow-y: none;
       }
       
     }

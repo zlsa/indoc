@@ -153,6 +153,12 @@ function run(options) {
     logger.log('warn', 'Duplicate file "' + data.filename + '"');
   });
 
+  // Called when an input file resides in the output folder
+
+  project.on('recursive-file', function(data) {
+    logger.log('error', 'File "' + data.filename + '" is in the output directory');
+  });
+
   // Called when a template can't be read.
 
   project.on('template-err', function(data) {

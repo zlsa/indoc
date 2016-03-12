@@ -503,14 +503,21 @@ body {
               padding-left: 24px;
               padding-right: 24px; }
             body #sections #header > .comment header .file-path .files-menu {
-              border-left: 1px solid #dfe7e7;
               flex: 1; }
               body #sections #header > .comment header .file-path .files-menu #filename {
-                width: 100%; }
-          body #sections #header > .comment header .files {
-            list-style-type: none;
-            transform-origin: 0 0;
-            transition: opacity 0.3s ease, transform 0.3s ease; }
+                width: 100%;
+                border-left: 1px solid #dfe7e7; }
+              body #sections #header > .comment header .file-path .files-menu .files {
+                border-top: 1px solid #dfe7e7;
+                max-height: 80vh;
+                position: absolute;
+                top: 64px;
+                margin-left: 0;
+                display: block;
+                overflow-y: auto;
+                list-style-type: none;
+                transform-origin: 0 0;
+                transition: opacity 0.3s ease, transform 0.3s ease; }
       body #sections .section {
         display: flex; }
         body #sections .section > .comment {
@@ -591,6 +598,12 @@ body {
     flex-direction: column; }
     body.index #header > .comment .file-path #filename {
       display: none !important; }
+    body.index #header > .comment .file-path .files {
+      border-top: none !important;
+      position: static !important;
+      top: 0;
+      max-height: none !important;
+      overflow-y: none; }
   @media (min-width: 900px) {
     body.code #header > .comment {
       position: relative; }
