@@ -358,8 +358,8 @@ body {
             cursor: pointer; }
           body #sections #header > .comment header .files .file a:hover {
             background-color: #f6f8f8; }
-        body #sections #header > .comment header .files .file + .file {
-          border-top: 1px solid #e8eeee; }
+        body #sections #header > .comment header .files .file + .file.separator {
+          border-top: 1px solid #e8eeee !important; }
     @media (max-width: 899px) {
       body #sections #header > .comment {
         width: 100%; }

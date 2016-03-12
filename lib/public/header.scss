@@ -73,7 +73,11 @@ $project-overview-width: 160px;
           }
 
           .file + .file {
-            border-top: 1px solid hsl($hue, $saturation, 92%);
+            
+            &.separator {
+              border-top: 1px solid hsl($hue, $saturation, 92%) !important;
+            }
+            
           }
           
         }

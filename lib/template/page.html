@@ -42,7 +42,11 @@
                 {{/if}}
                   
                   {{#each files}}
+                  {{#if this.separator}}
+                  <li class="file separator"><a href="{{../path}}/{{this.link}}">{{this.filename}}</a></li>
+                  {{else}}
                   <li class="file"><a href="{{../path}}/{{this.link}}">{{this.filename}}</a></li>
+                  {{/if}}
                   {{/each}}
                   
                 </ul>
