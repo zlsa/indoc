@@ -1,7 +1,10 @@
 
 # inline documentation generator ([GitHub repo](http://github.com/zlsa/indoc/))
 
-> (Psst: check out [README.md](:README.md) for help on how to use the library)
+> Psst: check out [README.md](:) for help on how to use the library.
+> 
+> Also, you might want to check out [MARKDOWN.md](:) for some extra
+> Markdown syntax `indoc` supports.)
 
 Right now, you're looking at the output of `indoc`, run on its own
 source code (plus a few examples, to demonstrate handling of various

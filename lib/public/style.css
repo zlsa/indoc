@@ -130,6 +130,8 @@ body {
       body #sections .section > .comment > .text p + p {
         text-indent: 1em;
         margin-top: 8px; }
+      body #sections .section > .comment > .text blockquote p {
+        text-indent: 0; }
       body #sections .section > .comment > .text h1 {
         font-size: 24px;
         min-height: 64px;
@@ -142,6 +144,7 @@ body {
         font-size: 22px;
         min-height: 48px;
         line-height: 48px;
+        border-bottom: 1px solid #d3dede;
         margin-bottom: 14px; }
       body #sections .section > .comment > .text * + h2 {
         margin-top: 42px; }
@@ -174,6 +177,7 @@ body {
         font-size: 16px;
         min-height: 34px;
         line-height: 34px;
+        border-bottom: 1px solid #d3dede;
         margin-bottom: 12px; }
       body #sections .section > .comment > .text * + h2 {
         margin-top: 20px; }
@@ -277,6 +281,8 @@ body {
       body #sections .section.markdown > .code > .markdown p + p {
         text-indent: 1em;
         margin-top: 8px; }
+      body #sections .section.markdown > .code > .markdown blockquote p {
+        text-indent: 0; }
       body #sections .section.markdown > .code > .markdown h1 {
         font-size: 24px;
         min-height: 64px;
@@ -289,6 +295,7 @@ body {
         font-size: 22px;
         min-height: 48px;
         line-height: 48px;
+        border-bottom: 1px solid #d3dede;
         margin-bottom: 14px; }
       body #sections .section.markdown > .code > .markdown * + h2 {
         margin-top: 42px; }
@@ -310,13 +317,9 @@ body {
       body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h3 {
         font-weight: bold; }
       body #sections .section.markdown > .code > .markdown p code {
+        background-color: #d3dede;
         font-weight: bold;
-        opacity: 0.8;
-        background: transparent;
-        border: none;
-        border-radius: 0;
-        padding: 0;
-        margin: 0; }
+        color: rgba(0, 0, 0, 0.8); }
     body #sections .section:first-child > .comment {
       padding-bottom: 64px; }
     body #sections .section:first-child > .code {
@@ -652,7 +655,7 @@ body {
             width: 100%;
             background: #fcfdfd;
             border: 1px solid #dfe7e7;
-            border-width: 0 0 1px 1px;
+            border-width: 0 1px 1px 1px;
             border-bottom-left-radius: 3px; }
     body.code #header.files-hidden #filename:after {
       transform: scaleY(1) !important; }
