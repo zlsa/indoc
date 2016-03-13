@@ -18,7 +18,7 @@
   "Python": {
     "extensions": ["py"],
     "name": {
-      "hljs": "JavaScript",
+      "hljs": "Python",
       "abbr": "py"
     },
     "single": [
