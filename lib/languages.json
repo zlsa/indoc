@@ -129,6 +129,18 @@
     ]
   },
   
+  "XML": {
+    "extensions": ["xml"],
+    "name": {
+      "hljs": "xml",
+      "human": "XML",
+      "abbr": "XML"
+    },
+    "multi": [
+      ["<!--", "", "-->"]
+    ]
+  },
+  
   "HTML": {
     "extensions": ["htm", "html"],
     "name": {
