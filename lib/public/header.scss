@@ -165,7 +165,7 @@ $overview-height: 48px;
             #filename {
               height: $path-height !important;
 
-              display: inline-block !important;
+              display: inline-block;
               
               white-space: nowrap;
               overflow: hidden;
@@ -254,9 +254,11 @@ $overview-height: 48px;
     #project-overview {
       border-bottom: 1px solid $comment-border-color;
       font-size: 24px;
+      border-right: none !important;
     }
 
     .file-path {
+      border: none !important;
       display: flex;
       flex-direction: column;
 

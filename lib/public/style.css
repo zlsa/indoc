@@ -528,7 +528,7 @@ body {
               flex: 1; }
               body #sections #header > .comment header .file-path .files-menu #filename {
                 height: 64px !important;
-                display: inline-block !important;
+                display: inline-block;
                 white-space: nowrap;
                 overflow: hidden;
                 line-height: 64px;
@@ -620,8 +620,10 @@ body {
         text-align: right; } }
   body.index #header > .comment #project-overview {
     border-bottom: 1px solid #dfe7e7;
-    font-size: 24px; }
+    font-size: 24px;
+    border-right: none !important; }
   body.index #header > .comment .file-path {
+    border: none !important;
     display: flex;
     flex-direction: column; }
     body.index #header > .comment .file-path #filename {
