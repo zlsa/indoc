@@ -625,7 +625,8 @@ body {
   body.index #header > .comment .file-path {
     border: none !important;
     display: flex;
-    flex-direction: column; }
+    flex-direction: column;
+    height: auto !important; }
     body.index #header > .comment .file-path #filename {
       display: none !important; }
     body.index #header > .comment .file-path .files {

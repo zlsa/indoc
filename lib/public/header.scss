@@ -262,6 +262,8 @@ $overview-height: 48px;
       display: flex;
       flex-direction: column;
 
+      height: auto !important;
+
       #filename {
         display: none !important;
       }
