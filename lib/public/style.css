@@ -64,7 +64,7 @@
   line-height: 64px;
   font-family: 'Inconsolata', Consolata, monospace;
   color: #415858; }
-  @media (max-width: 899px) {
+  @media (max-width: 499px) {
     #version {
       height: 48px;
       line-height: 48px; } }
@@ -106,7 +106,7 @@ body {
         body #sections .section > .comment > .text pre .hljs-built_in {
           color: #660099; }
         body #sections .section > .comment > .text pre .hljs-type {
-          color: #f0f; }
+          color: #4d1a44; }
         body #sections .section > .comment > .text pre .hljs-literal {
           color: #990066;
           font-weight: bold; }
@@ -212,7 +212,7 @@ body {
       body #sections .section > .code > pre .hljs-built_in {
         color: #660099; }
       body #sections .section > .code > pre .hljs-type {
-        color: #f0f; }
+        color: #4d1a44; }
       body #sections .section > .code > pre .hljs-literal {
         color: #990066;
         font-weight: bold; }
@@ -257,7 +257,7 @@ body {
         body #sections .section.markdown > .code > .markdown pre .hljs-built_in {
           color: #660099; }
         body #sections .section.markdown > .code > .markdown pre .hljs-type {
-          color: #f0f; }
+          color: #4d1a44; }
         body #sections .section.markdown > .code > .markdown pre .hljs-literal {
           color: #990066;
           font-weight: bold; }
@@ -321,12 +321,12 @@ body {
         font-weight: bold;
         color: rgba(0, 0, 0, 0.8); }
     body #sections .section:first-child > .comment {
-      padding-bottom: 64px; }
+      padding-bottom: 128px; }
     body #sections .section:first-child > .code {
-      padding-bottom: 64px; }
+      padding-bottom: 128px; }
     body #sections .section:nth-last-child(2) {
       flex: 1; }
-      @media (min-width: 900px) {
+      @media (min-width: 500px) {
         body #sections .section:nth-last-child(2) > .comment {
           padding-bottom: 64px; }
         body #sections .section:nth-last-child(2) > .code {
@@ -351,6 +351,7 @@ body {
         body #sections #header > .comment header .files .file a {
           min-height: 38px;
           line-height: 38px;
+          overflow: hidden;
           display: block;
           padding-left: 24px;
           padding-right: 24px;
@@ -377,7 +378,7 @@ body {
             transform: translateY(-50%); }
         body #sections #header > .comment header .files .file + .file.separator {
           border-top: 1px solid #e8eeee !important; }
-    @media (max-width: 899px) {
+    @media (max-width: 499px) {
       body #sections #header > .comment {
         width: 100%; }
         body #sections #header > .comment #project-overview {
@@ -406,50 +407,50 @@ body {
       body #sections .section > .comment > .text {
         padding: 16px 5vh 16px 5vh; }
       body #sections .section#header > .comment > header > .file-path #project-overview {
-        padding-left: 5vh !important; }
+        padding-left: 5vh; }
       body #sections .section#header > .comment > header > .file-path #filename {
         padding-right: 5vh; } }
-  @media (max-width: 899px) and (max-width: 899px) {
+  @media (max-width: 499px) and (max-width: 499px) {
     body #sections .section#header > .comment > header > .file-path #filename {
       padding-left: 5vh; } }
-    @media (max-width: 899px) {
+    @media (max-width: 499px) {
       body #sections .section#header > .comment > header .files li a {
         padding-right: 5vh; } }
-  @media (max-width: 899px) and (max-width: 899px) {
+  @media (max-width: 499px) and (max-width: 499px) {
     body #sections .section#header > .comment > header .files li a {
       padding-left: 5vh; } }
-    @media (max-width: 899px) {
+    @media (max-width: 499px) {
       body #sections .section#header > .comment > header .files.index li a {
         padding-left: 5vh; }
       body #sections .section.footer > .comment > .content {
         padding-left: 5vh;
         padding-right: 5vh; } }
 
-@media (max-width: 899px) and (max-width: 480px) {
+@media (max-width: 499px) and (max-width: 480px) {
   body #sections .section > .comment > .text {
     padding: 16px 12px 16px 12px; }
   body #sections .section#header > .comment > header > .file-path #project-overview {
-    padding-left: 12px !important; }
+    padding-left: 12px; }
   body #sections .section#header > .comment > header > .file-path #filename {
     padding-right: 12px; } }
-  @media (max-width: 899px) and (max-width: 480px) and (max-width: 899px) {
+  @media (max-width: 499px) and (max-width: 480px) and (max-width: 499px) {
     body #sections .section#header > .comment > header > .file-path #filename {
       padding-left: 12px; } }
 
-@media (max-width: 899px) and (max-width: 480px) {
+@media (max-width: 499px) and (max-width: 480px) {
   body #sections .section#header > .comment > header .files li a {
     padding-right: 12px; } }
-  @media (max-width: 899px) and (max-width: 480px) and (max-width: 899px) {
+  @media (max-width: 499px) and (max-width: 480px) and (max-width: 499px) {
     body #sections .section#header > .comment > header .files li a {
       padding-left: 12px; } }
 
-@media (max-width: 899px) and (max-width: 480px) {
+@media (max-width: 499px) and (max-width: 480px) {
   body #sections .section#header > .comment > header .files.index li a {
     padding-left: 12px; }
   body #sections .section.footer > .comment > .content {
     padding-left: 12px;
     padding-right: 12px; } }
-    @media (max-width: 899px) {
+    @media (max-width: 499px) {
       body #sections .section > .code {
         border-bottom: 1px solid #d3dede;
         border-top: 1px solid #d3dede; }
@@ -476,7 +477,7 @@ body {
       body #sections .section.markdown > .code > .markdown pre {
         padding-left: 16px; } }
 
-@media (max-width: 899px) and (max-width: 480px) {
+@media (max-width: 499px) and (max-width: 480px) {
   body #sections .section > .code > pre,
   body #sections .section.footer > .code > .content {
     padding: 16px 12px 16px 12px; }
@@ -497,10 +498,10 @@ body {
       font-style: italic; }
   body #sections .section.markdown > .code > .markdown pre {
     padding-left: 16px; } }
-    @media (max-width: 899px) {
+    @media (max-width: 499px) {
       body #sections .section.footer > .code {
         border-top: 1px solid #d3dede; } }
-    @media (min-width: 900px) {
+    @media (min-width: 500px) {
       body #sections #header > .code {
         min-height: 96px; }
       body #sections #header > .comment {
@@ -508,20 +509,29 @@ body {
         body #sections #header > .comment header {
           background: #fcfdfd; }
           body #sections #header > .comment header .file-path {
-            min-height: 64px;
+            height: 113px;
             line-height: 64px;
             border-bottom: 1px solid #dfe7e7;
             display: flex;
-            flex-orientation: row; }
+            flex-direction: column; }
             body #sections #header > .comment header .file-path #project-overview,
             body #sections #header > .comment header .file-path #filename {
+              border-right: 1px solid #d3dede;
               display: inline-block;
-              height: 100%;
               padding-left: 24px;
               padding-right: 24px; }
+            body #sections #header > .comment header .file-path #project-overview {
+              border-bottom: 1px solid #d3dede;
+              height: 48px;
+              line-height: 48px; }
             body #sections #header > .comment header .file-path .files-menu {
               flex: 1; }
               body #sections #header > .comment header .file-path .files-menu #filename {
+                height: 64px !important;
+                display: inline-block !important;
+                white-space: nowrap;
+                overflow: hidden;
+                line-height: 64px;
                 width: 100%;
                 border-left: 1px solid #dfe7e7; }
               body #sections #header > .comment header .file-path .files-menu .files {
@@ -546,19 +556,19 @@ body {
         body #sections .section > .comment > .text {
           padding: 8px 24px 8px 64px; }
         body #sections .section#header > .comment > header > .file-path #project-overview {
-          padding-left: 64px !important; }
+          padding-left: 64px; }
         body #sections .section#header > .comment > header > .file-path #filename {
           padding-right: 24px; } }
-    @media (min-width: 900px) and (max-width: 899px) {
+    @media (min-width: 500px) and (max-width: 499px) {
       body #sections .section#header > .comment > header > .file-path #filename {
         padding-left: 64px; } }
-    @media (min-width: 900px) {
+    @media (min-width: 500px) {
         body #sections .section#header > .comment > header .files li a {
           padding-right: 24px; } }
-    @media (min-width: 900px) and (max-width: 899px) {
+    @media (min-width: 500px) and (max-width: 499px) {
       body #sections .section#header > .comment > header .files li a {
         padding-left: 64px; } }
-    @media (min-width: 900px) {
+    @media (min-width: 500px) {
         body #sections .section#header > .comment > header .files.index li a {
           padding-left: 64px; }
         body #sections .section.footer > .comment > .content {
@@ -605,7 +615,7 @@ body {
       font-size: 14px;
       font-family: 'Inconsolata', Consolata, monospace;
       color: #6c9393; }
-    @media (max-width: 899px) {
+    @media (max-width: 499px) {
       body #sections #footer {
         text-align: right; } }
   body.index #header > .comment #project-overview {
@@ -622,22 +632,23 @@ body {
       top: 0;
       max-height: none !important;
       overflow-y: none; }
-  @media (min-width: 900px) {
+  @media (min-width: 500px) {
     body.code #header > .comment {
       position: relative; }
       body.code #header > .comment header .spacer {
         flex: 1; }
       body.code #header > .comment header .file-path {
         background: #fcfdfd; } }
-    @media (min-width: 900px) and (min-width: 900px) {
+    @media (min-width: 500px) and (min-width: 500px) {
       body.code #header > .comment header .file-path {
         position: fixed;
         width: 30%;
         min-width: 24em;
         max-width: 64em; } }
-  @media (min-width: 900px) {
+  @media (min-width: 500px) {
         body.code #header > .comment header .file-path #project-overview {
-          transition: background-color 0.1s ease; }
+          transition: background-color 0.1s ease;
+          padding-left: 24px !important; }
           body.code #header > .comment header .file-path #project-overview:hover {
             cursor: pointer; }
           body.code #header > .comment header .file-path #project-overview:hover {
@@ -645,7 +656,8 @@ body {
         body.code #header > .comment header .file-path .files-menu {
           position: relative; }
           body.code #header > .comment header .file-path .files-menu #filename {
-            transition: background-color 0.1s ease; }
+            transition: background-color 0.1s ease;
+            padding-right: 64px; }
             body.code #header > .comment header .file-path .files-menu #filename:hover {
               cursor: pointer; }
             body.code #header > .comment header .file-path .files-menu #filename:hover {
@@ -657,6 +669,7 @@ body {
               position: absolute;
               top: 0;
               right: 0;
+              z-index: 1000;
               opacity: 0.5;
               width: 64px;
               height: 64px;

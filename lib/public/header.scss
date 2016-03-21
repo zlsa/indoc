@@ -8,6 +8,9 @@ $files-anim: 0.3s;
 
 $project-overview-width: 160px;
 
+$overview-height: 48px;
+    
+
 @mixin hoverable() {
   @include clickable();
 
@@ -59,6 +62,8 @@ $project-overview-width: 160px;
           .file a {
             min-height: $file-height;
             line-height: $file-height;
+
+            overflow: hidden;
 
             display: block;
             
@@ -130,28 +135,42 @@ $project-overview-width: 160px;
 
         .file-path {
 
-          min-height: $path-height;
+          height: $path-height + $overview-height + 1px;
           line-height: $path-height;
 
           border-bottom: 1px solid $comment-border-color;
 
           display: flex;
-          flex-orientation: row;
+          flex-direction: column;
 
           #project-overview,
           #filename {
+            border-right: 1px solid $code-border-color;
+            
             display: inline-block;
-            
-            height: 100%;
-            
+
             padding-left: $file-path-padding;
             padding-right: $file-path-padding;
           }
 
+          #project-overview {
+            border-bottom: 1px solid $code-border-color;
+            height: $overview-height;
+            line-height: $overview-height;
+          }
+            
           .files-menu {
             flex: 1;
 
             #filename {
+              height: $path-height !important;
+
+              display: inline-block !important;
+              
+              white-space: nowrap;
+              overflow: hidden;
+              
+              line-height: $path-height;
               width: 100%;
               border-left: 1px solid $comment-border-color;
             }
@@ -194,8 +213,6 @@ $project-overview-width: 160px;
 
     width: 100%;
 
-    $overview-height: 48px;
-    
     #project-overview {
       min-height: $overview-height;
       line-height: $overview-height !important;
@@ -288,6 +305,7 @@ $project-overview-width: 160px;
 
           #project-overview {
             @include hoverable();
+            padding-left: $file-path-padding !important;
           }
           
           .files-menu {
@@ -296,6 +314,8 @@ $project-overview-width: 160px;
 
             #filename {
               @include hoverable();
+
+              padding-right: $path-height;
 
               &:after {
                 content: '';
@@ -306,6 +326,8 @@ $project-overview-width: 160px;
                 position: absolute;
                 top: 0;
                 right: 0;
+
+                z-index: 1000;
 
                 opacity: 0.5;
                 

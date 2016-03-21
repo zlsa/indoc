@@ -15,6 +15,21 @@
     ]
   },
   
+  "Java": {
+    "extensions": ["java"],
+    "name": {
+      "hljs": "Java",
+      "human": "Java",
+      "abbr": "java"
+    },
+    "single": [
+      "//"
+    ],
+    "multi": [
+      ["/*", "*", "*/"]
+    ]
+  },
+  
   "Python": {
     "extensions": ["py"],
     "name": {
