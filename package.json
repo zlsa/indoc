@@ -17,6 +17,24 @@
   "bin": {
     "indoc": "bin/main.js"
   },
+  "files": [
+    "bin/main.js",
+    
+    "lib/main.js",
+    "lib/file.js",
+    "lib/section.js",
+    "lib/language.js",
+    "lib/languages.json",
+    "lib/github-colors.json",
+    "lib/class.js",
+    "lib/events.js",
+    
+    "lib/public/style.css",
+    "lib/public/jquery.min.js",
+    "lib/public/script.js",
+    
+    "lib/template/*"
+  ],
   "main": "lib/main.js",
   "dependencies": {
     "fs-extra": "^0.26.5",
