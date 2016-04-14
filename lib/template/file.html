@@ -1,0 +1,23 @@
+{{#separator}}
+<li class="file separator">
+{{/separator}}
+  
+{{^separator}}
+<li class="file">
+{{/separator}}
+  
+<a href="{{link}}" title="{{filename}}">
+    
+{{#color}}
+<span class="language" style="background-color: {{color}}">{{language}}</span>
+{{/color}}
+
+{{^color}}
+<span class="language">{{language}}</span>
+{{/color}}
+
+<span class="filename">{{filename}}</span>
+
+</a>
+
+</li>

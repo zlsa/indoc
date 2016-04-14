@@ -138,7 +138,7 @@ find the version there.
 ```js
 var indoc = require('indoc');
 
-var project = indoc.project.create({
+var project = new indoc.Project({
   name: 'Mousetrap Simulation Library',
   owners: 'Tom', // "Copyright 2016 Tom"
   output: 'docs',
@@ -185,7 +185,7 @@ Right now, if there's a language that's not included, you can use the
 add new languages:
 
 ```javascript
-var project = indoc.project.create({
+var project = new indoc.Project({
   name: 'Mousetrap Simulation Library',
 
   ...

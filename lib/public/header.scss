@@ -1,20 +1,22 @@
 
-$path-height: $section-two-column-outer;
-$file-height: 38px;
+$overview-height: 64px;
+
+$path-height: 48px;
+
+$file-height: 42px;
 
 $file-path-padding: 24px;
 
-$files-anim: 0.3s;
-
-$project-overview-width: 160px;
-
-$overview-height: 48px;
-    
+$files-anim: 0.2s;
 
 @mixin hoverable() {
   @include clickable();
 
   transition: background-color 0.1s ease;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
   
   &:hover {
     background-color: hsl($hue, $saturation, 97%);
@@ -23,97 +25,114 @@ $overview-height: 48px;
 }
 
 @mixin header() {
-
+  
   #header {
+
+    @include font-mono();
     
-    > .comment {
+    .comment {
+      padding-bottom: 0 !important;
+    }
 
-      header {
+    // The actual header (and filelist, etc.) itself.
+    header {
 
-        width: 100%;
+      .file-path {
 
-        .file-path {
-          @include font-mono();
+        position: relative;
 
-          #project-overview {
-            font-weight: bold;
-
-            .version {
-              float: right;
-              font-weight: normal;
-              font-size: 16px;
-              color: hsl($hue, $saturation, 50%);
-            }
-            
-          }
+        #project-overview {
+          @include hoverable();
+          font-weight: bold;
+        }
+        
+        #project-overview,
+        .files-menu #filename {
+          display: block;
           
+          border-bottom: 1px solid $code-border-color;
+        }
+
+        #project-overview {
+          height: $overview-height + 1px;
+          line-height: $overview-height + 1px;
         }
 
         #filename {
-          font-weight: bold;
-          color: hsl($hue, $saturation, 30%);
-          border-right: 1px solid $code-border-color;
+          display: block;
+          height: $path-height;
+          line-height: $path-height;
+        }
+        
+        .files-menu .file a {
+          display: block;
+          height: $file-height;
+          line-height: $file-height;
+        }
+        
+        .files-menu .files {
+          background-color: $comment-bg;
+          width: 100%;
         }
 
-        .files {
+        .file.separator {
+          border-top: 1px solid $comment-border-color;
+        }
 
-          display: block;
+        .files-menu .file a {
 
-          .file a {
-            min-height: $file-height;
-            line-height: $file-height;
+          @include hoverable();
 
-            overflow: hidden;
+          position: relative;
+          overflow: hidden;
 
-            display: block;
+          .language {
+            $language-size: 14px;
             
-            padding-left: $file-path-padding;
-            padding-right: $file-path-padding;
-
-            color: hsl($hue, $saturation, 30%);
+            display: inline-block;
             
-            @include hoverable();
+            width: $language-size;
+            height: $language-size;
+            border-radius: $language-size;
+            font-size: 0;
 
-            @include font-mono();
-
-            position: relative;
-
-            .language {
-              float: right;
-              display: inline-block;
-              font-size: 0;
-              
-              $size: 10px;
-              
-              line-height: $size;
-              height: $size;
-              width: $size;
-              border-radius: $size * 2;
-
-              color: transparent;
-              position: absolute;
-              top: 50%;
-              right: 14px;
-              transform: translateY(-50%);
-            }
-
+            position: absolute;
+            right: 8px;
+            top: ($file-height - $language-size) * 0.5;
           }
 
-          .file + .file {
-            
-            &.separator {
-              border-top: 1px solid hsl($hue, $saturation, 92%) !important;
-            }
-            
+          // To cut off long filenames
+
+          .filename {
+            display: inline-block;
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
           }
           
         }
-
+        
       }
       
     }
     
   }
+  
+}
+
+@mixin header-comment-padding($vert, $left, $right) {
+
+  #project-overview,
+  .files-menu #filename,
+  .files-menu .file a {
+    padding-right: $right;
+    padding-left: $left;
+  }
+
+}
+
+@mixin header-single-column() {
 
 }
 
@@ -121,277 +140,101 @@ $overview-height: 48px;
   
   #header {
 
-    > .code {
-      min-height: $path-height * 1.5;
+    .files-path {
+      position: fixed;
+
+      @include comment-width();
+      padding-right: 1px;
     }
     
-    > .comment {
-
-      position: relative;
-
-      header {
-
-        background: $comment-bg;
-
-        .file-path {
-
-          height: $path-height + $overview-height + 1px;
-          line-height: $path-height;
-
-          border-bottom: 1px solid $comment-border-color;
-
-          display: flex;
-          flex-direction: column;
-
-          #project-overview,
-          #filename {
-            border-right: 1px solid $code-border-color;
-            
-            display: inline-block;
-
-            padding-left: $file-path-padding;
-            padding-right: $file-path-padding;
-          }
-
-          #project-overview {
-            border-bottom: 1px solid $code-border-color;
-            height: $overview-height;
-            line-height: $overview-height;
-          }
-            
-          .files-menu {
-            flex: 1;
-
-            #filename {
-              height: $path-height !important;
-
-              display: inline-block;
-              
-              white-space: nowrap;
-              overflow: hidden;
-              
-              line-height: $path-height;
-              width: 100%;
-              border-left: 1px solid $comment-border-color;
-            }
-
-            .files {
-              border-top: 1px solid $comment-border-color;
-              
-              max-height: 80vh;
-              max-height: calc(100vh - #{$path-height} - 48px);
-              
-              position: absolute;
-              top: $path-height;
-              margin-left: 0;
-              
-              display: block;
-              overflow-y: auto;
-              
-              list-style-type: none;
-              
-              transform-origin: 0 0;
-              transition: opacity $files-anim ease, transform $files-anim ease;
-              
-            }
-
-          }
-          
-        }
-
-      }
-      
-    }
-
-  }
-    
-}
-
-@mixin header-single-column() {
-  
-  #header > .comment {
-
-    width: 100%;
-
-    #project-overview {
-      min-height: $overview-height;
-      line-height: $overview-height !important;
-    }
-    
-    #project-overview,
     #filename {
-      display: block;
-
-      padding: 0 $file-path-padding;
-      
-      border-bottom: 1px solid $comment-border-color;
-
-    }
-
-    a#project-overview {
       @include hoverable();
-    }
-    
-    #filename {
-      font-size: 150%;
+
+      display: inline-block;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      padding-right: $path-height !important;
       
-      min-height: $path-height;
-      line-height: $path-height !important;
-    }
-
-    .files-menu {
-      border-bottom: 1px solid $code-border-color;
-    }
-
-  }
-  
-}
-  
-@mixin header-index() {
-  
-  #header > .comment {
-    
-    #project-overview {
-      border-bottom: 1px solid $comment-border-color;
-      font-size: 24px;
-      border-right: none !important;
-    }
-
-    .file-path {
-      border: none !important;
-      display: flex;
-      flex-direction: column;
-
-      height: auto !important;
-
-      #filename {
-        display: none !important;
-      }
-
-      .files {
-        border-top: none !important;
-        position: static !important;
-        top: 0;
-        max-height: none !important;
-        overflow-y: none;
-      }
-      
-    }
-
-  }
-
-}
-
-@mixin header-code() {
-
-  #header {
-
-    > .comment {
-
       position: relative;
-      
-      header {
 
-        .spacer {
-          flex: 1;
-        }
-
-        .file-path {
-
-          @include two-column() {
-            position: fixed;
-
-            @include comment-width();
-
-          }
-          
-          background: $comment-bg;
-
-          #project-overview {
-            @include hoverable();
-            padding-left: $file-path-padding !important;
-          }
-          
-          .files-menu {
-
-            position: relative;
-
-            #filename {
-              @include hoverable();
-
-              padding-right: $path-height;
-
-              &:after {
-                content: '';
-                display: block;
-
-                background-image: url('dropdown.png');
-
-                position: absolute;
-                top: 0;
-                right: 0;
-
-                z-index: 1000;
-
-                opacity: 0.5;
-                
-                width: $path-height;
-                height: $path-height;
-
-                transform: scaleY(-1);
-                transition: transform $files-anim ease;
-              }
-              
-            }
-            
-            .files {
-
-              position: absolute;
-              top: $path-height + 1px;
-              left: 0;
-              margin-left: -1px;
-              width: 100%;
-              
-              background: $comment-bg;
-
-              border: 1px solid $comment-border-color;
-              border-width: 0 1px 1px 1px;
-              border-bottom-left-radius: 3px;
-              
-            }
-
-          }
-          
-        }
-
+      &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: $path-height;
+        height: $path-height;
+        background-image: url('dropdown.png');
       }
+      
+    }
+    
+    .files-menu .files {
+      position: absolute;
+      border-bottom: 1px solid $code-border-color;
 
+      overflow-y: scroll;
+      max-height: calc(100vh - #{$path-height} - #{$overview-height} - 1px);
+
+      transition: opacity $files-anim ease, transform $files-anim ease;
+
+      transform: translateY(0);
+      
     }
     
     &.files-hidden {
       
-      #filename {
-        
-        &:after {
-          transform: scaleY(1) !important;
-        }
-        
+      .files-menu .files {
+        opacity: 0;
+        transform: translateY(-4px);
+        pointer-events: none;
       }
       
-      .files.hidable {
+    }
+    
+  }
+  
+}
 
-        pointer-events: none;
-        
-        opacity: 0;
-        
-        transform: scaleY(0.9);
-        
+@mixin header-code() {
+
+}
+
+@mixin header-index() {
+
+  #header {
+
+    #project-overview {
+      
+      .name {
+        font-size: 24px;
+      }
+      
+      .version {
+        float: right;
+        font-weight: 400;
       }
       
     }
 
+    #filename {
+      display: none !important;
+    }
+    
+    .files-menu .files {
+      border-bottom: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+      pointer-events: auto !important;
+    }
+    
   }
-  
+
 }
+
 
 

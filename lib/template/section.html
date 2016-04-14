@@ -1,0 +1,27 @@
+<section class="section">
+
+  {{#comment_markdown}}
+  <aside class="comment">
+    <div class="text markdown">{{{comment_markdown}}}</div>
+  </aside>
+  {{/comment_markdown}}
+  
+  {{^comment_markdown}}
+  <aside class="comment empty">
+    <div class="text markdown"></div>
+  </aside>
+  {{/comment_markdown}}
+
+  {{#code_highlighted}}
+  <div class="code">
+    <pre><code>{{{code_highlighted}}}</code></pre>
+  </div>
+  {{/code_highlighted}}
+
+  {{^code_highlighted}}
+  <div class="code empty">
+    <pre><code></code></pre>
+  </div>
+  {{/code_highlighted}}
+  
+</section>

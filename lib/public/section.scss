@@ -61,45 +61,13 @@
     padding: $vert $right $vert $left;
   }
   
-  &#header > .comment > header {
-    
-    > .file-path {
-      
-      #project-overview {
-        padding-left: $left;
-      }
-      
-      #filename {
-        padding-right: $right;
-        
-        @include single-column() {
-          padding-left: $left;
-        }
-        
-      }
-      
-    }
-
-    .files li a {
-      padding-right: $right;
-
-      @include single-column() {
-        padding-left: $left;
-      }
-      
-    }
-    
-    .files.index li a {
-      padding-left: $left;
-    }
-    
-  }
-  
   &.footer > .comment > .content {
     padding-left: $left;
     padding-right: $right;
   }
   
+  @include header-comment-padding($section-two-column-padding, $left, $right);
+
 }
 
 @mixin comment-padding-bottom($padding) {
@@ -165,6 +133,10 @@
     width: 100%;
     min-height: none;
     
+    &.empty {
+      display: none;
+    }
+
   }
 
   @include comment-padding($section-single-column-padding-v, $section-single-column-padding-h, $section-single-column-padding-h);
@@ -217,8 +189,8 @@
 
   }
 
-  @include comment-padding($section-two-column-padding, $section-two-column-outer, $section-two-column-inner);
-  
+  @include comment-padding($section-two-column-padding, $section-two-column-inner, $section-two-column-inner);
+
   &.footer > .comment {
     border-top: 1px solid $comment-border-color;
   }

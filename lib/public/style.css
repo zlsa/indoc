@@ -64,7 +64,7 @@
   line-height: 64px;
   font-family: 'Inconsolata', Consolata, monospace;
   color: #415858; }
-  @media (max-width: 499px) {
+  @media (max-width: 719px) {
     #version {
       height: 48px;
       line-height: 48px; } }
@@ -165,6 +165,10 @@ body {
         margin-top: 24px; }
       body #sections .section > .comment > .text h1, body #sections .section > .comment > .text h3 {
         font-weight: bold; }
+      body #sections .section > .comment > .text ul, body #sections .section > .comment > .text ol {
+        margin-left: 18px;
+        margin-top: 8px;
+        margin-bottom: 8px; }
       body #sections .section > .comment > .text h1 {
         font-size: 18px;
         min-height: 38px;
@@ -316,6 +320,10 @@ body {
         margin-top: 24px; }
       body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h3 {
         font-weight: bold; }
+      body #sections .section.markdown > .code > .markdown ul, body #sections .section.markdown > .code > .markdown ol {
+        margin-left: 18px;
+        margin-top: 8px;
+        margin-bottom: 8px; }
       body #sections .section.markdown > .code > .markdown p code {
         background-color: #d3dede;
         font-weight: bold;
@@ -326,131 +334,102 @@ body {
       padding-bottom: 128px; }
     body #sections .section:nth-last-child(2) {
       flex: 1; }
-      @media (min-width: 500px) {
+      @media (min-width: 720px) {
         body #sections .section:nth-last-child(2) > .comment {
           padding-bottom: 64px; }
         body #sections .section:nth-last-child(2) > .code {
           padding-bottom: 64px; } }
-    body #sections #header > .comment header {
-      width: 100%; }
-      body #sections #header > .comment header .file-path {
-        font-family: 'Inconsolata', Consolata, monospace; }
-        body #sections #header > .comment header .file-path #project-overview {
-          font-weight: bold; }
-          body #sections #header > .comment header .file-path #project-overview .version {
-            float: right;
-            font-weight: normal;
-            font-size: 16px;
-            color: #6c9393; }
-      body #sections #header > .comment header #filename {
-        font-weight: bold;
-        color: #415858;
-        border-right: 1px solid #d3dede; }
-      body #sections #header > .comment header .files {
-        display: block; }
-        body #sections #header > .comment header .files .file a {
-          min-height: 38px;
-          line-height: 38px;
-          overflow: hidden;
-          display: block;
-          padding-left: 24px;
-          padding-right: 24px;
-          color: #415858;
+    body #sections #header {
+      font-family: 'Inconsolata', Consolata, monospace; }
+      body #sections #header .comment {
+        padding-bottom: 0 !important; }
+      body #sections #header header .file-path {
+        position: relative; }
+        body #sections #header header .file-path #project-overview {
           transition: background-color 0.1s ease;
-          font-family: 'Inconsolata', Consolata, monospace;
-          position: relative; }
-          body #sections #header > .comment header .files .file a:hover {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+          font-weight: bold; }
+          body #sections #header header .file-path #project-overview:hover {
             cursor: pointer; }
-          body #sections #header > .comment header .files .file a:hover {
+          body #sections #header header .file-path #project-overview:hover {
             background-color: #f6f8f8; }
-          body #sections #header > .comment header .files .file a .language {
-            float: right;
-            display: inline-block;
-            font-size: 0;
-            line-height: 10px;
-            height: 10px;
-            width: 10px;
-            border-radius: 20px;
-            color: transparent;
-            position: absolute;
-            top: 50%;
-            right: 14px;
-            transform: translateY(-50%); }
-        body #sections #header > .comment header .files .file + .file.separator {
-          border-top: 1px solid #e8eeee !important; }
-    @media (max-width: 499px) {
-      body #sections #header > .comment {
-        width: 100%; }
-        body #sections #header > .comment #project-overview {
-          min-height: 48px;
-          line-height: 48px !important; }
-        body #sections #header > .comment #project-overview,
-        body #sections #header > .comment #filename {
+        body #sections #header header .file-path #project-overview,
+        body #sections #header header .file-path .files-menu #filename {
           display: block;
-          padding: 0 24px;
-          border-bottom: 1px solid #dfe7e7; }
-        body #sections #header > .comment a#project-overview {
-          transition: background-color 0.1s ease; }
-          body #sections #header > .comment a#project-overview:hover {
-            cursor: pointer; }
-          body #sections #header > .comment a#project-overview:hover {
-            background-color: #f6f8f8; }
-        body #sections #header > .comment #filename {
-          font-size: 150%;
-          min-height: 64px;
-          line-height: 64px !important; }
-        body #sections #header > .comment .files-menu {
           border-bottom: 1px solid #d3dede; }
+        body #sections #header header .file-path #project-overview {
+          height: 65px;
+          line-height: 65px; }
+        body #sections #header header .file-path #filename {
+          display: block;
+          height: 48px;
+          line-height: 48px; }
+        body #sections #header header .file-path .files-menu .file a {
+          display: block;
+          height: 42px;
+          line-height: 42px; }
+        body #sections #header header .file-path .files-menu .files {
+          background-color: #fcfdfd;
+          width: 100%; }
+        body #sections #header header .file-path .file.separator {
+          border-top: 1px solid #dfe7e7; }
+        body #sections #header header .file-path .files-menu .file a {
+          transition: background-color 0.1s ease;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          user-select: none;
+          position: relative;
+          overflow: hidden; }
+          body #sections #header header .file-path .files-menu .file a:hover {
+            cursor: pointer; }
+          body #sections #header header .file-path .files-menu .file a:hover {
+            background-color: #f6f8f8; }
+          body #sections #header header .file-path .files-menu .file a .language {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            border-radius: 14px;
+            font-size: 0;
+            position: absolute;
+            right: 8px;
+            top: 14px; }
+          body #sections #header header .file-path .files-menu .file a .filename {
+            display: inline-block;
+            max-width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis; }
+    @media (max-width: 719px) {
       body #sections .section > .comment {
         width: 100%;
         min-height: none; }
+        body #sections .section > .comment.empty {
+          display: none; }
       body #sections .section > .comment > .text {
         padding: 16px 5vh 16px 5vh; }
-      body #sections .section#header > .comment > header > .file-path #project-overview {
-        padding-left: 5vh; }
-      body #sections .section#header > .comment > header > .file-path #filename {
-        padding-right: 5vh; } }
-  @media (max-width: 499px) and (max-width: 499px) {
-    body #sections .section#header > .comment > header > .file-path #filename {
-      padding-left: 5vh; } }
-    @media (max-width: 499px) {
-      body #sections .section#header > .comment > header .files li a {
-        padding-right: 5vh; } }
-  @media (max-width: 499px) and (max-width: 499px) {
-    body #sections .section#header > .comment > header .files li a {
-      padding-left: 5vh; } }
-    @media (max-width: 499px) {
-      body #sections .section#header > .comment > header .files.index li a {
-        padding-left: 5vh; }
       body #sections .section.footer > .comment > .content {
         padding-left: 5vh;
-        padding-right: 5vh; } }
+        padding-right: 5vh; }
+      body #sections .section #project-overview,
+      body #sections .section .files-menu #filename,
+      body #sections .section .files-menu .file a {
+        padding-right: 5vh;
+        padding-left: 5vh; } }
 
-@media (max-width: 499px) and (max-width: 480px) {
+@media (max-width: 719px) and (max-width: 480px) {
   body #sections .section > .comment > .text {
     padding: 16px 12px 16px 12px; }
-  body #sections .section#header > .comment > header > .file-path #project-overview {
-    padding-left: 12px; }
-  body #sections .section#header > .comment > header > .file-path #filename {
-    padding-right: 12px; } }
-  @media (max-width: 499px) and (max-width: 480px) and (max-width: 499px) {
-    body #sections .section#header > .comment > header > .file-path #filename {
-      padding-left: 12px; } }
-
-@media (max-width: 499px) and (max-width: 480px) {
-  body #sections .section#header > .comment > header .files li a {
-    padding-right: 12px; } }
-  @media (max-width: 499px) and (max-width: 480px) and (max-width: 499px) {
-    body #sections .section#header > .comment > header .files li a {
-      padding-left: 12px; } }
-
-@media (max-width: 499px) and (max-width: 480px) {
-  body #sections .section#header > .comment > header .files.index li a {
-    padding-left: 12px; }
   body #sections .section.footer > .comment > .content {
     padding-left: 12px;
-    padding-right: 12px; } }
-    @media (max-width: 499px) {
+    padding-right: 12px; }
+  body #sections .section #project-overview,
+  body #sections .section .files-menu #filename,
+  body #sections .section .files-menu .file a {
+    padding-right: 12px;
+    padding-left: 12px; } }
+    @media (max-width: 719px) {
       body #sections .section > .code {
         border-bottom: 1px solid #d3dede;
         border-top: 1px solid #d3dede; }
@@ -460,6 +439,9 @@ body {
       body #sections .section.footer > .code > .content {
         padding: 16px 5vh 16px 5vh; }
       body #sections .section.markdown > .code > .markdown p, body #sections .section.markdown > .code > .markdown pre, body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h2, body #sections .section.markdown > .code > .markdown h3, body #sections .section.markdown > .code > .markdown h4, body #sections .section.markdown > .code > .markdown h5, body #sections .section.markdown > .code > .markdown h6 {
+        padding-left: 5vh;
+        padding-right: 5vh; }
+      body #sections .section.markdown > .code > .markdown ul, body #sections .section.markdown > .code > .markdown ol {
         padding-left: 5vh;
         padding-right: 5vh; }
       body #sections .section.markdown > .code > .markdown pre {
@@ -477,11 +459,14 @@ body {
       body #sections .section.markdown > .code > .markdown pre {
         padding-left: 16px; } }
 
-@media (max-width: 499px) and (max-width: 480px) {
+@media (max-width: 719px) and (max-width: 480px) {
   body #sections .section > .code > pre,
   body #sections .section.footer > .code > .content {
     padding: 16px 12px 16px 12px; }
   body #sections .section.markdown > .code > .markdown p, body #sections .section.markdown > .code > .markdown pre, body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h2, body #sections .section.markdown > .code > .markdown h3, body #sections .section.markdown > .code > .markdown h4, body #sections .section.markdown > .code > .markdown h5, body #sections .section.markdown > .code > .markdown h6 {
+    padding-left: 12px;
+    padding-right: 12px; }
+  body #sections .section.markdown > .code > .markdown ul, body #sections .section.markdown > .code > .markdown ol {
     padding-left: 12px;
     padding-right: 12px; }
   body #sections .section.markdown > .code > .markdown pre {
@@ -498,54 +483,52 @@ body {
       font-style: italic; }
   body #sections .section.markdown > .code > .markdown pre {
     padding-left: 16px; } }
-    @media (max-width: 499px) {
+    @media (max-width: 719px) {
       body #sections .section.footer > .code {
         border-top: 1px solid #d3dede; } }
-    @media (min-width: 500px) {
-      body #sections #header > .code {
-        min-height: 96px; }
-      body #sections #header > .comment {
+    @media (min-width: 720px) {
+      body #sections #header .files-path {
+        position: fixed;
+        width: 30%;
+        min-width: 24em;
+        max-width: 64em;
+        padding-right: 1px; }
+      body #sections #header #filename {
+        transition: background-color 0.1s ease;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+        display: inline-block;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 48px !important;
         position: relative; }
-        body #sections #header > .comment header {
-          background: #fcfdfd; }
-          body #sections #header > .comment header .file-path {
-            height: 113px;
-            line-height: 64px;
-            border-bottom: 1px solid #dfe7e7;
-            display: flex;
-            flex-direction: column; }
-            body #sections #header > .comment header .file-path #project-overview,
-            body #sections #header > .comment header .file-path #filename {
-              border-right: 1px solid #d3dede;
-              display: inline-block;
-              padding-left: 24px;
-              padding-right: 24px; }
-            body #sections #header > .comment header .file-path #project-overview {
-              border-bottom: 1px solid #d3dede;
-              height: 48px;
-              line-height: 48px; }
-            body #sections #header > .comment header .file-path .files-menu {
-              flex: 1; }
-              body #sections #header > .comment header .file-path .files-menu #filename {
-                height: 64px !important;
-                display: inline-block;
-                white-space: nowrap;
-                overflow: hidden;
-                line-height: 64px;
-                width: 100%;
-                border-left: 1px solid #dfe7e7; }
-              body #sections #header > .comment header .file-path .files-menu .files {
-                border-top: 1px solid #dfe7e7;
-                max-height: 80vh;
-                max-height: calc(100vh - 64px - 48px);
-                position: absolute;
-                top: 64px;
-                margin-left: 0;
-                display: block;
-                overflow-y: auto;
-                list-style-type: none;
-                transform-origin: 0 0;
-                transition: opacity 0.3s ease, transform 0.3s ease; }
+        body #sections #header #filename:hover {
+          cursor: pointer; }
+        body #sections #header #filename:hover {
+          background-color: #f6f8f8; }
+        body #sections #header #filename:after {
+          display: block;
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 48px;
+          height: 48px;
+          background-image: url("dropdown.png"); }
+      body #sections #header .files-menu .files {
+        position: absolute;
+        border-bottom: 1px solid #d3dede;
+        overflow-y: scroll;
+        max-height: calc(100vh - 48px - 64px - 1px);
+        transition: opacity 0.2s ease, transform 0.2s ease;
+        transform: translateY(0); }
+      body #sections #header.files-hidden .files-menu .files {
+        opacity: 0;
+        transform: translateY(-4px);
+        pointer-events: none; }
       body #sections .section {
         display: flex; }
         body #sections .section > .comment {
@@ -554,26 +537,15 @@ body {
           max-width: 64em;
           border-right: 1px solid #d3dede; }
         body #sections .section > .comment > .text {
-          padding: 8px 24px 8px 64px; }
-        body #sections .section#header > .comment > header > .file-path #project-overview {
-          padding-left: 64px; }
-        body #sections .section#header > .comment > header > .file-path #filename {
-          padding-right: 24px; } }
-    @media (min-width: 500px) and (max-width: 499px) {
-      body #sections .section#header > .comment > header > .file-path #filename {
-        padding-left: 64px; } }
-    @media (min-width: 500px) {
-        body #sections .section#header > .comment > header .files li a {
-          padding-right: 24px; } }
-    @media (min-width: 500px) and (max-width: 499px) {
-      body #sections .section#header > .comment > header .files li a {
-        padding-left: 64px; } }
-    @media (min-width: 500px) {
-        body #sections .section#header > .comment > header .files.index li a {
-          padding-left: 64px; }
+          padding: 8px 24px 8px 24px; }
         body #sections .section.footer > .comment > .content {
-          padding-left: 64px;
+          padding-left: 24px;
           padding-right: 24px; }
+        body #sections .section #project-overview,
+        body #sections .section .files-menu #filename,
+        body #sections .section .files-menu .file a {
+          padding-right: 24px;
+          padding-left: 24px; }
         body #sections .section.footer > .comment {
           border-top: 1px solid #dfe7e7; }
         body #sections .section > .code {
@@ -582,6 +554,9 @@ body {
         body #sections .section.footer > .code > .content {
           padding: 8px 64px 8px 24px; }
         body #sections .section.markdown > .code > .markdown p, body #sections .section.markdown > .code > .markdown pre, body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h2, body #sections .section.markdown > .code > .markdown h3, body #sections .section.markdown > .code > .markdown h4, body #sections .section.markdown > .code > .markdown h5, body #sections .section.markdown > .code > .markdown h6 {
+          padding-left: 24px;
+          padding-right: 64px; }
+        body #sections .section.markdown > .code > .markdown ul, body #sections .section.markdown > .code > .markdown ol {
           padding-left: 24px;
           padding-right: 64px; }
         body #sections .section.markdown > .code > .markdown pre {
@@ -615,82 +590,18 @@ body {
       font-size: 14px;
       font-family: 'Inconsolata', Consolata, monospace;
       color: #6c9393; }
-    @media (max-width: 499px) {
+    @media (max-width: 719px) {
       body #sections #footer {
         text-align: right; } }
-  body.index #header > .comment #project-overview {
-    border-bottom: 1px solid #dfe7e7;
-    font-size: 24px;
-    border-right: none !important; }
-  body.index #header > .comment .file-path {
-    border: none !important;
-    display: flex;
-    flex-direction: column;
-    height: auto !important; }
-    body.index #header > .comment .file-path #filename {
-      display: none !important; }
-    body.index #header > .comment .file-path .files {
-      border-top: none !important;
-      position: static !important;
-      top: 0;
-      max-height: none !important;
-      overflow-y: none; }
-  @media (min-width: 500px) {
-    body.code #header > .comment {
-      position: relative; }
-      body.code #header > .comment header .spacer {
-        flex: 1; }
-      body.code #header > .comment header .file-path {
-        background: #fcfdfd; } }
-    @media (min-width: 500px) and (min-width: 500px) {
-      body.code #header > .comment header .file-path {
-        position: fixed;
-        width: 30%;
-        min-width: 24em;
-        max-width: 64em; } }
-  @media (min-width: 500px) {
-        body.code #header > .comment header .file-path #project-overview {
-          transition: background-color 0.1s ease;
-          padding-left: 24px !important; }
-          body.code #header > .comment header .file-path #project-overview:hover {
-            cursor: pointer; }
-          body.code #header > .comment header .file-path #project-overview:hover {
-            background-color: #f6f8f8; }
-        body.code #header > .comment header .file-path .files-menu {
-          position: relative; }
-          body.code #header > .comment header .file-path .files-menu #filename {
-            transition: background-color 0.1s ease;
-            padding-right: 64px; }
-            body.code #header > .comment header .file-path .files-menu #filename:hover {
-              cursor: pointer; }
-            body.code #header > .comment header .file-path .files-menu #filename:hover {
-              background-color: #f6f8f8; }
-            body.code #header > .comment header .file-path .files-menu #filename:after {
-              content: '';
-              display: block;
-              background-image: url("dropdown.png");
-              position: absolute;
-              top: 0;
-              right: 0;
-              z-index: 1000;
-              opacity: 0.5;
-              width: 64px;
-              height: 64px;
-              transform: scaleY(-1);
-              transition: transform 0.3s ease; }
-          body.code #header > .comment header .file-path .files-menu .files {
-            position: absolute;
-            top: 65px;
-            left: 0;
-            margin-left: -1px;
-            width: 100%;
-            background: #fcfdfd;
-            border: 1px solid #dfe7e7;
-            border-width: 0 1px 1px 1px;
-            border-bottom-left-radius: 3px; }
-    body.code #header.files-hidden #filename:after {
-      transform: scaleY(1) !important; }
-    body.code #header.files-hidden .files.hidable {
-      pointer-events: none;
-      opacity: 0;
-      transform: scaleY(0.9); } }
+  body.index #header #project-overview .name {
+    font-size: 24px; }
+  body.index #header #project-overview .version {
+    float: right;
+    font-weight: 400; }
+  body.index #header #filename {
+    display: none !important; }
+  body.index #header .files-menu .files {
+    border-bottom: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important; }

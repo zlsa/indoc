@@ -70,6 +70,12 @@
     font-weight: bold;
   }
 
+  ul, ol {
+    margin-left: 18px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
 }
 
 @mixin markdown-small-headers() {
@@ -91,6 +97,11 @@
 @mixin markdown-padding($left, $right) {
 
   p, pre, h1, h2, h3, h4, h5, h6 {
+    padding-left: $left;
+    padding-right: $right;
+  }
+
+  ul, ol {
     padding-left: $left;
     padding-right: $right;
   }
