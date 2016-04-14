@@ -21,18 +21,13 @@
 /* TWO COLUMN STYLING */
 /* `#section` styling */
 #version {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0 24px;
+  float: right;
+  font-weight: 400;
+  padding: 0;
   height: 64px;
   line-height: 64px;
   font-family: 'Inconsolata', Consolata, monospace;
   color: #415858; }
-  @media (max-width: 719px) {
-    #version {
-      height: 48px;
-      line-height: 48px; } }
 
 html, body {
   width: 100%;
@@ -563,9 +558,8 @@ body {
         text-align: right; } }
   body.index #header #project-overview .name {
     font-size: 24px; }
-  body.index #header #project-overview .version {
-    float: right;
-    font-weight: 400; }
+  body.index #header #project-overview #version {
+    font-weight: 700; }
   body.index #header #filename {
     display: none !important; }
   body.index #header .files-menu .files {

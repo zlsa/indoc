@@ -29,11 +29,11 @@
             <div class="file-path">
               
               {{#index}}
-              <span id="project-overview"><span class="name">{{project}}</span><span class="version">{{version}}</span></span>
+              <span id="project-overview"><span class="name">{{project}}</span><span id="version">{{version}}</span></span>
               {{/index}}
               
               {{^index}}
-              <a id="project-overview" href="{{path}}" title="Project Overview">{{project}}</a>
+              <a id="project-overview" href="{{path}}" title="Project Overview">{{project}}<span id="version">{{version}}</span></a>
               {{/index}}
               
               <div class="files-menu">
@@ -71,10 +71,6 @@
         <div class="code empty">
         </div>
         {{/markdown}}
-
-        {{^index}}
-        <div id="version">{{version}}</div>
-        {{/index}}
 
       </section>
 

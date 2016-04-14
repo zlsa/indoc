@@ -15,8 +15,10 @@ Unlike `docco`, `indoc` has the concept of a `project`; instead of
 having a hacky "Jump To" menu, `indoc` has an integrated file listing
 on each generated page. (Check it out on the left.)
 
-> Note that `indoc` is currently only a few days old, and is subject to
-> rapid, backwards-incompatible changes in the near future.
+> Note that `indoc` is currently only a few weeks old, and is subject
+> to rapid, backwards-incompatible changes in the near future.
+>
+> Of course, the version number will indicate this.
 
 The recommended usage is to install `indoc` globally and use a local
 project `config.json` file with the `-c` command line option.

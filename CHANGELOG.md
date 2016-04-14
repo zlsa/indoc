@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.2
+
+* Version number is always next to the project name.
+
 ## 0.4.1
 
 * Use Google Fonts instead of self-hosting. (Will still work offline but with non-optimal fonts.)
