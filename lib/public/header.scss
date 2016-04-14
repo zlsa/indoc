@@ -177,7 +177,7 @@ $files-anim: 0.2s;
       position: absolute;
       border-bottom: 1px solid $code-border-color;
 
-      overflow-y: scroll;
+      overflow-y: auto;
       max-height: calc(100vh - #{$path-height} - #{$overview-height} - 1px);
 
       transition: opacity $files-anim ease, transform $files-anim ease;

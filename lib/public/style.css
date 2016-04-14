@@ -484,7 +484,7 @@ body {
       body #sections #header .files-menu .files {
         position: absolute;
         border-bottom: 1px solid #d3dede;
-        overflow-y: scroll;
+        overflow-y: auto;
         max-height: calc(100vh - 48px - 64px - 1px);
         transition: opacity 0.2s ease, transform 0.2s ease;
         transform: translateY(0); }

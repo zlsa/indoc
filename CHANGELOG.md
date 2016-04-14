@@ -3,6 +3,7 @@
 ## 0.4.2
 
 * Version number is always next to the project name.
+* File list scrollbar only appears when needed
 
 ## 0.4.1
 
