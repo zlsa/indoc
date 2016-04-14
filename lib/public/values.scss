@@ -49,3 +49,12 @@ $narrow-width: 480px;
     @content;
   }
 }
+
+@mixin font-sans() {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin font-mono() {
+  font-family: 'Inconsolata', Consolata, monospace;
+}
+
