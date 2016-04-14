@@ -5,6 +5,8 @@
 
 ## Project file linking
 
+> See [lib/section.js](:lib/section.js#project-file-linking) for the source code.
+
 You can link to files in the project by prefixing the URL with `:`;
 for example:
 
@@ -25,4 +27,10 @@ filename in the URL:
 ```md
 See [foobar.js](:) <!-- links to ./foobar.js -->
 ```
+
+## Header IDs
+
+Headers 
+
+[click here](#foobar) to see
 
