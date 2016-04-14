@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.3
+
+* Dropdown image is included in `package.json` file list.
+
 ## 0.4.2
 
 * Version number is always next to the project name.
