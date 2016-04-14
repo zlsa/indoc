@@ -19,17 +19,22 @@
   },
   "files": [
     "bin/main.js",
+    
     "lib/main.js",
     "lib/file.js",
     "lib/section.js",
     "lib/language.js",
-    "lib/languages.json",
-    "lib/github-colors.json",
     "lib/class.js",
     "lib/events.js",
+    
+    "lib/languages.json",
+    "lib/github-colors.json",
+    
     "lib/public/style.css",
     "lib/public/jquery.min.js",
     "lib/public/script.js",
+    "lib/public/dropdown.png",
+    
     "lib/template/*"
   ],
   "main": "lib/main.js",
