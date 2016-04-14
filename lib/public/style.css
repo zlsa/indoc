@@ -97,6 +97,7 @@ body {
         padding: 0px 2px;
         margin: 0 1px; }
       body #sections .section > .comment > .text pre {
+        font-family: 'Inconsolata', Consolata, monospace;
         margin: 24px 0;
         white-space: pre-wrap;
         word-wrap: break-word; }
@@ -209,6 +210,7 @@ body {
       word-wrap: break-word;
       font-size: 14px;
       font-family: 'Inconsolata', Consolata, monospace;
+      font-family: 'Inconsolata', Consolata, monospace;
       line-height: 135%; }
       body #sections .section > .code > pre .hljs-keyword {
         color: #00994d; }
@@ -252,6 +254,7 @@ body {
         padding: 0px 2px;
         margin: 0 1px; }
       body #sections .section.markdown > .code > .markdown pre {
+        font-family: 'Inconsolata', Consolata, monospace;
         margin: 24px 0;
         white-space: pre-wrap;
         word-wrap: break-word; }

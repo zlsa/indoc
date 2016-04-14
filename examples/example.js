@@ -19,3 +19,11 @@ function hello_world() {
 // And we have to call the function, too.
 
 hello_world();
+
+
+// ```js
+// hello_world();
+// if(42 === 42) {
+//   console.log("your computer isn't broken!");
+// }
+// ```

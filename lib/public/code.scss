@@ -1,5 +1,9 @@
 
+@import 'values';
+
 @mixin hljs() {
+  @include font-mono();
+  
   .hljs-keyword {
     color: hsl(150, 100%, 30%);
   }
