@@ -11,7 +11,7 @@
     "doc"
   ],
   "homepage": "https://zlsa.github.io/indoc/",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "license": "MIT",
   "repository": "github:zlsa/indoc",
   "bin": {
@@ -19,7 +19,6 @@
   },
   "files": [
     "bin/main.js",
-    
     "lib/main.js",
     "lib/file.js",
     "lib/section.js",
@@ -28,11 +27,9 @@
     "lib/github-colors.json",
     "lib/class.js",
     "lib/events.js",
-    
     "lib/public/style.css",
     "lib/public/jquery.min.js",
     "lib/public/script.js",
-    
     "lib/template/*"
   ],
   "main": "lib/main.js",
