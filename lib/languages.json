@@ -30,6 +30,21 @@
     ]
   },
   
+  "Rust": {
+    "extensions": ["rs"],
+    "name": {
+      "hljs": "Rust",
+      "human": "Rust",
+      "abbr": "rust"
+    },
+    "single": [
+      "//", "///"
+    ],
+    "multi": [
+      ["/*", "*", "*/"]
+    ]
+  },
+  
   "Python": {
     "extensions": ["py"],
     "name": {
