@@ -31,6 +31,8 @@
     "lib/public/jquery.min.js",
     "lib/public/script.js",
     "lib/public/dropdown.png",
+    "lib/public/favicon.png",
+    "lib/public/links.png",
     "lib/template/*"
   ],
   "main": "lib/main.js",

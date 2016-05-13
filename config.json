@@ -5,5 +5,8 @@
   "name": "Indoc",
   "output": "docs",
   "version": "package.json",
+  "links": {
+    "github": "https://github.com/zlsa/indoc/"
+  },
   "owners": "ZLSA Design"
 }

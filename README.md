@@ -146,6 +146,10 @@ var project = new indoc.Project({
   output: 'docs',
   readme: 'README.md',
   version: 'package.json', // the special string "package.json" will open the file "package.json" and read the version string there
+  links: {
+    github: "https://github.com/tom/mousetrap-sim",
+    twitter: "https://twitter.com/mousetrapsim"
+  },
   files: [
     'src/animal.js',
     'src/cat.js',
@@ -158,6 +162,15 @@ project.run(function(err, data) {
   console.log('Generated ' + data.total + ' files!');
 });
 ```
+
+# External Project Links
+
+You can reference external links with the `links` key in
+`options`. Currently supported link types are:
+
+* `github`
+* `twitter`
+* `home`
 
 # Languages
 

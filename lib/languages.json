@@ -102,11 +102,26 @@
   },
   
   "CPP": {
-    "extensions": ["cpp", "cxx", "C"],
+    "extensions": ["cpp", "cxx", "C", "cc"],
     "name": {
       "hljs": "CPP",
-      "human": "CPP",
+      "human": "C Plus Plus",
       "abbr": "CPP"
+    },
+    "single": [
+      "//"
+    ],
+    "multi": [
+      ["/*", "*", "*/"]
+    ]
+  },
+  
+  "HPP": {
+    "extensions": ["hpp", "hxx", "C"],
+    "name": {
+      "hljs": "CPP",
+      "human": "HPP",
+      "abbr": "HPP"
     },
     "single": [
       "//"
