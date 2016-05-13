@@ -388,9 +388,9 @@ body {
             opacity: 0.3; }
         body #sections #header header .links .link a.github {
           background-position: 0 0; }
-        body #sections #header header .links .link a.twitter {
-          background-position: 48px 0; }
         body #sections #header header .links .link a.home {
+          background-position: 48px 0; }
+        body #sections #header header .links .link a.twitter {
           background-position: 96px 0; }
     @media (max-width: 719px) {
       body #sections .section > .comment {
