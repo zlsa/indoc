@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.5
+
+* Fixed silly bug with project links on non-index pages.
+
+## 0.4.4
+
+* Rust and HPP files are recognized.
+* Project link support.
+
 ## 0.4.3
 
 * Dropdown image is included in `package.json` file list.
