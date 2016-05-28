@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.6
+
+* Fixed C++ and H++ colors.
+
 ## 0.4.5
 
 * Fixed silly bug with project links on non-index pages.
