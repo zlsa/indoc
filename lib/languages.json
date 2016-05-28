@@ -106,7 +106,8 @@
     "name": {
       "hljs": "CPP",
       "human": "C Plus Plus",
-      "abbr": "CPP"
+      "abbr": "C++",
+      "color": "c++"
     },
     "single": [
       "//"
@@ -121,7 +122,8 @@
     "name": {
       "hljs": "CPP",
       "human": "HPP",
-      "abbr": "HPP"
+      "abbr": "H++",
+      "color": "c++"
     },
     "single": [
       "//"
