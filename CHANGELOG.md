@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.8
+
+* Remove anti-scroll "feature"
+
 ## 0.4.7
 
 * Removed translate transition on file menu
