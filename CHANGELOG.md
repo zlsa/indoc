@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.7
+
+* Removed translate transition on file menu
+* Remove default link title
+
 ## 0.4.6
 
 * Fixed C++ and H++ colors.
