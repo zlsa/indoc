@@ -229,17 +229,14 @@ $files-anim: 0.2s;
       overflow-y: auto;
       max-height: calc(100vh - #{$path-height} - #{$overview-height} - 1px);
 
-      transition: opacity $files-anim ease, transform $files-anim ease;
+      transition: opacity $files-anim ease;
 
-      transform: translateY(0);
-      
     }
     
     &.files-hidden {
       
       .files-menu .files {
         opacity: 0;
-        transform: translateY(-4px);
         pointer-events: none;
       }
       
