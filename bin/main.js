@@ -133,15 +133,13 @@ if(argv.config) {
     name: argv.n,
     output: argv.o,
     owners: argv.owners,
-    version: argv['project-version']
-    
+    version: argv['project-version'],
   });
 }
 
 ////////////////////////////////////////////////
 
 function run(options) {
-  // And create the project with all of the above command-line options.
 
   function elapsed(start) {
     return ((Date.now() - start) * 0.001).toFixed(2) + 's';
@@ -149,7 +147,9 @@ function run(options) {
 
   var start = Date.now();
 
-  var project = indoc.project.create(options);
+  // And create the project with all of the above command-line options.
+
+  var project = new indoc.Project(options);
 
   // Called when we have a duplicate file (i.e. ['foo.js',
   // 'foo.js']). `indoc` automatically ignores it, but the event lets us

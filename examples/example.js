@@ -4,7 +4,9 @@
 /// To ignore a comment, simply remove the space at the start of the comment;
 /// for example, instead of using two forwards slashes, I've used three.
 
-/** This works for multiline comments, too. */
+/// However, this does not work for multi-line comments, because of the many
+/// existing documentation generators that use `/**` as the identifier for the
+/// start of a commented block.
 
 // This function prints out 'Hello, World!', then prints out the
 // answer to life, the universe, and everything.
