@@ -173,6 +173,21 @@
     ]
   },
   
+  "OpenSCAD": {
+    "extensions": ["scad"],
+    "name": {
+      "hljs": "openscad",
+      "human": "OpenSCAD",
+      "abbr": "scad"
+    },
+    "single": [
+      "//"
+    ],
+    "multi": [
+      ["/*", "", "*/"]
+    ]
+  },
+  
   "HTML": {
     "extensions": ["htm", "html"],
     "name": {
