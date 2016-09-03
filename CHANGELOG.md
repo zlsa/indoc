@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.4.11
+
+* Fix missing `index.html` when no `readme` file is specified
+
+## 0.4.10
+
+* Added language OpenSCAD
+
+## 0.4.9
+
+* Fix multi-line comment parsing.
+
 ## 0.4.8
 
 * Remove anti-scroll "feature"
