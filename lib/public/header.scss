@@ -182,7 +182,7 @@ $files-anim: 0.2s;
 }
 
 @mixin header-single-column() {
-
+  
 }
 
 @mixin header-two-column() {
@@ -255,6 +255,8 @@ $files-anim: 0.2s;
   #header {
 
     #project-overview {
+
+      width: auto;
       
       .name {
         font-size: 24px;
@@ -262,6 +264,8 @@ $files-anim: 0.2s;
 
       #version {
         font-weight: 700;
+        float: none;
+        margin-left: 2em;
       }
       
     }

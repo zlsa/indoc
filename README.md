@@ -4,30 +4,19 @@
 Inspired heavily by [`docco`](https://jashkenas.github.io/docco/),
 `indoc` is a quick-and-dirty documentation generator written in plain
 JavaScript. It can be run either from the command line or included as
-a library. The first line of `indoc` was laid down on a hard drive on
-March 10th, 2016; so if it seems rough around the edges, that's
-because it's still brand-new (ish). ~~However, since this is a hipster
-app that's written in JavaScript, v1.0 is coming within days! Either
-that or it'll be stuck on v0.0.1 forever.~~ (With the advantage of
-hindsight, it's at 0.4.11 right now and works pretty well.) Such are
-the woes of using hipster languages.
+a `node.js` library.
 
 Unlike `docco`, `indoc` has the concept of a `project`; instead of
 having a hacky "Jump To" menu, `indoc` has an integrated file listing
 on each generated page. (Check it out on the left.)
 
-> Note that `indoc` is currently only a few weeks old, and is subject
-> to rapid, backwards-incompatible changes in the near future.
->
-> Of course, the version number will indicate this.
-
 The recommended usage is to install `indoc` globally and use a local
-project `config.json` file with the `-c` command line option.
+project config file with the `-c` command line option.
 
 ```sh
 $ ls
-bin/     lib/     src/     README.md   config.json
-$ more config.json
+bin/     lib/     src/     README.md   indoc.json
+$ more indoc.json
 {
   "name": "Mousetrap Simulation Library"
   "owners": "Tom",
@@ -38,7 +27,7 @@ $ more config.json
     "src/**/*.js"
   ]
 }
-$ indoc -c config.json
+$ indoc -c indoc.json
 info: Generated "README.md"
 info: Generated "src/animal.js"
 info: Generated "src/cat.js"
@@ -46,7 +35,7 @@ info: Generated "src/mouse.js"
 info: Generated "src/trap.js"
 info: Successfully generated 5 files
 $ ls
-bin/     docs/    lib/     src/     README.md   config.json
+bin/     docs/    lib/     src/     README.md   indoc.json
 $ ls docs/
 index.html README.md/    animal.js/    cat.js/    mouse.js/     trap.js/
 $ 
@@ -79,7 +68,7 @@ $ indoc [options] files...
 Sets a config file to read configuration options from. If used, the
 rest of the arguments are ignored.
 
-Example config:
+Example config file:
 
 ```js
 {
