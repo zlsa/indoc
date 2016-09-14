@@ -86,6 +86,21 @@
     ]
   },
   
+  "TeX": {
+    "extensions": ["tex"],
+    "name": {
+      "hljs": "tex",
+      "human": "TeX",
+      "abbr": "TeX"
+    },
+    "single": [
+      "%",
+      "%%"
+    ],
+    "multi": [
+    ]
+  },
+  
   "C": {
     "extensions": ["c"],
     "name": {

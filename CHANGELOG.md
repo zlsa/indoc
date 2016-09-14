@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.12
+
+* Added support for ignoring comments with a matching string at the
+  start (resolve [issue #13](https://github.com/zlsa/indoc/issues/13))
+* Added language TeX
+
 ## 0.4.11
 
 * Fix missing `index.html` when no `readme` file is specified

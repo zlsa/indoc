@@ -190,15 +190,19 @@ The languages supported by `indoc` are stored in `lib/languages.json` in the fol
                            // "extensions", above, is used.
   },
   "single": [ "//", ";;" ],
-  multi: [
+  "multi": [
     ["/*", "*", "*/"]
+  ],
+  "ignore": [
+    "eslint-disable"
   ]
 }
 ```
 
-Right now, if there's a language that's not included, you can use the
-`languages` field of the `options` argument of the `indoc.project` to
-add new languages:
+Right now, if there's a language that's not included or not set up to
+your liking, you can use the `languages` field of the `options`
+argument of the `indoc.project` to add new languages or modify
+existing ones:
 
 ```javascript
 var project = new indoc.Project({
@@ -220,6 +224,9 @@ var project = new indoc.Project({
       single: [ '//', ';;' ], // a single-line comment starts with '//' or ';;'
       multi: [
         ['/*', '*', '*/'] /* See below for an explanation of how multiline comments work. */
+      ],
+      ignore: [
+        'hideme!' // hideme! (this comment will be ignored)
       ]
     }
   }
