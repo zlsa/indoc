@@ -88,18 +88,17 @@ body {
           font-weight: bold; }
         body #sections .section > .comment > .text pre .hljs-meta {
           color: #339966; }
-        body #sections .section > .comment > .text pre code {
-          background: transparent;
-          border: none;
-          border-radius: 0;
-          padding: 0;
-          margin: 0; }
       body #sections .section > .comment > .text p + p {
         text-indent: 1em;
         margin-top: 8px; }
       body #sections .section > .comment > .text blockquote p {
         text-indent: 0; }
-      body #sections .section > .comment > .text h1 code, body #sections .section > .comment > .text h2 code, body #sections .section > .comment > .text h3 code, body #sections .section > .comment > .text h4 code, body #sections .section > .comment > .text h5 code, body #sections .section > .comment > .text h6 code {
+      body #sections .section > .comment > .text h1 code, body #sections .section > .comment > .text h2 code, body #sections .section > .comment > .text h3 code, body #sections .section > .comment > .text h4 code, body #sections .section > .comment > .text h5 code, body #sections .section > .comment > .text h6 code, body #sections .section > .comment > .text pre code {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
         text-transform: none; }
       body #sections .section > .comment > .text h1 {
         font-size: 24px;
@@ -110,7 +109,7 @@ body {
       body #sections .section > .comment > .text * + h1 {
         margin-top: 48px; }
       body #sections .section > .comment > .text h2 {
-        font-size: 22px;
+        font-size: 21px;
         min-height: 48px;
         line-height: 48px;
         border-bottom: 1px solid #d3dede;
@@ -118,7 +117,7 @@ body {
       body #sections .section > .comment > .text * + h2 {
         margin-top: 42px; }
       body #sections .section > .comment > .text h3 {
-        font-size: 16px;
+        font-size: 18px;
         min-height: 36px;
         line-height: 36px;
         border-bottom: 1px solid #d3dede;
@@ -126,20 +125,20 @@ body {
       body #sections .section > .comment > .text * + h3 {
         margin-top: 36px; }
       body #sections .section > .comment > .text h4 {
-        font-size: 14px;
+        font-size: 16px;
         min-height: 32px;
         line-height: 32px;
         margin-bottom: 10px; }
       body #sections .section > .comment > .text * + h4 {
         margin-top: 24px; }
-      body #sections .section > .comment > .text h1, body #sections .section > .comment > .text h3 {
+      body #sections .section > .comment > .text h1, body #sections .section > .comment > .text h2, body #sections .section > .comment > .text h3 {
         font-weight: bold; }
       body #sections .section > .comment > .text ul, body #sections .section > .comment > .text ol {
         margin-left: 18px;
         margin-top: 8px;
         margin-bottom: 8px; }
       body #sections .section > .comment > .text h1 {
-        font-size: 18px;
+        font-size: 24px;
         min-height: 38px;
         line-height: 38px;
         border-bottom: 1px solid #d3dede;
@@ -147,7 +146,7 @@ body {
       body #sections .section > .comment > .text * + h1 {
         margin-top: 24px; }
       body #sections .section > .comment > .text h2 {
-        font-size: 16px;
+        font-size: 19px;
         min-height: 34px;
         line-height: 34px;
         border-bottom: 1px solid #d3dede;
@@ -155,7 +154,7 @@ body {
       body #sections .section > .comment > .text * + h2 {
         margin-top: 20px; }
       body #sections .section > .comment > .text h3 {
-        font-size: 14px;
+        font-size: 17px;
         min-height: 28px;
         line-height: 28px;
         border-bottom: 1px solid #d3dede;
@@ -163,7 +162,7 @@ body {
       body #sections .section > .comment > .text * + h3 {
         margin-top: 18px; }
       body #sections .section > .comment > .text h4 {
-        font-size: 12px;
+        font-size: 14px;
         min-height: 22px;
         line-height: 22px;
         margin-bottom: 8px; }
@@ -253,18 +252,17 @@ body {
           font-weight: bold; }
         body #sections .section.markdown > .code > .markdown pre .hljs-meta {
           color: #339966; }
-        body #sections .section.markdown > .code > .markdown pre code {
-          background: transparent;
-          border: none;
-          border-radius: 0;
-          padding: 0;
-          margin: 0; }
       body #sections .section.markdown > .code > .markdown p + p {
         text-indent: 1em;
         margin-top: 8px; }
       body #sections .section.markdown > .code > .markdown blockquote p {
         text-indent: 0; }
-      body #sections .section.markdown > .code > .markdown h1 code, body #sections .section.markdown > .code > .markdown h2 code, body #sections .section.markdown > .code > .markdown h3 code, body #sections .section.markdown > .code > .markdown h4 code, body #sections .section.markdown > .code > .markdown h5 code, body #sections .section.markdown > .code > .markdown h6 code {
+      body #sections .section.markdown > .code > .markdown h1 code, body #sections .section.markdown > .code > .markdown h2 code, body #sections .section.markdown > .code > .markdown h3 code, body #sections .section.markdown > .code > .markdown h4 code, body #sections .section.markdown > .code > .markdown h5 code, body #sections .section.markdown > .code > .markdown h6 code, body #sections .section.markdown > .code > .markdown pre code {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        padding: 0;
+        margin: 0;
         text-transform: none; }
       body #sections .section.markdown > .code > .markdown h1 {
         font-size: 24px;
@@ -275,7 +273,7 @@ body {
       body #sections .section.markdown > .code > .markdown * + h1 {
         margin-top: 48px; }
       body #sections .section.markdown > .code > .markdown h2 {
-        font-size: 22px;
+        font-size: 21px;
         min-height: 48px;
         line-height: 48px;
         border-bottom: 1px solid #d3dede;
@@ -283,7 +281,7 @@ body {
       body #sections .section.markdown > .code > .markdown * + h2 {
         margin-top: 42px; }
       body #sections .section.markdown > .code > .markdown h3 {
-        font-size: 16px;
+        font-size: 18px;
         min-height: 36px;
         line-height: 36px;
         border-bottom: 1px solid #d3dede;
@@ -291,13 +289,13 @@ body {
       body #sections .section.markdown > .code > .markdown * + h3 {
         margin-top: 36px; }
       body #sections .section.markdown > .code > .markdown h4 {
-        font-size: 14px;
+        font-size: 16px;
         min-height: 32px;
         line-height: 32px;
         margin-bottom: 10px; }
       body #sections .section.markdown > .code > .markdown * + h4 {
         margin-top: 24px; }
-      body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h3 {
+      body #sections .section.markdown > .code > .markdown h1, body #sections .section.markdown > .code > .markdown h2, body #sections .section.markdown > .code > .markdown h3 {
         font-weight: bold; }
       body #sections .section.markdown > .code > .markdown ul, body #sections .section.markdown > .code > .markdown ol {
         margin-left: 18px;

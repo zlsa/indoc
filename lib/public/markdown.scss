@@ -50,15 +50,6 @@
     
     white-space: pre-wrap;
     word-wrap: break-word;
-
-    code {
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      padding: 0;
-      margin: 0;
-    }
-    
   }
 
   p + p {
@@ -70,20 +61,25 @@
     text-indent: 0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2, h3, h4, h5, h6, pre {
 
     code {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
       text-transform: none;
     }
     
   }
   
   @include markdown-header(h1, 24px, 64px, 48px, 16px, true);
-  @include markdown-header(h2, 22px, 48px, 42px, 14px, true);
-  @include markdown-header(h3, 16px, 36px, 36px, 12px, true);
-  @include markdown-header(h4, 14px, 32px, 24px, 10px);
+  @include markdown-header(h2, 21px, 48px, 42px, 14px, true);
+  @include markdown-header(h3, 18px, 36px, 36px, 12px, true);
+  @include markdown-header(h4, 16px, 32px, 24px, 10px);
 
-  h1, h3 {
+  h1, h2, h3 {
     font-weight: bold;
   }
 
@@ -96,10 +92,10 @@
 }
 
 @mixin markdown-small-headers() {
-  @include markdown-header(h1, 18px, 38px, 24px, 14px, true);
-  @include markdown-header(h2, 16px, 34px, 20px, 12px, true);
-  @include markdown-header(h3, 14px, 28px, 18px, 10px, true);
-  @include markdown-header(h4, 12px, 22px, 16px, 8px);
+  @include markdown-header(h1, 24px, 38px, 24px, 14px, true);
+  @include markdown-header(h2, 19px, 34px, 20px, 12px, true);
+  @include markdown-header(h3, 17px, 28px, 18px, 10px, true);
+  @include markdown-header(h4, 14px, 22px, 16px, 8px);
 
   h1, h2, h3, h4 {
     color: hsl($hue, $saturation, 40%);
