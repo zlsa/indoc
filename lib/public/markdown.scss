@@ -30,7 +30,7 @@
     text-decoration: underline;
   }
 
-  p code {
+  code {
     @include font-mono();    
 
     display: inline;
@@ -50,6 +50,15 @@
     
     white-space: pre-wrap;
     word-wrap: break-word;
+
+    code {
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      margin: 0;
+    }
+    
   }
 
   p + p {
@@ -62,9 +71,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    
+
     code {
-      @include font-mono();
       text-transform: none;
     }
     

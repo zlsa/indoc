@@ -48,7 +48,7 @@ body {
       body #sections .section > .comment > .text a {
         color: #577575;
         text-decoration: underline; }
-      body #sections .section > .comment > .text p code {
+      body #sections .section > .comment > .text code {
         font-family: 'Inconsolata', Consolata, monospace;
         display: inline;
         background: #f0f4f4;
@@ -88,13 +88,18 @@ body {
           font-weight: bold; }
         body #sections .section > .comment > .text pre .hljs-meta {
           color: #339966; }
+        body #sections .section > .comment > .text pre code {
+          background: transparent;
+          border: none;
+          border-radius: 0;
+          padding: 0;
+          margin: 0; }
       body #sections .section > .comment > .text p + p {
         text-indent: 1em;
         margin-top: 8px; }
       body #sections .section > .comment > .text blockquote p {
         text-indent: 0; }
       body #sections .section > .comment > .text h1 code, body #sections .section > .comment > .text h2 code, body #sections .section > .comment > .text h3 code, body #sections .section > .comment > .text h4 code, body #sections .section > .comment > .text h5 code, body #sections .section > .comment > .text h6 code {
-        font-family: 'Inconsolata', Consolata, monospace;
         text-transform: none; }
       body #sections .section > .comment > .text h1 {
         font-size: 24px;
@@ -208,7 +213,7 @@ body {
       body #sections .section.markdown > .code > .markdown a {
         color: #577575;
         text-decoration: underline; }
-      body #sections .section.markdown > .code > .markdown p code {
+      body #sections .section.markdown > .code > .markdown code {
         font-family: 'Inconsolata', Consolata, monospace;
         display: inline;
         background: #f0f4f4;
@@ -248,13 +253,18 @@ body {
           font-weight: bold; }
         body #sections .section.markdown > .code > .markdown pre .hljs-meta {
           color: #339966; }
+        body #sections .section.markdown > .code > .markdown pre code {
+          background: transparent;
+          border: none;
+          border-radius: 0;
+          padding: 0;
+          margin: 0; }
       body #sections .section.markdown > .code > .markdown p + p {
         text-indent: 1em;
         margin-top: 8px; }
       body #sections .section.markdown > .code > .markdown blockquote p {
         text-indent: 0; }
       body #sections .section.markdown > .code > .markdown h1 code, body #sections .section.markdown > .code > .markdown h2 code, body #sections .section.markdown > .code > .markdown h3 code, body #sections .section.markdown > .code > .markdown h4 code, body #sections .section.markdown > .code > .markdown h5 code, body #sections .section.markdown > .code > .markdown h6 code {
-        font-family: 'Inconsolata', Consolata, monospace;
         text-transform: none; }
       body #sections .section.markdown > .code > .markdown h1 {
         font-size: 24px;
