@@ -93,6 +93,9 @@ body {
         margin-top: 8px; }
       body #sections .section > .comment > .text blockquote p {
         text-indent: 0; }
+      body #sections .section > .comment > .text h1 code, body #sections .section > .comment > .text h2 code, body #sections .section > .comment > .text h3 code, body #sections .section > .comment > .text h4 code, body #sections .section > .comment > .text h5 code, body #sections .section > .comment > .text h6 code {
+        font-family: 'Inconsolata', Consolata, monospace;
+        text-transform: none; }
       body #sections .section > .comment > .text h1 {
         font-size: 24px;
         min-height: 64px;
@@ -250,6 +253,9 @@ body {
         margin-top: 8px; }
       body #sections .section.markdown > .code > .markdown blockquote p {
         text-indent: 0; }
+      body #sections .section.markdown > .code > .markdown h1 code, body #sections .section.markdown > .code > .markdown h2 code, body #sections .section.markdown > .code > .markdown h3 code, body #sections .section.markdown > .code > .markdown h4 code, body #sections .section.markdown > .code > .markdown h5 code, body #sections .section.markdown > .code > .markdown h6 code {
+        font-family: 'Inconsolata', Consolata, monospace;
+        text-transform: none; }
       body #sections .section.markdown > .code > .markdown h1 {
         font-size: 24px;
         min-height: 64px;

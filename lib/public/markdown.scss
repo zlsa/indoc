@@ -61,6 +61,15 @@
     text-indent: 0;
   }
 
+  h1, h2, h3, h4, h5, h6 {
+    
+    code {
+      @include font-mono();
+      text-transform: none;
+    }
+    
+  }
+  
   @include markdown-header(h1, 24px, 64px, 48px, 16px, true);
   @include markdown-header(h2, 22px, 48px, 42px, 14px, true);
   @include markdown-header(h3, 16px, 36px, 36px, 12px, true);

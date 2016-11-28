@@ -1,5 +1,5 @@
 
-/* # JavaScript */
+/* # `JavaScript` */
 
 /// To ignore a comment, simply remove the space at the start of the comment;
 /// for example, instead of using two forwards slashes, I've used three.
