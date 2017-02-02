@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.4.14
+
+* Fix incorrect wrapping property on code, causing non-breakable code to extend into the comments pane.
+
+## 0.4.13
+
+* Changed the styling of headers and code formatting in the comments pane.
+
 ## 0.4.12
 
 * Added support for ignoring comments with a matching string at the
