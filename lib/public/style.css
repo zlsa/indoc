@@ -170,11 +170,9 @@ body {
         margin-top: 16px; }
       body #sections .section > .comment > .text h1, body #sections .section > .comment > .text h2, body #sections .section > .comment > .text h3, body #sections .section > .comment > .text h4 {
         color: #577575; }
-      body #sections .section > .comment > .text h1, body #sections .section > .comment > .text h2 {
-        text-transform: uppercase; }
     body #sections .section > .code > pre {
       white-space: pre-wrap;
-      word-wrap: break-word;
+      word-wrap: break-all;
       font-size: 14px;
       font-family: 'Inconsolata', Consolata, monospace;
       font-family: 'Inconsolata', Consolata, monospace;
