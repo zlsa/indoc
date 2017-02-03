@@ -173,6 +173,7 @@ body {
     body #sections .section > .code > pre {
       white-space: pre-wrap;
       word-wrap: break-all;
+      word-break: break-all;
       font-size: 14px;
       font-family: 'Inconsolata', Consolata, monospace;
       font-family: 'Inconsolata', Consolata, monospace;

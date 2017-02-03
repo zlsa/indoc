@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.15
+
+* Add property `word-break: break-all` in addition to `word-wrap: break-all`.
+
 ## 0.4.14
 
 * Fix incorrect wrapping property on code, causing non-breakable code to extend into the comments pane.
