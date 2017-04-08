@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.4.16
+
+* Add Python docstring-style multi-line comment support.
+* Fix incorrect truncation of the start of multi-line comments.
+
 ## 0.4.15
 
 * Add property `word-break: break-all` in addition to `word-wrap: break-all`.
