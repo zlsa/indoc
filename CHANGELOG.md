@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.4.17
+
+* Fix bug relating to multi-line comments with no defined middle
+  character (for example, `*` for the `['/*', '*', '*/']` multi-line comment
+  definition.)
+
 ## 0.4.16
 
 * Add Python docstring-style multi-line comment support.
