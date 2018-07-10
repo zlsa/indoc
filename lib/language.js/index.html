@@ -1,0 +1,877 @@
+<!doctype html>
+<html>
+  <head>
+    <title>lib/language.js</title>
+    <link rel="stylesheet" href="./../../public/style.css" />
+    <link rel="icon" type="image/png" href="./../../public/favicon-32.png" />
+    <link rel="icon" type="image/png" href="./../../public/favicon-64.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./../../public/jquery.min.js"></script>
+    <script src="./../../public/script.js"></script>
+  </head>
+  <body class="code">
+    
+    <main id="sections">
+
+      <!-- The header -->
+
+        
+      <section class="section header files-hidden" id="header">
+
+        <aside class="comment">
+
+          <header>
+
+            <div class="file-path">
+              
+              
+              <a id="project-overview" href="./../.." title="Project Overview">Indoc<span id="version">0.4.19</span></a>
+              
+              <div class="files-menu">
+                <span id="filename" title="lib/language.js">lib/language.js</span>
+                
+              
+                <ul class="files hidable">
+                  
+                  
+<li class="file">
+  
+<a href="../../CHANGELOG.md" title="CHANGELOG.md">
+    
+<span class="language" style="background-color: transparent">MD</span>
+
+
+<span class="filename">CHANGELOG.md</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../../MARKDOWN.md" title="MARKDOWN.md">
+    
+<span class="language" style="background-color: transparent">MD</span>
+
+
+<span class="filename">MARKDOWN.md</span>
+
+</a>
+
+</li>
+<li class="file separator">
+  
+  
+<a href="../../bin/main.js" title="bin/main.js">
+    
+<span class="language" style="background-color: #f1e05a">js</span>
+
+
+<span class="filename">bin/main.js</span>
+
+</a>
+
+</li>
+<li class="file separator">
+  
+  
+<a href="../../examples/example.c" title="examples/example.c">
+    
+<span class="language" style="background-color: #555555">C</span>
+
+
+<span class="filename">examples/example.c</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../../examples/example.html" title="examples/example.html">
+    
+<span class="language" style="background-color: #e44b23">HTML</span>
+
+
+<span class="filename">examples/example.html</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../../examples/example-with-really-really-long-filename.java" title="examples/example-with-really-really-long-filename.java">
+    
+<span class="language" style="background-color: #b07219">java</span>
+
+
+<span class="filename">examples/example-with-really-really-long-filename.java</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../../examples/example.js" title="examples/example.js">
+    
+<span class="language" style="background-color: #f1e05a">js</span>
+
+
+<span class="filename">examples/example.js</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../../examples/example.md" title="examples/example.md">
+    
+<span class="language" style="background-color: transparent">MD</span>
+
+
+<span class="filename">examples/example.md</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../../examples/example.s" title="examples/example.s">
+    
+<span class="language" style="background-color: #6E4C13">ASM</span>
+
+
+<span class="filename">examples/example.s</span>
+
+</a>
+
+</li>
+<li class="file separator">
+  
+  
+<a href="../class.js" title="lib/class.js">
+    
+<span class="language" style="background-color: #f1e05a">js</span>
+
+
+<span class="filename">lib/class.js</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../events.js" title="lib/events.js">
+    
+<span class="language" style="background-color: #f1e05a">js</span>
+
+
+<span class="filename">lib/events.js</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../file.js" title="lib/file.js">
+    
+<span class="language" style="background-color: #f1e05a">js</span>
+
+
+<span class="filename">lib/file.js</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../main.js" title="lib/main.js">
+    
+<span class="language" style="background-color: #f1e05a">js</span>
+
+
+<span class="filename">lib/main.js</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../section.js" title="lib/section.js">
+    
+<span class="language" style="background-color: #f1e05a">js</span>
+
+
+<span class="filename">lib/section.js</span>
+
+</a>
+
+</li>
+<li class="file separator">
+  
+  
+<a href="../public/script.js" title="lib/public/script.js">
+    
+<span class="language" style="background-color: #f1e05a">js</span>
+
+
+<span class="filename">lib/public/script.js</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../public/code.scss" title="lib/public/code.scss">
+    
+<span class="language" style="background-color: #CF649A">SCSS</span>
+
+
+<span class="filename">lib/public/code.scss</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../public/footer.scss" title="lib/public/footer.scss">
+    
+<span class="language" style="background-color: #CF649A">SCSS</span>
+
+
+<span class="filename">lib/public/footer.scss</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../public/header.scss" title="lib/public/header.scss">
+    
+<span class="language" style="background-color: #CF649A">SCSS</span>
+
+
+<span class="filename">lib/public/header.scss</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../public/markdown.scss" title="lib/public/markdown.scss">
+    
+<span class="language" style="background-color: #CF649A">SCSS</span>
+
+
+<span class="filename">lib/public/markdown.scss</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../public/reset.scss" title="lib/public/reset.scss">
+    
+<span class="language" style="background-color: #CF649A">SCSS</span>
+
+
+<span class="filename">lib/public/reset.scss</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../public/section.scss" title="lib/public/section.scss">
+    
+<span class="language" style="background-color: #CF649A">SCSS</span>
+
+
+<span class="filename">lib/public/section.scss</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../public/style.scss" title="lib/public/style.scss">
+    
+<span class="language" style="background-color: #CF649A">SCSS</span>
+
+
+<span class="filename">lib/public/style.scss</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../public/values.scss" title="lib/public/values.scss">
+    
+<span class="language" style="background-color: #CF649A">SCSS</span>
+
+
+<span class="filename">lib/public/values.scss</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../public/version.scss" title="lib/public/version.scss">
+    
+<span class="language" style="background-color: #CF649A">SCSS</span>
+
+
+<span class="filename">lib/public/version.scss</span>
+
+</a>
+
+</li>
+<li class="file separator">
+  
+  
+<a href="../template/file.html" title="lib/template/file.html">
+    
+<span class="language" style="background-color: #e44b23">HTML</span>
+
+
+<span class="filename">lib/template/file.html</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../template/link.html" title="lib/template/link.html">
+    
+<span class="language" style="background-color: #e44b23">HTML</span>
+
+
+<span class="filename">lib/template/link.html</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../template/page.html" title="lib/template/page.html">
+    
+<span class="language" style="background-color: #e44b23">HTML</span>
+
+
+<span class="filename">lib/template/page.html</span>
+
+</a>
+
+</li>
+  
+<li class="file">
+  
+<a href="../template/section.html" title="lib/template/section.html">
+    
+<span class="language" style="background-color: #e44b23">HTML</span>
+
+
+<span class="filename">lib/template/section.html</span>
+
+</a>
+
+</li>
+
+                  
+                </ul>
+                
+              </div>
+                
+            </div>
+
+            <div class="spacer"></div>
+            
+            
+          </header>
+            
+        </aside>
+
+        
+        <div class="code empty">
+        </div>
+
+      </section>
+
+      <!-- The main code section -->
+      
+      <section class="section">
+
+  
+  <aside class="comment empty">
+    <div class="text markdown"></div>
+  </aside>
+
+  <div class="code">
+    <pre><code><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">var</span> merge = <span class="hljs-built_in">require</span>(<span class="hljs-string">'merge'</span>);
+<span class="hljs-keyword">var</span> c = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./class'</span>).class;</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>Include the list of languages.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code><span class="hljs-keyword">var</span> languages_list = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./languages'</span>);</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>colors</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code><span class="hljs-keyword">var</span> colors = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./github-colors'</span>);
+
+exports.normalize_language = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">l, name</span>) </span>{
+  l.color = colors[(l.name.color || l.name.hljs || l.name.abbr || name).toLowerCase()] || <span class="hljs-string">'transparent'</span>;
+  <span class="hljs-keyword">if</span>(!(<span class="hljs-string">'abbr'</span> <span class="hljs-keyword">in</span> l.name)) l.name.abbr = l.extensions[<span class="hljs-number">0</span>];
+  <span class="hljs-keyword">return</span> l;
+};
+
+exports.get_language = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">extension, extra_languages</span>) </span>{
+  
+  <span class="hljs-keyword">var</span> languages = languages_list, i;</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>If there are extra language or language parameters passed in, we
+need to merge the two.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>  <span class="hljs-keyword">if</span>(extra_languages) {
+    <span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> extra_languages) {
+      languages[i] = merge(languages[i], extra_languages[i]);
+    }
+  }
+  
+  <span class="hljs-keyword">for</span>(i <span class="hljs-keyword">in</span> languages) {</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>If the language isn&#39;t in our DB, continue.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>    <span class="hljs-keyword">if</span>(!(<span class="hljs-string">'extensions'</span> <span class="hljs-keyword">in</span> languages[i])) <span class="hljs-keyword">continue</span>;
+
+    <span class="hljs-keyword">if</span>(languages[i].extensions.indexOf(extension) &gt;= <span class="hljs-number">0</span>) {
+      <span class="hljs-keyword">return</span> [exports.normalize_language(languages[i], i), i];
+    }
+  }
+  
+  <span class="hljs-keyword">return</span> [
+    {
+      <span class="hljs-attr">name</span>: { <span class="hljs-attr">hljs</span>: <span class="hljs-string">'auto'</span>, <span class="hljs-attr">human</span>: <span class="hljs-string">'Autodetected (Unknown)'</span>, <span class="hljs-attr">abbr</span>: <span class="hljs-string">'AUTO'</span> },
+      <span class="hljs-attr">color</span>: <span class="hljs-string">'#000'</span>,
+      <span class="hljs-attr">extensions</span>: []
+    },
+    <span class="hljs-string">'auto'</span>
+  ];
+};
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Language</span> </span>{
+  
+  <span class="hljs-keyword">constructor</span>(project, file) {
+    <span class="hljs-keyword">this</span>.name = {};
+    
+    <span class="hljs-keyword">this</span>.single = [];
+    
+    <span class="hljs-keyword">this</span>.multi = [];</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>Contains a list of strings; if any of these strings is at the
+start of a comment, the comment will be ignored (and stay in
+the file section).</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>    <span class="hljs-keyword">this</span>.ignore = [];
+
+    <span class="hljs-keyword">var</span> language = exports.get_language(path.extname(file.filename).substr(<span class="hljs-number">1</span>), project.options.languages);
+    <span class="hljs-keyword">var</span> language_name = language[<span class="hljs-number">1</span>];
+    
+    language = language[<span class="hljs-number">0</span>];
+
+    <span class="hljs-keyword">if</span>(language_name != <span class="hljs-string">'auto'</span>) {
+      <span class="hljs-keyword">this</span>.name = language.name;
+
+      <span class="hljs-keyword">if</span>(!(<span class="hljs-string">'human'</span> <span class="hljs-keyword">in</span> <span class="hljs-keyword">this</span>.name)) <span class="hljs-keyword">this</span>.name.human = language_name;
+      
+      <span class="hljs-keyword">if</span>(<span class="hljs-string">'single'</span> <span class="hljs-keyword">in</span> language) <span class="hljs-keyword">this</span>.single = language.single;
+      <span class="hljs-keyword">if</span>(<span class="hljs-string">'multi'</span> <span class="hljs-keyword">in</span> language)  <span class="hljs-keyword">this</span>.multi = language.multi;
+      <span class="hljs-keyword">if</span>(<span class="hljs-string">'ignore'</span> <span class="hljs-keyword">in</span> language) <span class="hljs-keyword">this</span>.ignore = language.ignore;</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>If we haven&#39;t found the language, send off an event with the filename.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>    } <span class="hljs-keyword">else</span> {
+      project.emit(<span class="hljs-string">'language-not-found'</span>, { <span class="hljs-attr">filename</span>: file.filename });</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>Then, tell HLJS (in <a href="../section.js/" title="">section.js</a> to autodetect the language.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>      <span class="hljs-keyword">this</span>.name = {
+        <span class="hljs-attr">hljs</span>: <span class="hljs-string">'auto'</span>,
+        <span class="hljs-attr">human</span>: <span class="hljs-string">'Autodetected (Unknown)'</span>,
+        <span class="hljs-attr">abbr</span>: <span class="hljs-string">'AUTO'</span>
+      };</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>Set up some sane defaults for comments. These won&#39;t cover
+tons of languages, but it&#39;s better to have at least some
+comments extracted, even if the language is unknown.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>      <span class="hljs-keyword">this</span>.single = [
+        <span class="hljs-string">'//'</span>,
+        <span class="hljs-string">';'</span>,
+        <span class="hljs-string">'--'</span>,
+        <span class="hljs-string">'#'</span>
+      ];
+
+      <span class="hljs-keyword">this</span>.multi = [
+        [<span class="hljs-string">'/*'</span>, <span class="hljs-string">'*'</span>, <span class="hljs-string">'*/'</span>]
+      ];
+
+    }
+    
+  }
+
+  should_ignore_comment(comment) {
+    comment = comment.trim();
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-keyword">this</span>.ignore.length<span class="hljs-number">-1</span>; i&gt;=<span class="hljs-number">0</span>; i--) {
+      <span class="hljs-keyword">if</span>(comment.startsWith(<span class="hljs-keyword">this</span>.ignore[i])) {
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+      }
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    
+  }
+
+  is_single_comment(line) {</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>Why add the space? Because we still want the empty comments to
+separate paragraphs in Markdown. Adding a space to the end of
+the comment is a bit of a weird way to do it, but it&#39;s fast and
+works well.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>    line = line.trim() + <span class="hljs-string">' '</span>;
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-keyword">this</span>.single.length<span class="hljs-number">-1</span>; i&gt;=<span class="hljs-number">0</span>; i--) {
+      <span class="hljs-keyword">if</span>(line.startsWith(<span class="hljs-keyword">this</span>.single[i] + <span class="hljs-string">' '</span>)) {
+        <span class="hljs-keyword">return</span> !<span class="hljs-keyword">this</span>.should_ignore_comment(<span class="hljs-keyword">this</span>.strip_single_comment(line));
+      }
+    }
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  }
+
+  starts_multi_comment(line) {
+    
+    line = line.trim();
+
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-keyword">this</span>.multi.length<span class="hljs-number">-1</span>; i&gt;=<span class="hljs-number">0</span>; i--) {
+      <span class="hljs-keyword">if</span>(line.startsWith(<span class="hljs-keyword">this</span>.multi[i][<span class="hljs-number">0</span>]) || line == <span class="hljs-keyword">this</span>.multi[i][<span class="hljs-number">0</span>]) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  }
+
+  ends_multi_comment(line) {
+    
+    line = line.trim();
+    
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-keyword">this</span>.multi.length<span class="hljs-number">-1</span>; i&gt;=<span class="hljs-number">0</span>; i--) {
+      <span class="hljs-keyword">if</span>(line.endsWith(<span class="hljs-keyword">this</span>.multi[i][<span class="hljs-number">2</span>])) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    }
+    
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+  }
+
+  strip_single_comment(line) {</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>Given a comment, returns the contents of it.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>    line = line.trim();
+    <span class="hljs-keyword">var</span> c;
+    
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-keyword">this</span>.single.length<span class="hljs-number">-1</span>; i&gt;=<span class="hljs-number">0</span>; i--) {
+      c = <span class="hljs-keyword">this</span>.single[i];
+      
+      <span class="hljs-keyword">if</span>(line.startsWith(c)) {
+        <span class="hljs-keyword">return</span> line.substr(c.length).trimRight().substr(<span class="hljs-number">1</span>);
+      }
+      
+    }
+    
+    <span class="hljs-keyword">return</span> line;
+  }
+
+  strip_multi_comment_end(line, end) {
+    line = line.trim();
+
+    <span class="hljs-keyword">if</span>(line.endsWith(end)) {
+      <span class="hljs-keyword">return</span> line.substr(<span class="hljs-number">0</span>, line.length - end.length).trimRight();
+    }
+    
+    <span class="hljs-keyword">return</span> line;
+  }
+  
+  strip_multi_comment(line) {
+    
+    line = line.trim();
+    <span class="hljs-keyword">var</span> s, m, e;</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>For each multi-line expression:</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i=<span class="hljs-keyword">this</span>.multi.length<span class="hljs-number">-1</span>; i&gt;=<span class="hljs-number">0</span>; i--) {</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>&quot;start&quot;, &quot;middle&quot;, and &quot;end&quot; identifiers</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>      s = <span class="hljs-keyword">this</span>.multi[i][<span class="hljs-number">0</span>];
+      m = <span class="hljs-keyword">this</span>.multi[i][<span class="hljs-number">1</span>];
+      e = <span class="hljs-keyword">this</span>.multi[i][<span class="hljs-number">2</span>];</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>Check if this is the <em>start</em> of a multi-line comment.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>      <span class="hljs-keyword">if</span>(line.startsWith(s)) {
+        line = line.substr(s.length);
+
+        <span class="hljs-keyword">if</span>(line.startsWith(m)) {
+          line = line.substr(m.length).trimRight();
+
+          <span class="hljs-keyword">if</span>(<span class="hljs-regexp">/\s/</span>.test(line[<span class="hljs-number">0</span>]) &amp;&amp; !<span class="hljs-regexp">/\s/</span>.test(line[<span class="hljs-number">1</span>])) {
+            line = line.substr(<span class="hljs-number">1</span>);
+          }
+          
+        }
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.strip_multi_comment_end(line, e);</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>Check if this is the end of a multi-line comment.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(line.endsWith(e)) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.strip_multi_comment_end(line, e);</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>Check if this is the middle of a multi-line comment</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>      } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(m &amp;&amp; line.startsWith(m)) {
+
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.strip_multi_comment_end(line.substr(m.length), e);
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">continue</span>;
+      }
+      
+    }
+    
+    <span class="hljs-keyword">return</span> line;
+  }
+
+  is_comment(line) {
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.is_single_comment(line) || <span class="hljs-keyword">this</span>.starts_multi_comment(line);
+  }
+
+  strip_comment(line) {</code></pre>
+  </div>
+
+  
+</section>
+<section class="section">
+
+  <aside class="comment">
+    <div class="text markdown"><p>See <code>strip_single_comment</code>.</p>
+</div>
+  </aside>
+  
+
+  <div class="code">
+    <pre><code>    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.is_single_comment(line))
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.strip_single_comment(line);
+    <span class="hljs-keyword">else</span>
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.strip_multi_comment(line);
+    <span class="hljs-keyword">return</span> line;
+  }
+
+}
+
+exports.Language = Language;</code></pre>
+  </div>
+
+  
+</section>
+
+      
+      
+      <section class="section footer" id="footer">
+        
+        <aside class="comment">
+          <span class="content project-copyright">&copy; Copyright 2018 ZLSA Design.</span>
+        </aside>
+
+        <div class="code">
+          <span class="content page-generation-time">Generated Tue, 10 Jul 2018 18:04:26 GMT</span>
+        </div>
+        
+      </section>
+      
+    </main>
+
+  </body>
+</html>
+
